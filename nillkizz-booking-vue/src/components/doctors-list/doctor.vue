@@ -31,8 +31,8 @@ export default {
   },
   computed: {
     spec() {
-      if (Object.keys(this.specs).length)
-        return this.doctor.specialty.map((id) => this.specs[id]).join(", ");
+      if (Object.keys(this.doctor.specialty).length)
+        return this.doctor.specialty.map((spec) => spec.name).join(", ");
       else return "";
     },
     education() {
@@ -49,11 +49,13 @@ export default {
   .photo-wrap
     height: 150px
     width: 150px
-    @apply p-1 border border-gray-100 rounded-full flex-shrink-0
+    @apply p-1 border border-gray-200 rounded-full flex-shrink-0
     .photo
       @apply w-full h-full bg-center bg-cover rounded-full border border-gray-200
   .info
     @apply flex flex-col pt-2 w-full
     .name
       @apply text-2xl text-gray-500
+    .details
+      @apply  text-gray-900
 </style>

@@ -27,11 +27,7 @@ export default {
       filters: {},
     };
   },
-  methods: {
-    getSpecs(specIds) {
-      if (this.specs) return specIds.map((id) => this.specs[id]);
-    },
-  },
+  methods: {},
   computed: {
     searchedDoctors() {
       function search(doc) {
@@ -40,8 +36,9 @@ export default {
           return doc.name.includes(key);
         });
         const bySpec = query.some((key) => {
-          const specs = this.getSpecs(doc.specialty);
-          return specs.some((spec) => (spec ? spec.includes(key) : false));
+          return doc.specialty.some((spec) =>
+            spec ? spec.name.includes(key) : false
+          );
         });
         return byName || bySpec;
       }

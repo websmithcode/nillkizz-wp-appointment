@@ -1,6 +1,6 @@
 <template lang="pug">
 .app_wrapper(v-cloak, :class="{ loading: IS_LOADING }")
-  doctors-list(:doctors="doctors", :specs="specs")
+  doctors-list(:doctors="doctors")
 </template>
 
 <script>
@@ -13,15 +13,23 @@ export default {
     doctorsList,
   },
   async mounted() {
-    this.doctors = await this.$store.dispatch("loading", api.getDoctors());
-    this.specs = await this.$store.dispatch("loading", api.getSpecialties());
-    this.timeslots = await this.$store.dispatch("loading", api.getTimeslots());
+    let doctors = await this.$store.dispatch("loading", api.getDoctors());
+    const specs = await this.$store.dispatch("loading", api.getSpecialties());
+    const timeslots = await this.$store.dispatch("loading", api.getTimeslots());
+
+    doctors = doctors.map((doc) => {
+      doc.specialty = doc.specialty.map((specId) => ({
+        id: specId,
+        name: specs[specId],
+      }));
+      doc.timeslots = timeslots.filter((ts) => ts.doctor_id == doc.id);
+      return doc;
+    });
+    this.doctors = doctors;
   },
   data() {
     return {
       doctors: [],
-      specs: {},
-      timeslots: [],
     };
   },
   computed: {
