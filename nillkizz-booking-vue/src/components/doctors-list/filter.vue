@@ -1,35 +1,32 @@
 <template lang="pug">
 .doctors-filter
-  .filters 
-    select
-      option(
-        v-for="(spec, index) in getSpecialities()",
-        :key="index",
-        :value="spec"
-      ) {{ spec }}
+  .filters
+    select(v-model="spec")
+      option(value="") Специальность
+      option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
 </template>
 
 <script>
 export default {
   props: {
     modelValue: Object,
-    doctors: Array,
+    specs: {},
   },
   data() {
     return {
-      search: "",
+      spec: "",
     };
   },
-  methods: {
-    doFilter() {
-      const filters = {
-        search: this.search,
+  computed: {
+    filters() {
+      return {
+        spec: this.spec,
       };
-      this.$emit("update:modelValue", filters);
     },
-    getSpecialities() {
-      let specs = [];
-      return specs;
+  },
+  watch: {
+    filters(newVal) {
+      this.$emit("update:modelValue", newVal);
     },
   },
 };

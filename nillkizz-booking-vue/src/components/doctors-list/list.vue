@@ -1,8 +1,8 @@
 <template lang="pug">
 .doctors-list
   doctors-search(v-model="search")
-  doctors-filter(v-model="filters")
-  main.doctors
+  doctors-filter(v-model="filters", :specs="specs")
+  main.doctors {{ filters }}
     doctor(
       v-for="doc in filteredDoctors",
       :key="doc.id",
@@ -24,7 +24,9 @@ export default {
   data() {
     return {
       search: "",
-      filters: {},
+      filters: {
+        spec: "",
+      },
     };
   },
   methods: {},
@@ -36,7 +38,7 @@ export default {
           return doc.name.includes(key);
         });
         const bySpec = query.some((key) => {
-          return doc.specialty.some((spec) =>
+          return doc.spec.some((spec) =>
             spec ? spec.name.includes(key) : false
           );
         });
@@ -46,8 +48,14 @@ export default {
       return searched;
     },
     filteredDoctors() {
-      const searched = this.searchedDoctors;
-      return searched;
+      return this.searchedDoctors.filter((doc) => {
+        let founded = true;
+
+        const spec = this.filters.spec;
+        if (/^\d+$/.test(spec))
+          founded &&= doc.specialty.includes(parseInt(spec));
+        return founded;
+      });
     },
   },
 };

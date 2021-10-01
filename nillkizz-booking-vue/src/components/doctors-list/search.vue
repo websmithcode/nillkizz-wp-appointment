@@ -1,6 +1,6 @@
 <template lang="pug">
 .search
-  input(v-model="search", @input="onInput", placeholder="Врач, Специальность")
+  input(v-model="search", placeholder="Врач, Специальность")
 </template>
 
 <script>
@@ -13,9 +13,9 @@ export default {
       search: "",
     };
   },
-  methods: {
-    onInput() {
-      this.$emit("update:modelValue", this.search);
+  watch: {
+    search(newVal) {
+      this.$emit("update:modelValue", newVal);
     },
   },
 };

@@ -31,9 +31,9 @@ export default {
   },
   computed: {
     spec() {
-      if (Object.keys(this.doctor.specialty).length)
-        return this.doctor.specialty.map((spec) => spec.name).join(", ");
-      else return "";
+      if (this.doctor.spec)
+        return this.doctor.spec.map((spec) => spec.name).join(", ");
+      return "";
     },
     education() {
       if (this.doctor.education.length) return this.doctor.education.join(", ");

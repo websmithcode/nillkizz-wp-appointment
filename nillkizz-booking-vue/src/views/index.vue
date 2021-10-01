@@ -1,6 +1,6 @@
 <template lang="pug">
 .app_wrapper(v-cloak, :class="{ loading: IS_LOADING }")
-  doctors-list(:doctors="doctors")
+  doctors-list(:doctors="doctors", :specs="specs")
 </template>
 
 <script>
@@ -17,19 +17,21 @@ export default {
     const specs = await this.$store.dispatch("loading", api.getSpecialties());
     const timeslots = await this.$store.dispatch("loading", api.getTimeslots());
 
+    const mapedSpecs = {};
+    specs.forEach((s) => (mapedSpecs[s.id] = s));
+
     doctors = doctors.map((doc) => {
-      doc.specialty = doc.specialty.map((specId) => ({
-        id: specId,
-        name: specs[specId],
-      }));
+      doc.spec = doc.specialty.map((specId) => mapedSpecs[specId]);
       doc.timeslots = timeslots.filter((ts) => ts.doctor_id == doc.id);
       return doc;
     });
     this.doctors = doctors;
+    this.specs = specs;
   },
   data() {
     return {
       doctors: [],
+      specs: {},
     };
   },
   computed: {
