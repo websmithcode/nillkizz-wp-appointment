@@ -1,8 +1,7 @@
 <template lang="pug">
 .doctors-list
-  doctors-search(v-model="search")
   doctors-filter(v-model="filters", :specs="specs")
-  main.doctors {{ filters }}
+  main.doctors
     doctor(
       v-for="doc in filteredDoctors",
       :key="doc.id",
@@ -13,18 +12,17 @@
 
 <script>
 import doctorsFilter from "./filter";
-import doctorsSearch from "./search";
 import doctor from "./doctor";
 export default {
-  components: { doctorsFilter, doctorsSearch, doctor },
+  components: { doctorsFilter, doctor },
   props: {
     doctors: Array,
     specs: Object,
   },
   data() {
     return {
-      search: "",
       filters: {
+        search: "",
         spec: "",
       },
     };
@@ -33,7 +31,7 @@ export default {
   computed: {
     searchedDoctors() {
       function search(doc) {
-        const query = this.search.trim().split(" ");
+        const query = this.filters.search.trim().split(" ");
         const byName = query.some((key) => {
           return doc.name.includes(key);
         });
@@ -63,8 +61,7 @@ export default {
 
 <style lang="sass" scoped>
 .doctors-list
-  .content
-    @apply w-full
-    .doctors
-      @apply flex flex-col gap-3
+  @apply mx-2
+  .doctors
+    @apply flex flex-col items-center gap-3
 </style>

@@ -1,21 +1,28 @@
 <template lang="pug">
 .doctors-filter
+  .search 
+    ui-input(v-model="search", :name="'Поиск: Врач, Специальность'")
   .filters 
-    .filter(:class="{ empty: spec == '' }")
-      label Специальность
-      select(v-model="spec")
-        option(value="")
-        option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
+    ui-select(v-model="spec", :name="'Специальность'")
+      option(value="")
+      option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
 </template>
 
 <script>
+import uiSelect from "@/components/ui/select";
+import uiInput from "@/components/ui/input";
 export default {
+  components: {
+    uiSelect,
+    uiInput,
+  },
   props: {
     modelValue: Object,
     specs: {},
   },
   data() {
     return {
+      search: "",
       spec: "",
     };
   },
@@ -23,6 +30,7 @@ export default {
     filters() {
       return {
         spec: this.spec,
+        search: this.search,
       };
     },
   },
@@ -35,16 +43,10 @@ export default {
 </script>
 
 <style scoped lang="sass">
-.filters
-  @apply flex
-  .filter
-    @apply border-gray-500 border relative pt-1
-    select
-      @apply p-2
-    label
-      @apply text-gray-400 absolute pointer-events-none top-0 left-2 text-xs duration-200
-    &.empty
-      label
-        top: .5rem
-        @apply text-base
+.doctors-filter
+  @apply mb-3
+  .search
+    @apply mb-2
+  .filters
+    @apply flex
 </style>

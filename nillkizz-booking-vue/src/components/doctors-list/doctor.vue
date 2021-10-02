@@ -45,7 +45,9 @@ export default {
 
 <style lang="sass" scoped>
 .doctor
-  @apply flex gap-4 bg-gray-100 mb-2 p-3 border border-gray-400
+  @apply flex flex-col items-center gap-1 max-w-md w-full
+  @apply lg:flex-row lg:max-w-full lg:gap-4
+  @apply bg-gray-100 p-3 border border-gray-400
   .photo-wrap
     height: 150px
     width: 150px
@@ -53,7 +55,7 @@ export default {
     .photo
       @apply w-full h-full bg-center bg-cover rounded-full border border-gray-200
   .info
-    @apply flex flex-col pt-2 w-full
+    @apply flex flex-col w-full
     .name
       @apply text-2xl text-gray-500
     .details
