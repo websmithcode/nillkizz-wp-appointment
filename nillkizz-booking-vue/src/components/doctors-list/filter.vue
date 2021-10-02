@@ -4,8 +4,11 @@
     ui-input(v-model="search", :name="'Поиск: Врач, Специальность'")
   .filters 
     ui-select(v-model="spec", :name="'Специальность'")
-      option(value="")
+      option(value="") ----
       option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
+    //- ui-select(v-model="exp", :name="'Стаж'")
+    //-   option(value="")
+    //-   option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
 </template>
 
 <script>
@@ -24,6 +27,7 @@ export default {
     return {
       search: "",
       spec: "",
+      exp: "",
     };
   },
   computed: {

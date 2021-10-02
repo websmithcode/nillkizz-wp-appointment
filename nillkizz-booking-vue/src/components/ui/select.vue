@@ -1,8 +1,8 @@
 <template lang="pug">
 .select.field(:class="{ empty: modelValue == '' }")
-  label {{ name }}
   select(v-model="value")
     slot
+  label {{ name }}
 </template>
 
 <script>
@@ -28,12 +28,13 @@ export default {
 .field
   @apply border-gray-500 border relative
   select
-    @apply p-1 pt-4 w-full bg-white
+    @apply p-1 pt-4 w-full bg-white opacity-0 duration-300
   label
     top: .5rem
     @apply text-gray-400 absolute pointer-events-none duration-200 text-base left-2
-  input:focus ~ label, &:not(.empty) label
-    @apply top-0 text-xs
-  input:focus ~ label
-    @apply text-gray-900
+  &:not(.empty)
+    select
+      @apply opacity-100
+    label
+      @apply top-0 text-xs
 </style>
