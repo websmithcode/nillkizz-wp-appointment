@@ -10,16 +10,13 @@
       .experience(v-if="doctor.experience") Стаж {{ doctor.experience }} Лет
       .education(v-if="education") Образование: {{ education }}
   .appointment
-    .calendar
-      .active(v-if="true") Active
-        .days days
-        .slots
-      .empty(v-else) Empty
-    .full-calendar
+    calendar(:doctor="doctor")
 </template>
 
 <script>
+import calendar from "./calendar/calendar.vue";
 export default {
+  components: { calendar },
   props: {
     doctor: Object,
     specs: Object,

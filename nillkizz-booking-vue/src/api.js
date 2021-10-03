@@ -9,7 +9,7 @@ class DemoAPI {
     return new Promise((res) => {
       setTimeout(() => {
         return res();
-      }, 1000);
+      }, 400);
     }).then(() => {
       return {
         pagination: {
@@ -23,7 +23,7 @@ class DemoAPI {
     return new Promise((res) => {
       setTimeout(() => {
         return res();
-      }, 1000);
+      }, 400);
     }).then(() => {
       return demoData.persons;
     });
@@ -32,7 +32,7 @@ class DemoAPI {
     return new Promise((res) => {
       setTimeout(() => {
         return res();
-      }, 1000);
+      }, 400);
     }).then(() => {
       return demoData.specs;
     });
@@ -41,7 +41,7 @@ class DemoAPI {
     return new Promise((res) => {
       setTimeout(() => {
         return res();
-      }, 1000);
+      }, 400);
     }).then(() => {
       return demoData.timeslots;
     });
