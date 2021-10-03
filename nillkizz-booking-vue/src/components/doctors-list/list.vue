@@ -1,29 +1,41 @@
 <template lang="pug">
 .doctors-list
   doctors-filter(v-model="filters", :specs="specs")
-  main.doctors
+  main.doctors {{ filters }}
     doctor(
-      v-for="doc in filteredDoctors",
+      v-for="doc in paginated",
       :key="doc.id",
       :doctor="doc",
       :specs="specs"
     )
+  ui-pagination(
+    v-model:paginated="paginated",
+    :perPage="perPage",
+    :elems="doctors",
+    :startSize="2",
+    :endSize="2",
+    :middleSize="2"
+  )
 </template>
 
 <script>
 import doctorsFilter from "./filter";
 import doctor from "./doctor";
+import uiPagination from "@/components/ui/pagination";
 export default {
-  components: { doctorsFilter, doctor },
+  components: { doctorsFilter, doctor, uiPagination },
   props: {
     doctors: Array,
     specs: Object,
   },
   data() {
     return {
+      paginated: this.doctors,
+      perPage: 3,
       filters: {
         search: "",
         spec: "",
+        experience: "",
       },
     };
   },
@@ -52,6 +64,10 @@ export default {
         const spec = this.filters.spec;
         if (/^\d+$/.test(spec))
           founded &&= doc.specialty.includes(parseInt(spec));
+
+        const exp = this.filters.experience;
+        if (/^\d+$/.test(exp)) founded &&= doc.experience > parseInt(exp);
+
         return founded;
       });
     },
@@ -63,5 +79,5 @@ export default {
 .doctors-list
   @apply mx-2
   .doctors
-    @apply flex flex-col items-center gap-3
+    @apply flex flex-col items-center gap-3 mb-4
 </style>

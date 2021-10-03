@@ -30,9 +30,7 @@ export default {
     @apply p-1 pl-2 pt-3 w-full
   label
     top: .5rem
-    @apply text-gray-400 absolute pointer-events-none duration-200 text-base left-2
+    @apply text-gray-400 absolute pointer-events-none duration-200 text-base left-2 select-none
   input:focus ~ label, &:not(.empty) label
     @apply top-0 text-xs
-  input:focus ~ label
-    @apply text-gray-900
 </style>

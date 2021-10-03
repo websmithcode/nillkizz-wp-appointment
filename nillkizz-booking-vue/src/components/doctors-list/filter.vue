@@ -6,9 +6,11 @@
     ui-select(v-model="spec", :name="'Специальность'")
       option(value="") ----
       option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
-    //- ui-select(v-model="exp", :name="'Стаж'")
-    //-   option(value="")
-    //-   option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
+    ui-select(v-model="exp", :name="'Стаж'")
+      option(value="") Любой
+      option(value="5") От 5 лет
+      option(value="15") От 15 лет
+      option(value="30") От 30 лет
 </template>
 
 <script>
@@ -32,10 +34,11 @@ export default {
   },
   computed: {
     filters() {
-      return {
+      return Object.assign(this.modelValue, {
         spec: this.spec,
         search: this.search,
-      };
+        experience: this.exp,
+      });
     },
   },
   watch: {
@@ -52,5 +55,5 @@ export default {
   .search
     @apply mb-2
   .filters
-    @apply flex
+    @apply flex gap-3
 </style>

@@ -36,10 +36,10 @@ export default {
     top: calc(50% - .5rem)
     @apply absolute right-1 text-gray-700 w-4 pointer-events-none
   select
-    @apply p-1 pt-4 w-full bg-white opacity-0 duration-300 appearance-none
+    @apply p-1 pt-3 pr-4 w-full bg-white opacity-0 duration-300 appearance-none
   label
     top: .5rem
-    @apply text-gray-400 absolute pointer-events-none duration-200 text-base left-2
+    @apply text-gray-400 absolute pointer-events-none duration-200 text-base left-2 select-none
   &:not(.empty)
     select
       @apply opacity-100

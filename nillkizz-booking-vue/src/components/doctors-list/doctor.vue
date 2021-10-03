@@ -58,6 +58,4 @@ export default {
     @apply flex flex-col w-full
     .name
       @apply text-2xl text-gray-500
-    .details
-      @apply  text-gray-900
 </style>
