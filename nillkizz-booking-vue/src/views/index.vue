@@ -18,7 +18,6 @@ export default {
     const timeslots = await this.$store.dispatch("loading", api.getTimeslots());
 
     const mapedSpecs = {};
-    console.log(specs);
     specs.forEach((s) => (mapedSpecs[s.id] = s));
 
     doctors = doctors.map((doc) => {

@@ -1,6 +1,6 @@
 <template lang="pug">
-nav.pagination
-  ul(v-if="enabled")
+nav.pagination(v-if="enabled")
+  ul
     li.prev(@click="value--", :disabled="value < 2") Назад
     li.page(
       v-for="page in pages",
@@ -50,11 +50,11 @@ export default {
   computed: {
     enabled() {
       return (
-        this.elCount > 0 && (this.perPage > 0 || this.elCount < this.perPage)
+        this.elCount > 0 && this.perPage > 0 && this.elCount > this.perPage
       );
     },
     elCount() {
-      if (this.elCount) return this.elCount;
+      if (this.elemsCount) return this.elemsCount;
       return this.elems.length;
     },
     sizes() {
@@ -73,8 +73,19 @@ export default {
         (page) => ({ value: page, active: page == this.value, disabled: false })
       );
       const cIndex = this.value - 1;
-      const first = fullpages.slice(0, this.sizes.start);
-      const last = fullpages.slice(-this.sizes.end);
+      const first = fullpages.slice(
+        0,
+        Math.min(
+          Math.max(fullpages.length - this.sizes.end, 1),
+          this.sizes.start
+        )
+      );
+      const last = fullpages.slice(
+        -Math.min(
+          Math.max(fullpages.length - this.sizes.start, 1),
+          this.sizes.end
+        )
+      );
 
       const current = fullpages
         .slice(
@@ -92,7 +103,10 @@ export default {
           pages.splice(this.sizes.start, 0, { value: "...", disabled: true });
         if (current.slice(-1)[0].value < last[0].value - 1)
           pages.splice(-this.sizes.end, 0, { value: "...", disabled: true });
-      } else {
+      } else if (
+        fullpages.length >
+        current.length + first.length + last.length
+      ) {
         pages.splice(-this.sizes.end, 0, { value: "...", disabled: true });
       }
 
@@ -100,6 +114,10 @@ export default {
     },
   },
   watch: {
+    elems() {
+      this.value = 1;
+      this.$nextTick(this.emitUpdates);
+    },
     pages() {
       this.$nextTick(this.emitUpdates);
     },

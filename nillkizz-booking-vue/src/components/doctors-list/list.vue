@@ -11,7 +11,7 @@
   ui-pagination(
     v-model:paginated="paginated",
     :perPage="perPage",
-    :elems="doctors",
+    :elems="filteredDoctors",
     :startSize="2",
     :endSize="2",
     :middleSize="2"
@@ -30,12 +30,13 @@ export default {
   },
   data() {
     return {
-      paginated: this.doctors,
+      paginated: [],
       perPage: 3,
       filters: {
         search: "",
         spec: "",
         experience: "",
+        sex: "",
       },
     };
   },
@@ -68,6 +69,8 @@ export default {
         const exp = this.filters.experience;
         if (/^\d+$/.test(exp)) founded &&= doc.experience > parseInt(exp);
 
+        const sex = this.filters.sex;
+        if (["male", "female"].includes(sex)) founded &&= doc.sex == sex;
         return founded;
       });
     },
