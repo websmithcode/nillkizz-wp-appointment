@@ -1,13 +1,15 @@
 <template lang="pug">
 .doctors-list
   doctors-filter(v-model="filters", :specs="specs")
-  main.doctors {{ filters }}
-    doctor(
-      v-for="doc in paginated",
-      :key="doc.id",
-      :doctor="doc",
-      :specs="specs"
-    )
+  main
+    .doctors(v-if="!!paginated.length") {{ filters }}
+      doctor(
+        v-for="doc in paginated",
+        :key="doc.id",
+        :doctor="doc",
+        :specs="specs"
+      )
+    .empty(v-else) Ничего не найдено
   ui-pagination(
     v-model:paginated="paginated",
     :perPage="perPage",
@@ -81,6 +83,9 @@ export default {
 <style lang="sass" scoped>
 .doctors-list
   @apply mx-2
-  .doctors
-    @apply flex flex-col items-center gap-3 mb-4
+  main
+    .doctors
+      @apply flex flex-col items-center gap-3 mb-4
+    .empty
+      @apply text-2xl text-center pt-24
 </style>
