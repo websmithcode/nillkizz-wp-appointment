@@ -3,7 +3,7 @@
 //     return [];
 //   }
 // }
-import demoData from "@/demo_data";
+import demoData from "@/demo_data.json";
 class DemoAPI {
   async getConfig() {
     return new Promise((res) => {
