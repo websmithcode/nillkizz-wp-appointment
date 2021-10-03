@@ -58,11 +58,13 @@ export default {
       return this.elems.length;
     },
     sizes() {
-      return {
-        start: this.startSize ?? 1,
-        middle: this.middleSize ?? 1,
-        end: this.endSize ?? 1,
-      };
+      const wwidth = window.innerWidth;
+      const start = wwidth > 480 ? this.startSize ?? 1 : 1;
+      const middle =
+        wwidth > 380 ? (wwidth > 640 ? this.middleSize ?? 1 : 1) : 0;
+      const end = wwidth > 480 ? this.endSize ?? 1 : 1;
+
+      return { start, middle, end };
     },
     pages() {
       if (!this.enabled) return [];

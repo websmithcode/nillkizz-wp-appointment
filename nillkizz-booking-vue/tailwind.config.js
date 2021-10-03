@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       minWidth: {
-        '8': '2rem',
-      }
+        8: "2rem",
+      },
     },
   },
   variants: {
