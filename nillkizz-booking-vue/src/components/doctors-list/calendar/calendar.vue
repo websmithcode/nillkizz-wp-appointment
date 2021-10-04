@@ -25,7 +25,7 @@ export default {
 
 <style lang="sass" scoped>
 .calendar
-  width: 380px
+  width: 381px
   .active
     @apply flex flex-col
     .slots

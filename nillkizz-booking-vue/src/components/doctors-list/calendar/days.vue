@@ -80,7 +80,7 @@ $dayWidth: 45px
 $dayHeight: 60px
 .days
   margin-bottom: -1px
-  @apply flex ml-3
+  @apply flex sm:ml-3 justify-center
   .days-container
     width: 315px
     height: $dayHeight
@@ -113,7 +113,8 @@ $dayHeight: 60px
 
   .control
     width: 30px
-    @apply flex justify-center items-center select-none cursor-pointer mx-3
+    @apply hidden
+    @apply sm:flex justify-center items-center select-none cursor-pointer mx-3
     .icon
       @apply w-8 text-white duration-300 transform p-1 bg-gray-400 rounded-full
       &.back
