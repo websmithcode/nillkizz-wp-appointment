@@ -1,9 +1,10 @@
 <template lang="pug">
 .days
+  .selector(:style="selectorStyle")
   .day(
     :class="{ active: isActive(day) }",
     :disabled="isDisabled(day)",
-    @click="active = day",
+    @click="setActive(day, $event)",
     v-for="day in days"
   )
     .content
@@ -21,6 +22,7 @@ export default {
     return {
       active: undefined,
       now: DateTime.now().startOf("day"),
+      selectorStyle: { display: "none" },
     };
   },
   mounted() {
@@ -33,6 +35,12 @@ export default {
     isDisabled(day) {
       const isGoneDay = day.dt.ts < this.now;
       return isGoneDay;
+    },
+    setActive(day, ev) {
+      this.active = day;
+
+      const left = ev.target.offsetLeft + "px";
+      this.selectorStyle = { left };
     },
   },
   computed: {
@@ -50,17 +58,22 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+$dayWidth: 45px
 .days
-  margin-bottom: -1px
-  @apply flex mr-auto z-10
+  @apply flex mr-auto z-10 relative
+  .selector
+    width: $dayWidth
+    bottom: -1px
+    @apply border border-b-0 border-gray-400 bg-gray-100 absolute h-full z-0 duration-300
   .day
-    @apply p-1 text-center select-none cursor-pointer duration-500
+    width: $dayWidth
+    @apply text-center select-none cursor-pointer duration-500 z-10 py-1
     &.active
-      @apply border border-gray-400 pointer-events-none
-    &.active
-      border-bottom-color: #F3F4F6
+      @apply pointer-events-none
     &[disabled='true']
       @apply pointer-events-none text-gray-400
     .content
-      @apply px-3 py-2 hover:bg-white duration-500
+      @apply hover:bg-white duration-500
+    *
+      @apply pointer-events-none
 </style>

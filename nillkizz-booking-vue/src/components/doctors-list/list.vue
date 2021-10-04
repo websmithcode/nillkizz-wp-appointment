@@ -2,7 +2,7 @@
 .doctors-list
   doctors-filter(v-model="filters", :specs="specs")
   main
-    .doctors(v-if="!!paginated.length") {{ filters }}
+    .doctors(v-if="!!paginated.length")
       doctor(
         v-for="doc in paginated",
         :key="doc.id",

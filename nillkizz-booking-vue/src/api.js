@@ -25,7 +25,7 @@ class DemoAPI {
         return res();
       }, 400);
     }).then(() => {
-      return demoData.persons;
+      return demoData.persons.slice(0, 6);
     });
   }
   async getSpecialties() {
