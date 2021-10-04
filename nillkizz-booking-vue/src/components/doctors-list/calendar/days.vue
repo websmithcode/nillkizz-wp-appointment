@@ -1,15 +1,17 @@
 <template lang="pug">
 .days
-  .selector(:style="selectorStyle")
-  .day(
-    :class="{ active: isActive(day) }",
-    :disabled="isDisabled(day)",
-    @click="setActive(day, $event)",
-    v-for="day in days"
-  )
-    .content
-      .dow {{ day.dt.toFormat('ccc').toUpperCase() }}
-      .dom {{ day.dt.day }}
+  .days-container
+    .days-wrapper
+      .selector(:style="selectorStyle")
+      .day(
+        :class="{ active: isActive(day) }",
+        :disabled="isDisabled(day)",
+        @click="setActive(day, $event.target)",
+        v-for="day in days"
+      )
+        .content
+          .dow {{ day.dt.toFormat('ccc').toUpperCase() }}
+          .dom {{ day.dt.day }}
 </template>
 
 <script>
@@ -26,7 +28,7 @@ export default {
     };
   },
   mounted() {
-    this.active = this.days.filter((day) => day.dt.ts == this.now.ts)[0];
+    this.setActive(this.days.filter((day) => day.dt.ts == this.now.ts)[0]);
   },
   methods: {
     isActive(day) {
@@ -36,11 +38,12 @@ export default {
       const isGoneDay = day.dt.ts < this.now;
       return isGoneDay;
     },
-    setActive(day, ev) {
+    setActive(day) {
       this.active = day;
-
-      const left = ev.target.offsetLeft + "px";
-      this.selectorStyle = { left };
+      this.$nextTick(() => {
+        const left = this.$el.querySelector(".days .active").offsetLeft + "px";
+        this.selectorStyle = { left };
+      });
     },
   },
   computed: {
@@ -59,21 +62,28 @@ export default {
 
 <style lang="sass" scoped>
 $dayWidth: 45px
+$dayHeight: 60px
 .days
-  @apply flex mr-auto z-10 relative
-  .selector
-    width: $dayWidth
-    bottom: -1px
-    @apply border border-b-0 border-gray-400 bg-gray-100 absolute h-full z-0 duration-300
-  .day
-    width: $dayWidth
-    @apply text-center select-none cursor-pointer duration-500 z-10 py-1
-    &.active
-      @apply pointer-events-none
-    &[disabled='true']
-      @apply pointer-events-none text-gray-400
-    .content
-      @apply hover:bg-white duration-500
-    *
-      @apply pointer-events-none
+  width: 400px
+  margin-bottom: -1px
+  .days-container
+    height: $dayHeight
+    @apply overflow-hidden
+    .days-wrapper
+      @apply flex mr-auto z-10 relative overflow-x-scroll
+      .selector
+        width: $dayWidth
+        @apply border border-b-0 border-gray-400 bg-gray-100 absolute h-full z-0 duration-300
+      .day
+        min-width: $dayWidth
+        height: $dayHeight
+        @apply text-center select-none cursor-pointer duration-500 z-10 py-1
+        &.active
+          @apply pointer-events-none
+        &[disabled='true']
+          @apply pointer-events-none text-gray-400
+        .content
+          @apply hover:bg-white duration-500
+        *
+          @apply pointer-events-none
 </style>
