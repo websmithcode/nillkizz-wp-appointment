@@ -12,11 +12,16 @@
         .content
           .dow {{ day.dt.toFormat('ccc').toUpperCase() }}
           .dom {{ day.dt.day }}
+
+  .control(@click="scrollDays") 
+    chevron-right-icon.icon(:class="{ back: daysIsScrolled }")
 </template>
 
 <script>
 import { DateTime } from "luxon";
+import { ChevronRightIcon } from "@heroicons/vue/solid";
 export default {
+  components: { ChevronRightIcon },
   props: {
     slots: Object,
   },
@@ -25,6 +30,7 @@ export default {
       active: undefined,
       now: DateTime.now().startOf("day"),
       selectorStyle: { display: "none" },
+      daysIsScrolled: false,
     };
   },
   mounted() {
@@ -45,6 +51,12 @@ export default {
         this.selectorStyle = { left };
       });
     },
+    scrollDays() {
+      const scrollable = this.$el.querySelector(".days .days-wrapper");
+      if (this.daysIsScrolled) scrollable.scrollTo(0, 0);
+      else scrollable.scrollTo(scrollable.scrollWidth, 0);
+      this.daysIsScrolled = !this.daysIsScrolled;
+    },
   },
   computed: {
     days() {
@@ -64,12 +76,14 @@ export default {
 $dayWidth: 45px
 $dayHeight: 60px
 .days
-  width: 400px
   margin-bottom: -1px
+  @apply flex ml-3
   .days-container
+    width: 315px
     height: $dayHeight
     @apply overflow-hidden
     .days-wrapper
+      scroll-behavior: smooth
       @apply flex mr-auto z-10 relative overflow-x-scroll
       .selector
         width: $dayWidth
@@ -86,4 +100,12 @@ $dayHeight: 60px
           @apply hover:bg-white duration-500
         *
           @apply pointer-events-none
+
+  .control
+    width: 30px
+    @apply flex justify-center items-center select-none cursor-pointer mx-3
+    .icon
+      @apply w-8 text-white duration-300 transform p-1 bg-gray-400 rounded-full
+      &.back
+        @apply rotate-180
 </style>
