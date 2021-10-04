@@ -4,8 +4,8 @@
     .days-wrapper
       .selector(:style="selectorStyle")
       .day(
-        :class="{ active: isActive(day) }",
-        :disabled="isDisabled(day)",
+        :class="{ active: isActive(day), today: day.dt.ts == this.now.ts }",
+        :disabled="day.disabled",
         @click="setActive(day, $event.target)",
         v-for="day in days"
       )
@@ -23,8 +23,10 @@ import { ChevronRightIcon } from "@heroicons/vue/solid";
 export default {
   components: { ChevronRightIcon },
   props: {
+    modelValue: Object,
     slots: Object,
   },
+  emits: ["update:modelValue"],
   data() {
     return {
       active: undefined,
@@ -34,15 +36,11 @@ export default {
     };
   },
   mounted() {
-    this.setActive(this.days.filter((day) => day.dt.ts == this.now.ts)[0]);
+    this.setActive(this.days.filter((day) => !day.disabled)[0]);
   },
   methods: {
     isActive(day) {
       return day.dt.startOf("day").ts == this.active?.dt.ts;
-    },
-    isDisabled(day) {
-      const isGoneDay = day.dt.ts < this.now;
-      return isGoneDay;
     },
     setActive(day) {
       this.active = day;
@@ -50,6 +48,7 @@ export default {
         const left = this.$el.querySelector(".days .active").offsetLeft + "px";
         this.selectorStyle = { left };
       });
+      this.$emit("update:modelValue", day);
     },
     scrollDays() {
       const scrollable = this.$el.querySelector(".days .days-wrapper");
@@ -60,10 +59,14 @@ export default {
   },
   computed: {
     days() {
+      const isDisabled = (day) => {
+        return day.dt.ts < this.now || day.length < 1;
+      };
       const slots = Object.entries(this.slots);
       if (slots.length > 0)
         return slots.map((slot) => {
           slot[1].dt = DateTime.fromISO(slot[0]).setLocale("ru");
+          slot[1].disabled = isDisabled(slot[1]);
           return slot[1];
         });
       else return [];
@@ -91,7 +94,7 @@ $dayHeight: 60px
       .day
         min-width: $dayWidth
         height: $dayHeight
-        @apply text-center select-none cursor-pointer duration-500 z-10 py-1
+        @apply text-center select-none cursor-pointer duration-500 z-10 py-1 relative
         &.active
           @apply pointer-events-none
         &[disabled='true']
@@ -100,6 +103,13 @@ $dayHeight: 60px
           @apply hover:bg-white duration-500
         *
           @apply pointer-events-none
+        &.today:after
+          content: ''
+          $size: 6px
+          height: $size
+          width: $size
+          left: calc(50% - 3px)
+          @apply absolute bottom-1 bg-blue-500 rounded-full
 
   .control
     width: 30px

@@ -3,8 +3,8 @@
   .active(
     v-if="!!doctor.timeslots.length && !doctor.timeslots[0].slots.length"
   )
-    days(:slots="doctor.timeslots[0].slots")
-    .slots 123
+    days(v-model="selectedDay", :slots="doctor.timeslots[0].slots")
+    .slots {{ selectedDay }}
   .empty(v-else) 
     .content Записи нет
 .full-calendar
@@ -16,6 +16,7 @@ export default {
   components: { days },
   props: {
     doctor: Object,
+    selectedDay: {},
   },
   methods: {},
   computed: {},
@@ -24,11 +25,11 @@ export default {
 
 <style lang="sass" scoped>
 .calendar
+  width: 380px
   .active
     @apply flex flex-col
     .slots
       @apply border border-gray-400
   .empty
-    min-width: 200px
     @apply text-center text-xl
 </style>

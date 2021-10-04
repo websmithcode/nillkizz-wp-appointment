@@ -21,11 +21,7 @@ export default {
     doctor: Object,
     specs: Object,
   },
-  methods: {
-    rerender() {
-      this.$forceUpdate();
-    },
-  },
+  methods: {},
   computed: {
     spec() {
       if (this.doctor.spec)
