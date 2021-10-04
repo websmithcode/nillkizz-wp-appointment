@@ -5,6 +5,22 @@
 // }
 import demoData from "@/demo_data.json";
 class DemoAPI {
+  async getData() {
+    const fetched_doctors = await this.getDoctors();
+    const fetched_specs = await this.getSpecialties();
+    const fetched_timeslots = await this.getTimeslots();
+
+    const mappedSpecs = {};
+    fetched_specs.forEach((s) => (mappedSpecs[s.id] = s));
+
+    const doctors = fetched_doctors.map((doc) => {
+      doc.spec = doc.specialty.map((specId) => mappedSpecs[specId]);
+      doc.timeslots = fetched_timeslots.filter((ts) => ts.doctor_id == doc.id);
+      return doc;
+    });
+    const specs = fetched_specs.filter(spec => doctors.some(doc => doc.specialty.includes(spec.id)));
+    return { doctors: doctors, specs: specs }
+  }
   async getConfig() {
     return new Promise((res) => {
       setTimeout(() => {
@@ -25,7 +41,7 @@ class DemoAPI {
         return res();
       }, 400);
     }).then(() => {
-      return demoData.persons.slice(0, 6);
+      return demoData.persons.slice(0, 8);
     });
   }
   async getSpecialties() {
