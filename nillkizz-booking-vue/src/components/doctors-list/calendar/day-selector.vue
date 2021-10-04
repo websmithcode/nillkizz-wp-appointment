@@ -4,7 +4,7 @@
     .days-wrapper
       .selector(:style="selectorStyle")
       .day(
-        :class="{ active: isActive(day), today: day.dt.ts == this.now.ts }",
+        :class="{ active: isActive(day), today: day.isToday }",
         :disabled="day.disabled",
         @click="setActive(day, $event.target)",
         v-for="day in days"
@@ -18,19 +18,17 @@
 </template>
 
 <script>
-import { DateTime } from "luxon";
 import { ChevronRightIcon } from "@heroicons/vue/solid";
 export default {
   components: { ChevronRightIcon },
   props: {
     modelValue: Object,
-    slots: Object,
+    days: Object,
   },
   emits: ["update:modelValue"],
   data() {
     return {
       active: undefined,
-      now: DateTime.now().startOf("day"),
       selectorStyle: { display: "none" },
       daysIsScrolled: false,
     };
@@ -55,21 +53,6 @@ export default {
       if (this.daysIsScrolled) scrollable.scrollTo(0, 0);
       else scrollable.scrollTo(scrollable.scrollWidth, 0);
       this.daysIsScrolled = !this.daysIsScrolled;
-    },
-  },
-  computed: {
-    days() {
-      const isDisabled = (day) => {
-        return day.dt.ts < this.now || day.length < 1;
-      };
-      const slots = Object.entries(this.slots);
-      if (slots.length > 0)
-        return slots.map((slot) => {
-          slot[1].dt = DateTime.fromISO(slot[0]).setLocale("ru");
-          slot[1].disabled = isDisabled(slot[1]);
-          return slot[1];
-        });
-      else return [];
     },
   },
 };
