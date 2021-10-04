@@ -13,27 +13,16 @@ export default {
     doctorsList,
   },
   async mounted() {
-    // let doctors = await this.$store.dispatch("loading", api.getDoctors());
-    // const specs = await this.$store.dispatch("loading", api.getSpecialties());
-    // const timeslots = await this.$store.dispatch("loading", api.getTimeslots());
-
-    // const mapedSpecs = {};
-    // specs.forEach((s) => (mapedSpecs[s.id] = s));
-
-    // doctors = doctors.map((doc) => {
-    //   doc.spec = doc.specialty.map((specId) => mapedSpecs[specId]);
-    //   doc.timeslots = timeslots.filter((ts) => ts.doctor_id == doc.id);
-    //   return doc;
-    // });
-    // this.doctors = doctors;
-    // this.specs = specs;
-
-    const data = await api.getData();
-    this.doctors = data.doctors;
-    this.specs = data.specs;
+    const { doctors, specs } = await this.$store.dispatch(
+      "loading",
+      api.getData()
+    );
+    this.doctors = doctors;
+    this.specs = specs;
   },
   data() {
     return {
+      loading: true,
       doctors: [],
       specs: {},
     };
