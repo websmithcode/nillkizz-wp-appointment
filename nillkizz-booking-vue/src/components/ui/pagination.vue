@@ -13,7 +13,6 @@ nav.pagination(v-if="enabled")
 
 <script>
 export default {
-  components: {},
   props: {
     modelValue: Number,
     perPage: Number,
@@ -24,7 +23,7 @@ export default {
     middleSize: Number,
     endSize: Number,
   },
-  emits: ["update:modelValue", "update:paginated"],
+  emits: ["update:modelValue", "update:paginated", "pageChanged"],
   data() {
     return {
       value: this.modelValue ?? 1,
@@ -33,6 +32,7 @@ export default {
   methods: {
     setPage(page) {
       this.value = page;
+      this.$emit("pageChanged", this.value);
     },
     emitUpdates() {
       this.$emit("update:modelValue", this.value);

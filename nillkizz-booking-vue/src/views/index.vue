@@ -35,6 +35,8 @@ export default {
 </script>
 
 <style lang="sass">
+html, body
+  scroll-behavior: smooth
 .app_wrapper > .doctors-list
   @apply opacity-100 duration-500
 [v-cloack], .app_wrapper.loading

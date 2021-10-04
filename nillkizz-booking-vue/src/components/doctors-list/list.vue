@@ -16,7 +16,8 @@
     :elems="filteredDoctors",
     :startSize="2",
     :endSize="2",
-    :middleSize="2"
+    :middleSize="2",
+    @pageChanged="scrollToTop"
   )
 </template>
 
@@ -42,7 +43,11 @@ export default {
       },
     };
   },
-  methods: {},
+  methods: {
+    scrollToTop() {
+      this.$nextTick(() => this.$el.scrollIntoView());
+    },
+  },
   computed: {
     searchedDoctors() {
       function search(doc) {
