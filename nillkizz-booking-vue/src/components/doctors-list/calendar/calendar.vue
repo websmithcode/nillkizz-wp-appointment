@@ -2,7 +2,7 @@
 .calendar
   .active(v-if="isActive")
     day-selector(v-model="selectedDay", :days="days")
-    .slots {{ selectedDay }}
+    slot-selector(:slots="selectedDay")
   .empty(v-else) 
     .content Записи нет
 .full-calendar
@@ -11,8 +11,9 @@
 <script>
 import { DateTime } from "luxon";
 import daySelector from "./day-selector";
+import slotSelector from "./slot-selector";
 export default {
-  components: { daySelector },
+  components: { daySelector, slotSelector },
   props: {
     doctor: Object,
     selectedDay: {},
@@ -55,8 +56,6 @@ export default {
   width: 381px
   .active
     @apply flex flex-col
-    .slots
-      @apply border border-gray-400
   .empty
     @apply text-center text-xl
 </style>
