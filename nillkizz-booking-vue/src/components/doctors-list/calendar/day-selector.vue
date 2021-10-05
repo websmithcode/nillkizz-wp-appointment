@@ -6,7 +6,7 @@
       .day(
         :class="{ active: isActive(day), today: day.isToday }",
         :disabled="day.disabled",
-        @click="setActive(day, $event.target)",
+        @click="!day.disabled && setActive(day, $event.target)",
         v-for="day in days"
       )
         .content
@@ -81,7 +81,7 @@ $dayHeight: 60px
         &.active
           @apply pointer-events-none
         &[disabled='true']
-          @apply pointer-events-none text-gray-400
+          @apply text-gray-400 cursor-not-allowed
         .content
           @apply hover:bg-white duration-500
         *

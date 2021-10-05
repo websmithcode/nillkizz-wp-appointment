@@ -16,11 +16,11 @@ export default {
   components: { daySelector, slotSelector },
   props: {
     doctor: Object,
-    selectedDay: {},
   },
   data() {
     return {
       now: DateTime.now().startOf("day"),
+      selectedDay: {},
     };
   },
   methods: {},
