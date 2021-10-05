@@ -18,8 +18,10 @@ class DemoAPI {
       doc.timeslots = fetched_timeslots.filter((ts) => ts.doctor_id == doc.id);
       return doc;
     });
-    const specs = fetched_specs.filter(spec => doctors.some(doc => doc.specialty.includes(spec.id)));
-    return { doctors: doctors, specs: specs }
+    const specs = fetched_specs.filter((spec) =>
+      doctors.some((doc) => doc.specialty.includes(spec.id))
+    );
+    return { doctors: doctors, specs: specs };
   }
   async getConfig() {
     return new Promise((res) => {
@@ -41,7 +43,7 @@ class DemoAPI {
         return res();
       }, 400);
     }).then(() => {
-      return demoData.persons.slice(0, 7);
+      return demoData.persons.slice(0, 70);
     });
   }
   async getSpecialties() {

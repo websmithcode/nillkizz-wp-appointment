@@ -1,14 +1,17 @@
 <template lang="pug">
 nav.pagination(v-if="enabled")
   ul
-    li.prev(@click="value--", :disabled="value < 2") Назад
+    li.prev(@click="changePage('prev')", :disabled="value < 2") Назад
     li.page(
       v-for="page in pages",
       :class="{ active: page.active }",
       :disabled="page.disabled",
-      @click="setPage(page.value)"
+      @click="changePage(page.value)"
     ) {{ page.value }}
-    li.next(@click="value++", :disabled="value > pages.slice(-1)[0].value - 1") Дальше
+    li.next(
+      @click="changePage('next')",
+      :disabled="value > pages.slice(-1)[0].value - 1"
+    ) Дальше
 </template>
 
 <script>
@@ -30,9 +33,22 @@ export default {
     };
   },
   methods: {
-    setPage(page) {
-      this.value = page;
-      this.$emit("pageChanged", this.value);
+    changePage(action) {
+      if (/\d+/.test(String(action))) {
+        this.value = action;
+        return;
+      }
+      switch (action) {
+        case /\d+/:
+          this.value = action;
+          break;
+        case "next":
+          this.value++;
+          break;
+        case "prev":
+          this.value--;
+          break;
+      }
     },
     emitUpdates() {
       this.$emit("update:modelValue", this.value);
@@ -114,6 +130,9 @@ export default {
     },
   },
   watch: {
+    value(newVal) {
+      this.$emit("pageChanged", newVal);
+    },
     elems() {
       this.value = 1;
       this.$nextTick(this.emitUpdates);

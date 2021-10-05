@@ -17,7 +17,7 @@
     :startSize="2",
     :endSize="2",
     :middleSize="2",
-    @pageChanged="scrollToTop"
+    @pageChanged="pageChanged = true"
   )
 </template>
 
@@ -33,6 +33,7 @@ export default {
   },
   data() {
     return {
+      pageChanged: false,
       paginated: [],
       perPage: 3,
       filters: {
@@ -45,7 +46,10 @@ export default {
   },
   methods: {
     scrollToTop() {
-      this.$nextTick(() => this.$el.scrollIntoView());
+      this.$nextTick(() => {
+        debugger;
+        document.getElementById("top-of-doctors-list").scrollIntoView();
+      });
     },
   },
   computed: {
@@ -79,6 +83,16 @@ export default {
         const sex = this.filters.sex;
         if (["male", "female"].includes(sex)) founded &&= doc.sex == sex;
         return founded;
+      });
+    },
+  },
+  watch: {
+    paginated() {
+      this.$nextTick(() => {
+        if (this.pageChanged) {
+          this.$el.scrollIntoView();
+          this.pageChanged = false;
+        }
       });
     },
   },
