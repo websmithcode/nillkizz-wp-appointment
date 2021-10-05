@@ -1,17 +1,32 @@
 <template lang="pug">
-router-view
+.view-wrapper(v-cloak, :class="{ loaded: !IS_LOADING }")
+  router-view
 debug-area
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import debugArea from "@/components/debug-area";
 export default {
   components: {
     debugArea,
   },
+  computed: {
+    ...mapGetters(["IS_LOADING"]),
+  },
 };
 </script>
 <style lang="sass">
-body
-  @apply text-gray-800
+html, body
+  scroll-behavior: smooth
+  @apply text-gray-800 h-full
+
+  .view-wrapper.loaded
+    @apply opacity-100 duration-500 pointer-events-auto
+  .view-wrapper
+    @apply opacity-0 pointer-events-none
+  [v-cloack]
+    max-height: 300px
+    height: 300px
+    @apply hidden
 </style>
