@@ -1,6 +1,6 @@
 <template lang="pug">
 .view-wrapper(v-cloak, :class="{ loaded: !IS_LOADING }")
-  router-view
+  router-view(v-model:doctorToAppointment="doctorToAppointment")
 debug-area
 </template>
 
@@ -10,6 +10,14 @@ import debugArea from "@/components/debug-area";
 export default {
   components: {
     debugArea,
+  },
+  async mounted() {
+    this.$store.dispatch("fetchDoctorsAndSpecs");
+  },
+  data() {
+    return {
+      doctorToAppointment: undefined,
+    };
   },
   computed: {
     ...mapGetters(["IS_LOADING"]),

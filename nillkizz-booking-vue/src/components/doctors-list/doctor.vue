@@ -14,15 +14,15 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import calendar from "./calendar/calendar.vue";
 export default {
   components: { calendar },
   props: {
     doctor: Object,
-    specs: Object,
   },
-  methods: {},
   computed: {
+    ...mapGetters(["specs"]),
     spec() {
       if (this.doctor.spec)
         return this.doctor.spec.map((spec) => spec.name).join(", ");

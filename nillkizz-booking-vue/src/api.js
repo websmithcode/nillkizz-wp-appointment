@@ -6,7 +6,7 @@
 import demoData from "@/demo_data.json";
 import { DateTime } from "luxon";
 class DemoAPI {
-  async getData() {
+  async getDoctorsAndSpecs() {
     const fetched_doctors = await this.getDoctors();
     const fetched_specs = await this.getSpecialties();
     const fetched_timeslots = await this.getTimeslots();
@@ -46,7 +46,7 @@ class DemoAPI {
     const specs = fetched_specs.filter((spec) =>
       doctors.some((doc) => doc.specialty.includes(spec.id))
     );
-    return { doctors: doctors, specs: specs };
+    return { doctors, specs };
   }
   async getConfig() {
     return new Promise((res) => {

@@ -1,14 +1,9 @@
 <template lang="pug">
 .doctors-list
-  doctors-filter(v-model="filters", :specs="specs")
+  doctors-filter(v-model="filters")
   main
     .doctors(v-if="!!paginated.length")
-      doctor(
-        v-for="doc in paginated",
-        :key="doc.id",
-        :doctor="doc",
-        :specs="specs"
-      )
+      doctor(v-for="doc in paginated", :key="doc.id", :doctor="doc")
     .empty(v-else) Ничего не найдено
   ui-pagination(
     v-model:paginated="paginated",
@@ -22,15 +17,14 @@
 </template>
 
 <script>
-import doctorsFilter from "./filter";
-import doctor from "./doctor";
+import { mapGetters } from "vuex";
+
+import doctorsFilter from "@/components/doctors-list/filter";
+import doctor from "@/components/doctors-list/doctor";
 import uiPagination from "@/components/ui/pagination";
+
 export default {
   components: { doctorsFilter, doctor, uiPagination },
-  props: {
-    doctors: Array,
-    specs: Object,
-  },
   data() {
     return {
       pageChanged: false,
@@ -53,6 +47,7 @@ export default {
     },
   },
   computed: {
+    ...mapGetters(["doctors"]),
     searchedDoctors() {
       function search(doc) {
         const query = this.filters.search.trim().split(" ");

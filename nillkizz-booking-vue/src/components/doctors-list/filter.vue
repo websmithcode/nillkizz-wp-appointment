@@ -18,8 +18,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 import uiSelect from "@/components/ui/select";
 import uiInput from "@/components/ui/input";
+
 export default {
   components: {
     uiSelect,
@@ -27,7 +30,6 @@ export default {
   },
   props: {
     modelValue: Object,
-    specs: {},
   },
   data() {
     return {
@@ -38,6 +40,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(["specs"]),
     filters() {
       return Object.assign(this.modelValue, {
         spec: this.spec,
