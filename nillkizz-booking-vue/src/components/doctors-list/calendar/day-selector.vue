@@ -86,7 +86,7 @@ $dayHeight: 60px
       @apply flex mr-auto z-10 relative overflow-x-scroll
       .selector
         width: $dayWidth
-        @apply border border-b-0 border-gray-400 bg-gray-100 absolute h-full z-0 duration-300
+        @apply border border-b-0 border-gray-400 bg-gray-50 absolute h-full z-0 duration-300
       .day
         min-width: $dayWidth
         height: $dayHeight

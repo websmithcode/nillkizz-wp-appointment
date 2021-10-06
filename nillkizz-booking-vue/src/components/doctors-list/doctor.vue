@@ -47,7 +47,7 @@ export default {
 .doctor
   @apply flex flex-col items-center gap-1 max-w-md w-full
   @apply lg:flex-row lg:max-w-full lg:gap-4
-  @apply bg-gray-100 p-3 border border-gray-400
+  @apply bg-gray-50 p-3 border border-gray-400
   .photo-wrap
     height: 150px
     width: 150px
