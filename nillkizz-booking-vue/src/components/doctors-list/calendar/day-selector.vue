@@ -29,26 +29,35 @@ export default {
   data() {
     return {
       days: Array.from(this.calendar.values()),
-      value: undefined,
+      value: this.modelValue ?? undefined,
       daysIsScrolled: false,
       selectorStyle: { display: "none" },
     };
   },
   mounted() {
-    this.selectDay(this.days.filter((day) => !day.disabled)[0].ISO);
+    this.selectDay(
+      this.value ? this.value : this.days.filter((day) => !day.disabled)[0].ISO
+    );
+    this.$nextTick(() => {
+      const daysWrapper = this.$el.querySelector(".days-wrapper"),
+        currentScroll = daysWrapper.scrollLeft,
+        selectedOffsetLeft = daysWrapper.querySelector(".selected").offsetLeft,
+        daysWrapperWidth = daysWrapper.offsetWidth;
+      if (currentScroll + daysWrapperWidth < selectedOffsetLeft)
+        this.scrollDays();
+    });
   },
   methods: {
     selectDay(dayISO) {
       this.value = dayISO;
 
       this.$nextTick(() => {
-        const left =
-          this.$el.querySelector(".days .selected").offsetLeft + "px";
+        const left = this.$el.querySelector(".selected").offsetLeft + "px";
         this.selectorStyle = { left };
       });
     },
     scrollDays() {
-      const scrollable = this.$el.querySelector(".days .days-wrapper");
+      const scrollable = this.$el.querySelector(".days-wrapper");
       if (this.daysIsScrolled) scrollable.scrollTo(0, 0);
       else scrollable.scrollTo(scrollable.scrollWidth, 0);
       this.daysIsScrolled = !this.daysIsScrolled;

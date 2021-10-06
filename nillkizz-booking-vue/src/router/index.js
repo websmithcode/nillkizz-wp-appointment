@@ -7,7 +7,7 @@ const routes = [
     component: () => import("@/views/list.vue"),
   },
   {
-    path: "/appointment/doctor_:doctor_id/day_:day/slot_:time",
+    path: "/appointment/doctor_:doctorId/day_:dayISO/slot_:slotTime",
     name: "appointment",
     component: () => import("@/views/appointment.vue"),
   },

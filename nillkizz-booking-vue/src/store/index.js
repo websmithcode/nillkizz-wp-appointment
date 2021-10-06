@@ -39,12 +39,13 @@ export default createStore({
       });
     },
     async fetchDoctorsAndSpecs(context) {
-      const { doctors, specs } = await context.dispatch(
+      const { mapDoctors, doctors, specs } = await context.dispatch(
         "loading",
         api.getDoctorsAndSpecs()
       );
       context.state.specs = specs;
       context.state.doctors = doctors;
+      context.state.mapDoctors = mapDoctors;
     },
   },
   modules: {},

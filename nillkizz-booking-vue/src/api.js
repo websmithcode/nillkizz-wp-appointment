@@ -35,8 +35,8 @@ class DemoAPI {
 
               day.dt = DateTime.fromISO(dayISO).setLocale("ru");
               day.ISO = dayISO;
-              // day.disabled = day.dt.ts < now || day.length < 1;
-              day.disabled = day.size < 1;
+              day.disabled = day.dt.ts < now || day.size < 1;
+              // day.disabled = day.size < 1;
               day.isToday = day.dt.ts == now.ts;
               return [dayISO, day];
             })

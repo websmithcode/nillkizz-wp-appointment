@@ -1,19 +1,25 @@
 <template lang="pug">
-div {{ $route.params }}
+calendar(
+  v-if="calendar",
+  :calendar="calendar",
+  :initialDayISO="$route.params.dayISO",
+  :initialSlotTime="$route.params.slotTime"
+)
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import calendar from "@/components/doctors-list/calendar/calendar.vue";
 
 export default {
-  async mounted() {},
-  data() {
-    return {
-      loading: true,
-    };
-  },
+  components: { calendar },
   computed: {
-    ...mapGetters(["IS_LOADING"]),
+    ...mapGetters(["mapDoctors"]),
+    calendar() {
+      const docId = parseInt(this.$route.params.doctorId);
+      if (!this.mapDoctors.has(docId)) return;
+      return this.mapDoctors.get(docId).calendar;
+    },
   },
 };
 </script>

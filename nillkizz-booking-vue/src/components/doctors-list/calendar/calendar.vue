@@ -20,14 +20,16 @@ export default {
   components: { daySelector, slotSelector },
   props: {
     calendar: Map,
+    initialDayISO: String,
+    initialSlotTime: String,
   },
   emits: ["slotSelected"],
   data() {
     const now = DateTime.now().startOf("day");
     return {
       now,
-      selectedDayISO: undefined,
-      selectedSlot: undefined,
+      selectedDayISO: this.initialDayISO ?? undefined,
+      selectedSlot: this.initialSlotTime ?? undefined,
     };
   },
   computed: {
