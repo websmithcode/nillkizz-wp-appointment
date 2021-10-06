@@ -1,5 +1,5 @@
 <template lang="pug">
-.select.field(:class="{ empty: modelValue == '' }")
+.select.field(:class="{ empty: value == '' }")
   input(v-model="value")
   label {{ name }}
 </template>
@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      value: "",
+      value: this.modelValue ?? "",
     };
   },
   watch: {

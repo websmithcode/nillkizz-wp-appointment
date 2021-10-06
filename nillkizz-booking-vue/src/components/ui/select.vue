@@ -1,5 +1,5 @@
 <template lang="pug">
-.select.field(:class="{ empty: modelValue == '' }")
+.select.field(:class="{ empty: value == '' }")
   select(v-model="value")
     slot
   chevron-down-icon.chevron-down
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      value: "",
+      value: this.modelValue ?? "",
     };
   },
   watch: {
