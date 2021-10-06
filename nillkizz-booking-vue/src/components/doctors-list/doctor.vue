@@ -10,7 +10,7 @@
       .experience(v-if="doctor.experience") Стаж {{ doctor.experience }} Лет
       .education(v-if="education") Образование: {{ education }}
   .appointment
-    calendar(:doctor="doctor")
+    calendar(:calendar="doctor.calendar")
 </template>
 
 <script>

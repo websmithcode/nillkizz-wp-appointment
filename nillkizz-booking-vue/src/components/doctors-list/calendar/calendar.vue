@@ -1,7 +1,7 @@
 <template lang="pug">
 .calendar
-  .active(v-if="isActive")
-    day-selector(v-model="selectedDay", :days="days")
+  .active(v-if="calendar.isActive")
+    day-selector(:days="calendar")
     slot-selector(:slots="selectedDay")
   .empty(v-else) 
     .content Записи нет
@@ -15,37 +15,18 @@ import slotSelector from "./slot-selector";
 export default {
   components: { daySelector, slotSelector },
   props: {
-    doctor: Object,
+    calendar: Array,
   },
   data() {
+    const now = DateTime.now().startOf("day");
     return {
-      now: DateTime.now().startOf("day"),
-      selectedDay: {},
+      now,
     };
   },
   methods: {},
   computed: {
-    isActive() {
-      const hasDates = !!this.doctor.timeslots.length;
-      const hasTimeslots = this.doctor.timeslots[0]?.slots;
-      return hasDates && hasTimeslots && this.days.isActive;
-    },
-    days() {
-      const isDisabled = (day) => {
-        return day.dt.ts < this.now || day.length < 1;
-      };
-      let days = [];
-      const slots = Object.entries(this.doctor.timeslots[0].slots);
-      if (slots.length > 0)
-        days = slots.map((slot) => {
-          slot[1].dt = DateTime.fromISO(slot[0]).setLocale("ru");
-          slot[1].disabled = isDisabled(slot[1]);
-          slot[1].isToday = slot[1].dt.ts == this.now.ts;
-          return slot[1];
-        });
-      else days = [];
-      days.isActive = days.some((day) => !day.disabled);
-      return days;
+    selectedDay() {
+      return this.calendar.filter((day) => day.selected)[0];
     },
   },
 };

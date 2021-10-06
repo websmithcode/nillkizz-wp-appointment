@@ -4,9 +4,9 @@
     .days-wrapper
       .selector(:style="selectorStyle")
       .day(
-        :class="{ active: isActive(day), today: day.isToday }",
+        :class="{ selected: day.selected, today: day.isToday }",
         :disabled="day.disabled",
-        @click="!day.disabled && setActive(day, $event.target)",
+        @click="!day.disabled && selectDay(day, $event.target)",
         v-for="day in days"
       )
         .content
@@ -28,22 +28,22 @@ export default {
   emits: ["update:modelValue"],
   data() {
     return {
-      active: undefined,
+      activeDay: undefined,
       selectorStyle: { display: "none" },
       daysIsScrolled: false,
     };
   },
   mounted() {
-    this.setActive(this.days.filter((day) => !day.disabled)[0]);
+    this.selectDay(this.days.filter((day) => !day.disabled)[0]);
   },
   methods: {
-    isActive(day) {
-      return day.dt.startOf("day").ts == this.active?.dt.ts;
-    },
-    setActive(day) {
-      this.active = day;
+    selectDay(day) {
+      if (this.activeDay) this.activeDay.selected = false;
+      day.selected = true;
+      this.activeDay = day;
       this.$nextTick(() => {
-        const left = this.$el.querySelector(".days .active").offsetLeft + "px";
+        const left =
+          this.$el.querySelector(".days .selected").offsetLeft + "px";
         this.selectorStyle = { left };
       });
       this.$emit("update:modelValue", day);
@@ -78,7 +78,7 @@ $dayHeight: 60px
         min-width: $dayWidth
         height: $dayHeight
         @apply text-center select-none cursor-pointer duration-500 z-10 py-1 relative
-        &.active
+        &.selected
           @apply pointer-events-none
         &[disabled='true']
           @apply text-gray-400 cursor-not-allowed
