@@ -4,9 +4,9 @@
     .days-wrapper
       .selector(:style="selectorStyle")
       .day(
-        :class="{ selected: day.selected, today: day.isToday }",
+        :class="{ selected: value == day.ISO, today: day.isToday }",
         :disabled="day.disabled",
-        @click="!day.disabled && selectDay(day, $event.target)",
+        @click="!day.disabled && selectDay(day.ISO)",
         v-for="day in days"
       )
         .content
@@ -22,37 +22,41 @@ import { ChevronRightIcon } from "@heroicons/vue/solid";
 export default {
   components: { ChevronRightIcon },
   props: {
-    modelValue: Object,
-    days: Object,
+    modelValue: String,
+    calendar: Object,
   },
   emits: ["update:modelValue"],
   data() {
     return {
-      activeDay: undefined,
-      selectorStyle: { display: "none" },
+      days: Array.from(this.calendar.values()),
+      value: undefined,
       daysIsScrolled: false,
+      selectorStyle: { display: "none" },
     };
   },
   mounted() {
-    this.selectDay(this.days.filter((day) => !day.disabled)[0]);
+    this.selectDay(this.days.filter((day) => !day.disabled)[0].ISO);
   },
   methods: {
-    selectDay(day) {
-      if (this.activeDay) this.activeDay.selected = false;
-      day.selected = true;
-      this.activeDay = day;
+    selectDay(dayISO) {
+      this.value = dayISO;
+
       this.$nextTick(() => {
         const left =
           this.$el.querySelector(".days .selected").offsetLeft + "px";
         this.selectorStyle = { left };
       });
-      this.$emit("update:modelValue", day);
     },
     scrollDays() {
       const scrollable = this.$el.querySelector(".days .days-wrapper");
       if (this.daysIsScrolled) scrollable.scrollTo(0, 0);
       else scrollable.scrollTo(scrollable.scrollWidth, 0);
       this.daysIsScrolled = !this.daysIsScrolled;
+    },
+  },
+  watch: {
+    value() {
+      this.$emit("update:modelValue", this.value);
     },
   },
 };

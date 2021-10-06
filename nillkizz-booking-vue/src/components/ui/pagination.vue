@@ -32,6 +32,11 @@ export default {
       value: this.modelValue ?? 1,
     };
   },
+  mounted() {
+    this.$nextTick(() => {
+      this.emitUpdates();
+    });
+  },
   methods: {
     changePage(action) {
       if (/\d+/.test(String(action))) {

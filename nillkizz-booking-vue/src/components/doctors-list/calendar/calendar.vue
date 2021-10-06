@@ -1,8 +1,12 @@
 <template lang="pug">
 .calendar
   .active(v-if="calendar.isActive")
-    day-selector(:days="calendar")
-    slot-selector(:slots="selectedDay")
+    day-selector(:calendar="calendar", v-model="selectedDayISO")
+    slot-selector(
+      v-if="calendar.has(selectedDayISO)",
+      :selectedDay="selectedDay",
+      v-model="selectedSlot"
+    )
   .empty(v-else) 
     .content Записи нет
 .full-calendar
@@ -15,18 +19,25 @@ import slotSelector from "./slot-selector";
 export default {
   components: { daySelector, slotSelector },
   props: {
-    calendar: Array,
+    calendar: Map,
   },
+  emits: ["slotSelected"],
   data() {
     const now = DateTime.now().startOf("day");
     return {
       now,
+      selectedDayISO: undefined,
+      selectedSlot: undefined,
     };
   },
-  methods: {},
   computed: {
     selectedDay() {
-      return this.calendar.filter((day) => day.selected)[0];
+      return this.calendar.get(this.selectedDayISO);
+    },
+  },
+  watch: {
+    selectedSlot(slotTime) {
+      this.$emit("slotSelected", { dayISO: this.selectedDayISO, slotTime });
     },
   },
 };

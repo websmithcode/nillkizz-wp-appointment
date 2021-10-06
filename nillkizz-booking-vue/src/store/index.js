@@ -6,6 +6,7 @@ export default createStore({
     loading: 0,
     specs: {},
     doctors: [],
+    mapDoctors: new Map(),
   },
   getters: {
     IS_LOADING(state) {
@@ -16,6 +17,9 @@ export default createStore({
     },
     doctors(state) {
       return state.doctors;
+    },
+    mapDoctors(state) {
+      return state.mapDoctors;
     },
   },
   mutations: {

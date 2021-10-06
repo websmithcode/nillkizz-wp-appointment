@@ -1,9 +1,9 @@
 <template lang="pug">
+div {{ $route.params }}
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
-// import api from "@/api";
+import { mapGetters } from "vuex";
 
 export default {
   async mounted() {},
@@ -13,7 +13,6 @@ export default {
     };
   },
   computed: {
-    ...mapState(["config"]),
     ...mapGetters(["IS_LOADING"]),
   },
 };

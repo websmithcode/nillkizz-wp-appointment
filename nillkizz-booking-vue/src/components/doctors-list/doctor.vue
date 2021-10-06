@@ -10,7 +10,7 @@
       .experience(v-if="doctor.experience") Стаж {{ doctor.experience }} Лет
       .education(v-if="education") Образование: {{ education }}
   .appointment
-    calendar(:calendar="doctor.calendar")
+    calendar(:calendar="doctor.calendar", @slotSelected="goToAppointment")
 </template>
 
 <script>
@@ -20,6 +20,13 @@ export default {
   components: { calendar },
   props: {
     doctor: Object,
+  },
+  methods: {
+    goToAppointment(args) {
+      this.$router.push(
+        `/appointment/doctor_${this.doctor.id}/day_${args.dayISO}/slot_${args.slotTime}`
+      );
+    },
   },
   computed: {
     ...mapGetters(["specs"]),
