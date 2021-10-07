@@ -10,6 +10,12 @@ export default {
     modelValue: String,
     name: String,
     attrs: Object,
+    handler: Function,
+  },
+  mounted() {
+    this.$nextTick(() => {
+      if (this.handler) this.handler(this.$el);
+    });
   },
   data() {
     return {

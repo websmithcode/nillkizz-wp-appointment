@@ -13,8 +13,8 @@ export default {
     ChevronDownIcon,
   },
   props: {
-    modelValue: String,
-    name: String,
+    modelValue: [String, Number],
+    name: [String, Number],
   },
   data() {
     return {

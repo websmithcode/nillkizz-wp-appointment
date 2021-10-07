@@ -10,16 +10,19 @@
       .experience(v-if="doctor.experience") Стаж {{ doctor.experience }} Лет
       .education(v-if="education") Образование: {{ education }}
   .appointment
-    calendar(:calendar="doctor.calendar", @slotSelected="goToAppointment")
+    calendar(:calendar="doctor.calendar", v-model="selectedSlot")
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import calendar from "./calendar/calendar.vue";
+import calendar from "./calendar.vue";
 export default {
   components: { calendar },
   props: {
     doctor: Object,
+  },
+  data() {
+    return { selectedSlot: {} };
   },
   methods: {
     goToAppointment(args) {
@@ -38,6 +41,11 @@ export default {
     education() {
       if (this.doctor.education.length) return this.doctor.education.join(", ");
       else return "";
+    },
+  },
+  watch: {
+    selectedSlot(newVal) {
+      this.goToAppointment(newVal);
     },
   },
 };

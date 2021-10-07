@@ -11,7 +11,7 @@ export default {
   components: {
     debugArea,
   },
-  async mounted() {
+  beforeCreate() {
     this.$store.dispatch("fetchDoctorsAndSpecs");
   },
   data() {
