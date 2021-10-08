@@ -110,7 +110,7 @@ export default {
         @apply overflow-hidden
         .days-wrapper
           scroll-behavior: smooth
-          @apply flex mr-auto z-10 relative overflow-x-scroll
+          @apply flex mr-auto z-10 relative overflow-x-scroll overflow-y-hidden
           .selector
             width: $dayWidth
             @apply border border-b-0 border-gray-400 bg-gray-50 absolute h-full z-0 duration-300

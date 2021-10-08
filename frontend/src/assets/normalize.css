@@ -1,0 +1,80 @@
+#app *, #app ::before, #app ::after {
+  box-sizing: border-box; }
+
+#app hr {
+  height: 0;
+  color: inherit; }
+
+#app abbr[title] {
+  text-decoration: underline dotted; }
+
+#app b, #app strong {
+  font-weight: bolder; }
+
+#app code, #app kbd, #app samp, #app pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1em; }
+
+#app small {
+  font-size: 80%; }
+
+#app sub, #app sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+#app sub {
+  bottom: -0.25em; }
+
+#app sup {
+  top: -0.5em; }
+
+#app table {
+  text-indent: 0;
+  border-color: inherit; }
+
+#app button, #app input, #app optgroup, #app select, #app textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+
+#app button, #app select {
+  text-transform: none; }
+
+#app button, #app [type='button'], #app [type='reset'], #app [type='submit'] {
+  -webkit-appearance: button; }
+
+#app ::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+#app :-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+#app :-moz-ui-invalid {
+  box-shadow: none; }
+
+#app legend {
+  padding: 0; }
+
+#app progress {
+  vertical-align: baseline; }
+
+#app ::-webkit-inner-spin-button, #app ::-webkit-outer-spin-button {
+  height: auto; }
+
+#app [type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+
+#app ::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+#app ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+
+#app summary {
+  display: list-item; }

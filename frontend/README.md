@@ -1,4 +1,4 @@
-# nillkizz-booking-vue
+# nillkizzAppointmentVue
 
 ## Project setup
 ```

@@ -36,6 +36,7 @@
     "sass-loader": "^8.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue-cli-plugin-pug": "~2.0.0",
-    "vue-cli-plugin-tailwind": "~2.0.6"
+    "vue-cli-plugin-tailwind": "~2.0.6",
+    "webpack-chain": "^6.5.1"
   }
 }
