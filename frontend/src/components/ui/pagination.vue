@@ -159,7 +159,7 @@ export default {
     li
       border: 0 solid silver
       border-width: 1px 1px 0 0
-      @apply text-sm px-2 min-w-8 h-8 flex justify-center items-center cursor-pointer
+      @apply text-sm px-2 min-w-8 h-8 flex justify-center items-center cursor-pointer bg-white
       &.active
         @apply bg-gray-700 text-white pointer-events-none
       &[disabled="true"]

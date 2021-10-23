@@ -31,7 +31,7 @@ export default {
 
 <style scoped lang="sass">
 .field
-  @apply border-gray-500 border relative
+  @apply border-gray-500 border relative bg-white
   .chevron-down
     top: calc(50% - .5rem)
     @apply absolute right-1 text-gray-700 w-4 pointer-events-none
