@@ -11,7 +11,7 @@
       option(value="5") От 5 лет
       option(value="15") От 15 лет
       option(value="30") От 30 лет
-    ui-select(v-model="sex", :name="'Пол'")
+    ui-select(v-model="gender", :name="'Пол'")
       option(value="") Любой
       option(value="male") М
       option(value="female") Ж
@@ -36,7 +36,7 @@ export default {
       search: "",
       spec: "",
       exp: "",
-      sex: "",
+      gender: "",
     };
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
         spec: this.spec,
         search: this.search,
         experience: this.exp,
-        sex: this.sex,
+        gender: this.gender,
       });
     },
   },

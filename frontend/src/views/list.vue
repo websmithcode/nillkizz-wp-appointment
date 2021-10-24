@@ -34,7 +34,7 @@ export default {
         search: "",
         spec: "",
         experience: "",
-        sex: "",
+        gender: "",
       },
     };
   },
@@ -75,8 +75,8 @@ export default {
         const exp = this.filters.experience;
         if (/^\d+$/.test(exp)) founded &&= doc.experience > parseInt(exp);
 
-        const sex = this.filters.sex;
-        if (["male", "female"].includes(sex)) founded &&= doc.sex == sex;
+        const gender = this.filters.gender;
+        if (["male", "female"].includes(gender)) founded &&= doc.gender == gender;
         return founded;
       });
     },
