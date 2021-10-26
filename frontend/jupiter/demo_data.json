@@ -5,11 +5,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/440873/904034-440873-chupin_l.jpg"
       },
-      "name": "\u0427\u0443\u043f\u0438\u043d \u0412\u0430\u0441\u0438\u043b\u0438\u0439 \u042e\u0440\u044c\u0435\u0432\u0438\u0447",
+      "name": "Чупин Василий Юрьевич",
       "experience": "30",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         2,
@@ -22,10 +22,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/57954/573899-57954-kolevatova_l.jpg"
       },
-      "name": "\u041a\u043e\u043b\u0435\u0432\u0430\u0442\u043e\u0432\u0430 \u0413\u0430\u043b\u0438\u043d\u0430 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u043d\u0430",
+      "name": "Колеватова Галина Анатольевна",
       "experience": "39",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         27
@@ -37,10 +37,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/161031/395424-161031-betehtina_l.jpg"
       },
-      "name": "\u0411\u0435\u0442\u0435\u0445\u0442\u0438\u043d\u0430 \u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0430 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u043d\u0430",
+      "name": "Бетехтина Светлана Николаевна",
       "experience": "29",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         7,
@@ -53,10 +53,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/218232/706111-218232-hramcova_l.jpg"
       },
-      "name": "\u0425\u0440\u0430\u043c\u0446\u043e\u0432\u0430 \u041e\u043b\u044c\u0433\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u043d\u0430",
+      "name": "Храмцова Ольга Александровна",
       "experience": "15",
       "education": [
-        "1 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "1 категория"
       ],
       "specialty": [
         5
@@ -68,10 +68,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/57962/422908-57962-svinina_l.jpg"
       },
-      "name": "\u0421\u0432\u0438\u043d\u0438\u043d\u0430 \u041b\u044e\u0434\u043c\u0438\u043b\u0430 \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u043d\u0430",
+      "name": "Свинина Людмила Леонидовна",
       "experience": "36",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         17,
@@ -84,10 +84,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108146/832231-108146-gerasimov_l.jpg"
       },
-      "name": "\u0413\u0435\u0440\u0430\u0441\u0438\u043c\u043e\u0432 \u0421\u0442\u0430\u043d\u0438\u0441\u043b\u0430\u0432 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u0438\u0447",
+      "name": "Герасимов Станислав Васильевич",
       "experience": "27",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         62
@@ -99,10 +99,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299714/395423-299714-babkin_l.jpg"
       },
-      "name": "\u0411\u0430\u0431\u043a\u0438\u043d \u0421\u0435\u0440\u0433\u0435\u0439 \u042e\u0440\u044c\u0435\u0432\u0438\u0447",
+      "name": "Бабкин Сергей Юрьевич",
       "experience": "22",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         34
@@ -114,10 +114,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/55355/55149-55355-ivanov_l.jpg"
       },
-      "name": "\u0418\u0432\u0430\u043d\u043e\u0432 \u0421\u0435\u0440\u0433\u0435\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+      "name": "Иванов Сергей Владимирович",
       "experience": "27",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         30,
@@ -131,10 +131,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/134554/473544-134554-rykova_l.jpg"
       },
-      "name": "\u0420\u044b\u043a\u043e\u0432\u0430 \u0415\u043b\u0435\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Рыкова Елена Владимировна",
       "experience": "35",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         0,
@@ -147,11 +147,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/298726/179670-298726-pavlov_l.jpg"
       },
-      "name": "\u041f\u0430\u0432\u043b\u043e\u0432 \u0415\u0432\u0433\u0435\u043d\u0438\u0439 \u0413\u0435\u043d\u043d\u0430\u0434\u044c\u0435\u0432\u0438\u0447",
+      "name": "Павлов Евгений Геннадьевич",
       "experience": "17",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         3,
@@ -164,11 +164,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/215604/395488-215604-tarlovskiy_l.jpg"
       },
-      "name": "\u0422\u0430\u0440\u043b\u043e\u0432\u0441\u043a\u0438\u0439 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d\u043e\u0432\u0438\u0447",
+      "name": "Тарловский Алексей Константинович",
       "experience": "24",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         59
@@ -180,11 +180,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299407/473550-299407-podyninogina_l.jpg"
       },
-      "name": "\u041f\u043e\u0434\u044b\u043d\u0438\u043d\u043e\u0433\u0438\u043d\u0430 \u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Подыниногина Валентина Владимировна",
       "experience": "28",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         41
@@ -196,10 +196,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108505/673504-108505-golovina_l.jpg"
       },
-      "name": "\u0413\u043e\u043b\u043e\u0432\u0438\u043d\u0430 \u041d\u0430\u0442\u0430\u043b\u044c\u044f \u0421\u0430\u0431\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Головина Наталья Сабировна",
       "experience": "28",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         5
@@ -211,10 +211,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/298747/803571-298747-pshenichnikova_l.jpg"
       },
-      "name": "\u041f\u0448\u0435\u043d\u0438\u0447\u043d\u0438\u043a\u043e\u0432\u0430 \u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f \u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u043e\u0432\u043d\u0430",
+      "name": "Пшеничникова Анастасия Валентиновна",
       "experience": "22",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         5
@@ -226,11 +226,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/536805/628321-536805-sincova_l.jpg"
       },
-      "name": "\u0421\u0438\u043d\u0446\u043e\u0432\u0430 \u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Синцова Светлана Владимировна",
       "experience": "21",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         5,
@@ -244,10 +244,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299653/550701-299653-peganova_l.jpg"
       },
-      "name": "\u041f\u0435\u0433\u0430\u043d\u043e\u0432\u0430 \u0415\u043b\u0435\u043d\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u043d\u0430",
+      "name": "Пеганова Елена Александровна",
       "experience": "24",
       "education": [
-        "1 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "1 категория"
       ],
       "specialty": [
         5
@@ -259,7 +259,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108280/364114-108280-melkisheva_l.jpg"
       },
-      "name": "\u041c\u0435\u043b\u043a\u0438\u0448\u0435\u0432\u0430 \u041c\u0430\u0440\u0438\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Мелкишева Марина Владимировна",
       "experience": "33",
       "education": [
         null
@@ -274,7 +274,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108214/395499-108214-shipicyn_l.jpg"
       },
-      "name": "\u0428\u0438\u043f\u0438\u0446\u044b\u043d \u0421\u0435\u0440\u0433\u0435\u0439 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u0438\u0447",
+      "name": "Шипицын Сергей Николаевич",
       "experience": "23",
       "education": [
         null
@@ -290,7 +290,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299800/119758-299800-malceva_l.jpg"
       },
-      "name": "\u041c\u0430\u043b\u044c\u0446\u0435\u0432\u0430 \u041d\u0430\u0442\u0430\u043b\u044c\u044f \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u043d\u0430",
+      "name": "Мальцева Наталья Викторовна",
       "experience": "17",
       "education": [
         null
@@ -306,7 +306,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108288/709523-108288-starkova_l.jpg"
       },
-      "name": "\u0421\u0442\u0430\u0440\u043a\u043e\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u041b\u044c\u0432\u043e\u0432\u043d\u0430",
+      "name": "Старкова Екатерина Львовна",
       "experience": "25",
       "education": [
         null
@@ -321,7 +321,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirovo-chepeck/doctorimage/300059/120103-300059-antonova_l.jpg"
       },
-      "name": "\u0410\u043d\u0442\u043e\u043d\u043e\u0432\u0430 \u0414\u0430\u0440\u044c\u044f \u041f\u0435\u0442\u0440\u043e\u0432\u043d\u0430",
+      "name": "Антонова Дарья Петровна",
       "experience": "13",
       "education": [
         null
@@ -336,7 +336,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108271/364098-108271-kuzminyh_l.jpg"
       },
-      "name": "\u041a\u0443\u0437\u044c\u043c\u0438\u043d\u044b\u0445 \u041b\u0430\u0440\u0438\u0441\u0430 \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u043d\u0430",
+      "name": "Кузьминых Лариса Леонидовна",
       "experience": "20",
       "education": [
         null
@@ -352,7 +352,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/215607/832230-215607-kolupaev_l.jpg"
       },
-      "name": "\u041a\u043e\u043b\u0443\u043f\u0430\u0435\u0432 \u0421\u0435\u0440\u0433\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0435\u0435\u0432\u0438\u0447",
+      "name": "Колупаев Сергей Алексеевич",
       "experience": "12",
       "education": [
         null
@@ -371,10 +371,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299136/488595-299136-zhvakin_l.jpg"
       },
-      "name": "\u0416\u0432\u0430\u043a\u0438\u043d \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447",
+      "name": "Жвакин Алексей Александрович",
       "experience": "9",
       "education": [
-        "2 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "2 категория"
       ],
       "specialty": [
         32,
@@ -387,7 +387,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/622479/426754-622479-savina_l.jpg"
       },
-      "name": "\u0421\u0430\u0432\u0438\u043d\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u043d\u0430",
+      "name": "Савина Екатерина Александровна",
       "experience": "11",
       "education": [
         null
@@ -402,7 +402,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108304/364191-108304-yurlova_l.jpg"
       },
-      "name": "\u042e\u0440\u043b\u043e\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u043d\u0430",
+      "name": "Юрлова Екатерина Анатольевна",
       "experience": "20",
       "education": [
         null
@@ -417,10 +417,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299110/179671-299110-anferova_l.jpg"
       },
-      "name": "\u0410\u043d\u0444\u0435\u0440\u043e\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0412\u0430\u0434\u0438\u043c\u043e\u0432\u043d\u0430",
+      "name": "Анферова Екатерина Вадимовна",
       "experience": "14",
       "education": [
-        "2 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "2 категория"
       ],
       "specialty": [
         5
@@ -432,7 +432,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/563448/343268-563448-klabukova_l.jpg"
       },
-      "name": "\u041a\u043b\u0430\u0431\u0443\u043a\u043e\u0432\u0430 \u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u043d\u0430",
+      "name": "Клабукова Светлана Александровна",
       "experience": "9",
       "education": [
         null
@@ -449,7 +449,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299922/636817-299922-tananin_l.jpg"
       },
-      "name": "\u0422\u0430\u043d\u0430\u043d\u0438\u043d \u0412\u0438\u0442\u0430\u043b\u0438\u0439 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u0438\u0447",
+      "name": "Тананин Виталий Анатольевич",
       "experience": "7",
       "education": [
         null
@@ -464,7 +464,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/431968/550709-431968-strom_l.jpg"
       },
-      "name": "\u0421\u0442\u0440\u043e\u043c \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+      "name": "Стром Дмитрий Владимирович",
       "experience": "7",
       "education": [
         null
@@ -480,7 +480,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/878758/865221-878758-chepurnyh_l.jpg"
       },
-      "name": "\u0427\u0435\u043f\u0443\u0440\u043d\u044b\u0445 \u041f\u0430\u0432\u0435\u043b \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447",
+      "name": "Чепурных Павел Александрович",
       "experience": "7",
       "education": [
         null
@@ -496,7 +496,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/704255/550768-704255-gireva_l.jpg"
       },
-      "name": "\u0413\u0438\u0440\u0435\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u043e\u0432\u043d\u0430",
+      "name": "Гирева Екатерина Валентиновна",
       "experience": "5",
       "education": [
         null
@@ -511,7 +511,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299802/179677-299802-muhin_l.jpg"
       },
-      "name": "\u041c\u0443\u0445\u0438\u043d \u0421\u0435\u0440\u0433\u0435\u0439 \u0418\u0433\u043e\u0440\u0435\u0432\u0438\u0447",
+      "name": "Мухин Сергей Игоревич",
       "experience": "7",
       "education": [
         null
@@ -527,7 +527,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/793913/755175-793913-kolesnikova_l.jpg"
       },
-      "name": "\u041a\u043e\u043b\u0435\u0441\u043d\u0438\u043a\u043e\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u043d\u0430",
+      "name": "Колесникова Екатерина Сергеевна",
       "experience": "4",
       "education": [
         null
@@ -543,7 +543,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/599136/870168-599136-pospelova_l.jpg"
       },
-      "name": "\u041f\u043e\u0441\u043f\u0435\u043b\u043e\u0432\u0430 \u041a\u0440\u0438\u0441\u0442\u0438\u043d\u0430 \u042e\u0440\u044c\u0435\u0432\u043d\u0430",
+      "name": "Поспелова Кристина Юрьевна",
       "experience": "5",
       "education": [
         null
@@ -560,7 +560,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/704256/550769-704256-sivkova_l.jpg"
       },
-      "name": "\u0421\u0438\u0432\u043a\u043e\u0432\u0430 \u0410\u043d\u043d\u0430 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u043d\u0430",
+      "name": "Сивкова Анна Андреевна",
       "experience": "3",
       "education": [
         null
@@ -575,7 +575,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/849666/785670-849666-nasibullin_l.jpg"
       },
-      "name": "\u041d\u0430\u0441\u0438\u0431\u0443\u043b\u043b\u0438\u043d \u0420\u0430\u043c\u0438\u043b\u044c \u0420\u0430\u0438\u043b\u0435\u0432\u0438\u0447",
+      "name": "Насибуллин Рамиль Раилевич",
       "experience": "3",
       "education": [
         null
@@ -590,7 +590,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/57523/364165-57523-kozlova_l.jpg"
       },
-      "name": "\u0421\u044b\u0447\u0451\u0432\u0430 \u0418\u0440\u0438\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Сычёва Ирина Владимировна",
       "experience": "11",
       "education": [
         null
@@ -606,10 +606,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299595/550766-299595-shevcova_l.jpg"
       },
-      "name": "\u0428\u0435\u0432\u0446\u043e\u0432\u0430 \u0422\u0430\u0442\u044c\u044f\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Шевцова Татьяна Владимировна",
       "experience": "32",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         36,
@@ -622,7 +622,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/127180/395455-127180-mohirev_l.jpg"
       },
-      "name": "\u041c\u043e\u0445\u0438\u0440\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447",
+      "name": "Мохирев Александр Александрович",
       "experience": "12",
       "education": [
         null
@@ -638,7 +638,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299159/920999-299159-korshunova_l.jpg"
       },
-      "name": "\u041a\u043e\u0440\u0448\u0443\u043d\u043e\u0432\u0430 \u041c\u0430\u0440\u0438\u044f \u0412\u0430\u0434\u0438\u043c\u043e\u0432\u043d\u0430",
+      "name": "Коршунова Мария Вадимовна",
       "experience": "10",
       "education": [
         null
@@ -654,7 +654,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/300159/623912-300159-boyarinceva_l.jpg"
       },
-      "name": "\u0411\u043e\u044f\u0440\u0438\u043d\u0446\u0435\u0432\u0430 \u0415\u043b\u0435\u043d\u0430 \u042e\u0440\u044c\u0435\u0432\u043d\u0430",
+      "name": "Бояринцева Елена Юрьевна",
       "experience": "25",
       "education": [
         null
@@ -670,11 +670,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299521/473537-299521-sapozhnikova_l.jpg"
       },
-      "name": "\u0421\u0430\u043f\u043e\u0436\u043d\u0438\u043a\u043e\u0432\u0430 \u041c\u0430\u0440\u0438\u043d\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u043d\u0430",
+      "name": "Сапожникова Марина Александровна",
       "experience": "27",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         5
@@ -686,10 +686,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108227/440429-108227-molchanov_l.jpg"
       },
-      "name": "\u041c\u043e\u043b\u0447\u0430\u043d\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+      "name": "Молчанов Алексей Владимирович",
       "experience": "15",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         19,
@@ -703,10 +703,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/127019/421862-127019-syatchihin_l.jpg"
       },
-      "name": "\u0421\u044f\u0442\u0447\u0438\u0445\u0438\u043d \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447",
+      "name": "Сятчихин Александр Викторович",
       "experience": "30",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         30,
@@ -721,10 +721,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108532/550741-108532-bekker_l.jpg"
       },
-      "name": "\u0411\u0435\u043a\u043a\u0435\u0440 \u0415\u043b\u0435\u043d\u0430 \u0413\u0435\u043e\u0440\u0433\u0438\u0435\u0432\u043d\u0430",
+      "name": "Беккер Елена Георгиевна",
       "experience": "35",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         5
@@ -736,10 +736,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299582/550704-299582-popyrina_l.jpg"
       },
-      "name": "\u041f\u043e\u043f\u044b\u0440\u0438\u043d\u0430 \u041d\u0430\u0442\u0430\u043b\u044c\u044f \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u043d\u0430",
+      "name": "Попырина Наталья Сергеевна",
       "experience": "18",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         0,
@@ -753,10 +753,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299723/455739-299723-kononova_l.jpg"
       },
-      "name": "\u041a\u043e\u043d\u043e\u043d\u043e\u0432\u0430 \u041e\u043b\u044c\u0433\u0430 \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043d\u0430",
+      "name": "Кононова Ольга Михайловна",
       "experience": "21",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         7
@@ -768,10 +768,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299580/891528-299580-ivakina_l.jpg"
       },
-      "name": "\u0418\u0432\u0430\u043a\u0438\u043d\u0430 \u041e\u043b\u044c\u0433\u0430 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u043d\u0430",
+      "name": "Ивакина Ольга Евгеньевна",
       "experience": "17",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         0,
@@ -785,10 +785,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/176518/433154-176518-popyvanova_l.jpg"
       },
-      "name": "\u041f\u043e\u043f\u044b\u0432\u0430\u043d\u043e\u0432\u0430 \u0415\u043b\u0435\u043d\u0430 \u0413\u0435\u043d\u043d\u0430\u0434\u044c\u0435\u0432\u043d\u0430",
+      "name": "Попыванова Елена Геннадьевна",
       "experience": "31",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         27
@@ -800,10 +800,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/471792/249847-471792-votincev_l.jpg"
       },
-      "name": "\u0412\u043e\u0442\u0438\u043d\u0446\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447",
+      "name": "Вотинцев Александр Евгеньевич",
       "experience": "17",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         35
@@ -815,10 +815,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/215608/53247-215608-tarlovskaya_l.jpg"
       },
-      "name": "\u0422\u0430\u0440\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u042e\u043b\u0438\u044f \u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u043e\u0432\u043d\u0430",
+      "name": "Тарловская Юлия Валентиновна",
       "experience": "16",
       "education": [
-        "1 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "1 категория"
       ],
       "specialty": [
         59
@@ -830,10 +830,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/207358/395433-207358-gaar_l.jpg"
       },
-      "name": "\u0413\u0430\u0430\u0440 \u0415\u0432\u0433\u0435\u043d\u0438\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+      "name": "Гаар Евгений Владимирович",
       "experience": "26",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         60
@@ -845,10 +845,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108549/589578-108549-shubina_l.jpg"
       },
-      "name": "\u0428\u0443\u0431\u0438\u043d\u0430 \u041e\u043b\u044c\u0433\u0430 \u0412\u0438\u0442\u0430\u043b\u044c\u0435\u0432\u043d\u0430",
+      "name": "Шубина Ольга Витальевна",
       "experience": "19",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         18,
@@ -862,10 +862,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/217312/395440-217312-dubrovskaya_l.jpg"
       },
-      "name": "\u0414\u0443\u0431\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u041c\u0430\u0440\u0438\u044f \u041a\u0430\u0437\u0431\u0435\u043a\u043e\u0432\u043d\u0430",
+      "name": "Дубровская Мария Казбековна",
       "experience": "27",
       "education": [
-        "1 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "1 категория"
       ],
       "specialty": [
         45
@@ -877,10 +877,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/57435/367004-57435-sherman_l.jpg"
       },
-      "name": "\u0428\u0435\u0440\u043c\u0430\u043d \u041d\u0430\u0438\u043b\u044f \u0417\u0430\u0433\u0438\u0434\u043e\u0432\u043d\u0430",
+      "name": "Шерман Наиля Загидовна",
       "experience": "33",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         37
@@ -892,10 +892,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108059/395429-108059-vladimirov_l.jpg"
       },
-      "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432 \u0421\u0435\u0440\u0433\u0435\u0439 \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u0438\u0447",
+      "name": "Владимиров Сергей Леонидович",
       "experience": "27",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         27
@@ -907,10 +907,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108452/405443-108452-pahomova_l.jpg"
       },
-      "name": "\u041f\u0430\u0445\u043e\u043c\u043e\u0432\u0430 \u0415\u043b\u0435\u043d\u0430 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u043d\u0430",
+      "name": "Пахомова Елена Викторовна",
       "experience": "38",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         5
@@ -922,11 +922,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/57819/119767-57819-stazaeva_l.jpg"
       },
-      "name": "\u0421\u0442\u0430\u0437\u0430\u0435\u0432\u0430 \u0422\u0430\u0442\u044c\u044f\u043d\u0430 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u043d\u0430",
+      "name": "Стазаева Татьяна Николаевна",
       "experience": "42",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         46,
@@ -939,10 +939,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/169235/395422-169235-ananev_l.jpg"
       },
-      "name": "\u0410\u043d\u0430\u043d\u044c\u0435\u0432 \u0410\u043d\u0434\u0440\u0435\u0439 \u042e\u0440\u044c\u0435\u0432\u0438\u0447",
+      "name": "Ананьев Андрей Юрьевич",
       "experience": "25",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         32
@@ -954,10 +954,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/217314/625822-217314-posazhennikov_l.jpg"
       },
-      "name": "\u041f\u043e\u0441\u0430\u0436\u0435\u043d\u043d\u0438\u043a\u043e\u0432 \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447",
+      "name": "Посаженников Дмитрий Иванович",
       "experience": "26",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         50
@@ -969,10 +969,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/298736/427207-298736-ardashev_l.jpg"
       },
-      "name": "\u0410\u0440\u0434\u0430\u0448\u0435\u0432 \u0418\u0433\u043e\u0440\u044c \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u0438\u0447",
+      "name": "Ардашев Игорь Валерьевич",
       "experience": "21",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         34
@@ -984,10 +984,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/119903/426791-119903-dudin_l.jpg"
       },
-      "name": "\u0414\u0443\u0434\u0438\u043d \u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447",
+      "name": "Дудин Вячеслав Андреевич",
       "experience": "17",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         34
@@ -999,10 +999,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108274/364063-108274-zonova_l.jpg"
       },
-      "name": "\u0417\u043e\u043d\u043e\u0432\u0430 \u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0430 \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u043d\u0430",
+      "name": "Зонова Светлана Леонидовна",
       "experience": "28",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         34
@@ -1014,11 +1014,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108413/550690-108413-elsukova_l.jpg"
       },
-      "name": "\u0415\u043b\u0441\u0443\u043a\u043e\u0432\u0430 \u041e\u043b\u044c\u0433\u0430 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u043d\u0430",
+      "name": "Елсукова Ольга Сергеевна",
       "experience": "18",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         24,
@@ -1031,10 +1031,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/218228/56192-218228-kocepalov_l.jpg"
       },
-      "name": "\u041a\u043e\u0446\u0435\u043f\u0430\u043b\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u0438\u0447",
+      "name": "Коцепалов Александр Николаевич",
       "experience": "30",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         5,
@@ -1047,10 +1047,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108237/803591-108237-chernyaeva_l.jpg"
       },
-      "name": "\u0427\u0435\u0440\u043d\u044f\u0435\u0432\u0430 \u041c\u0430\u0440\u0438\u043d\u0430 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u043d\u0430",
+      "name": "Черняева Марина Валерьевна",
       "experience": "34",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         14
@@ -1062,11 +1062,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108475/119765-108475-ryabova_l.jpg"
       },
-      "name": "\u0420\u044f\u0431\u043e\u0432\u0430 \u0412\u0435\u0440\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Рябова Вера Владимировна",
       "experience": "16",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         6,
@@ -1079,11 +1079,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299432/179726-299432-vyaznikov_l.jpg"
       },
-      "name": "\u0412\u044f\u0437\u043d\u0438\u043a\u043e\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u0438\u0447",
+      "name": "Вязников Владимир Анатольевич",
       "experience": "45",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041f\u0440\u043e\u0444\u0435\u0441\u0441\u043e\u0440"
+        "Высшая категория",
+        "Профессор"
       ],
       "specialty": [
         28,
@@ -1096,10 +1096,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108155/360925-108155-mamaeva_l.jpg"
       },
-      "name": "\u041c\u0430\u043c\u0430\u0435\u0432\u0430 \u042e\u043b\u0438\u044f \u0413\u0435\u043d\u043d\u0430\u0434\u044c\u0435\u0432\u043d\u0430",
+      "name": "Мамаева Юлия Геннадьевна",
       "experience": "14",
       "education": [
-        "1 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "1 категория"
       ],
       "specialty": [
         5
@@ -1111,11 +1111,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299784/366994-299784-redkin_l.jpg"
       },
-      "name": "\u0420\u0435\u0434\u044c\u043a\u0438\u043d \u041e\u043b\u0435\u0433 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447",
+      "name": "Редькин Олег Сергеевич",
       "experience": "22",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         18,
@@ -1130,10 +1130,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299177/179678-299177-nazarova_l.jpg"
       },
-      "name": "\u041d\u0430\u0437\u0430\u0440\u043e\u0432\u0430 \u041c\u0430\u0440\u0438\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Назарова Марина Владимировна",
       "experience": "13",
       "education": [
-        "1 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "1 категория"
       ],
       "specialty": [
         34
@@ -1145,10 +1145,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/55435/457830-55435-haldeeva_l.jpg"
       },
-      "name": "\u0425\u0430\u043b\u0434\u0435\u0435\u0432\u0430 \u042e\u043b\u0438\u044f \u041f\u0430\u0432\u043b\u043e\u0432\u043d\u0430",
+      "name": "Халдеева Юлия Павловна",
       "experience": "13",
       "education": [
-        "2 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "2 категория"
       ],
       "specialty": [
         29
@@ -1160,10 +1160,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/218245/440407-218245-smirnova_l.jpg"
       },
-      "name": "\u0421\u043c\u0438\u0440\u043d\u043e\u0432\u0430 \u041d\u0430\u0442\u0430\u043b\u044c\u044f \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u043d\u0430",
+      "name": "Смирнова Наталья Александровна",
       "experience": "21",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         5
@@ -1175,10 +1175,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/457200/235690-457200-nosach_l.jpg"
       },
-      "name": "\u041d\u043e\u0441\u0430\u0447 \u0410\u043d\u0434\u0440\u0435\u0439 \u042e\u0440\u044c\u0435\u0432\u0438\u0447",
+      "name": "Носач Андрей Юрьевич",
       "experience": "25",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         62
@@ -1190,10 +1190,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108574/550744-108574-alypova_l.jpg"
       },
-      "name": "\u0410\u043b\u044b\u043f\u043e\u0432\u0430 \u041c\u0430\u0440\u0438\u043d\u0430 \u0415\u043c\u0435\u043b\u044c\u044f\u043d\u043e\u0432\u043d\u0430",
+      "name": "Алыпова Марина Емельяновна",
       "experience": "33",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         51
@@ -1205,7 +1205,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/595424/433152-595424-brauer_l.jpg"
       },
-      "name": "\u0411\u0440\u0430\u0443\u044d\u0440 \u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u0430 \u041a\u0430\u0440\u043b\u043e\u0432\u043d\u0430",
+      "name": "Брауэр Валентина Карловна",
       "experience": "35",
       "education": [
         null
@@ -1222,7 +1222,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108265/6163-108265-gvozdenko_l.jpg"
       },
-      "name": "\u0413\u0432\u043e\u0437\u0434\u0435\u043d\u043a\u043e \u041c\u0430\u0440\u0438\u043d\u0430 \u0420\u0443\u0434\u043e\u043b\u044c\u0444\u043e\u0432\u043d\u0430",
+      "name": "Гвозденко Марина Рудольфовна",
       "experience": "25",
       "education": [
         null
@@ -1237,7 +1237,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299796/395438-299796-dinmuhametova_l.jpg"
       },
-      "name": "\u0414\u0438\u043d\u043c\u0443\u0445\u0430\u043c\u0435\u0442\u043e\u0432\u0430 \u041d\u0430\u0442\u0430\u043b\u044c\u044f \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043d\u0430",
+      "name": "Динмухаметова Наталья Михайловна",
       "experience": "35",
       "education": [
         null
@@ -1253,7 +1253,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/215586/550698-215586-kotkina_l.jpg"
       },
-      "name": "\u041a\u043e\u0442\u043a\u0438\u043d\u0430 \u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Коткина Светлана Владимировна",
       "experience": "24",
       "education": [
         null
@@ -1272,7 +1272,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/299795/119752-299795-gafirov_l.jpg"
       },
-      "name": "\u0413\u0430\u0444\u0438\u0440\u043e\u0432 \u041c\u0430\u0440\u0430\u0442 \u041c\u0430\u0433\u0441\u0443\u043c\u043e\u0432\u0438\u0447",
+      "name": "Гафиров Марат Магсумович",
       "experience": "15",
       "education": [
         null
@@ -1287,7 +1287,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/581053/367008-581053-kosyh_l.jpg"
       },
-      "name": "\u041a\u043e\u0441\u044b\u0445 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0410\u0440\u043a\u0430\u0434\u044c\u0435\u0432\u0438\u0447",
+      "name": "Косых Владимир Аркадьевич",
       "experience": "39",
       "education": [
         null
@@ -1303,11 +1303,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/189060/119769-189060-sherman_l.jpg"
       },
-      "name": "\u0428\u0435\u0440\u043c\u0430\u043d \u041c\u0438\u0445\u0430\u0438\u043b \u0410\u0439\u0437\u0438\u043a\u043e\u0432\u0438\u0447",
+      "name": "Шерман Михаил Айзикович",
       "experience": "32",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041f\u0440\u043e\u0444\u0435\u0441\u0441\u043e\u0440"
+        "Высшая категория",
+        "Профессор"
       ],
       "specialty": [
         34
@@ -1319,11 +1319,11 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/381030/426722-381030-zagoskina_l.jpg"
       },
-      "name": "\u0417\u0430\u0433\u043e\u0441\u043a\u0438\u043d\u0430 \u0422\u0430\u043c\u0430\u0440\u0430 \u041f\u0430\u0432\u043b\u043e\u0432\u043d\u0430",
+      "name": "Загоскина Тамара Павловна",
       "experience": "47",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
-        "\u041a\u0430\u043d\u0434\u0438\u0434\u0430\u0442 \u043d\u0430\u0443\u043a"
+        "Высшая категория",
+        "Кандидат наук"
       ],
       "specialty": [
         1,
@@ -1339,10 +1339,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108511/396339-108511-urvancev_l.jpg"
       },
-      "name": "\u0423\u0440\u0432\u0430\u043d\u0446\u0435\u0432 \u0410\u043d\u0434\u0440\u0435\u0439 \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u0438\u0447",
+      "name": "Урванцев Андрей Михайлович",
       "experience": "27",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         29
@@ -1354,7 +1354,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/581048/395482-581048-suhih_l.jpg"
       },
-      "name": "\u0421\u0443\u0445\u0438\u0445 \u0410\u043d\u043d\u0430 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u043d\u0430",
+      "name": "Сухих Анна Валерьевна",
       "experience": "17",
       "education": [
         null
@@ -1369,7 +1369,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/55272/748297-55272-bozrikova_l.jpg"
       },
-      "name": "\u0411\u043e\u0437\u0440\u0438\u043a\u043e\u0432\u0430 \u041e\u043b\u044c\u0433\u0430 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u043d\u0430",
+      "name": "Бозрикова Ольга Евгеньевна",
       "experience": "12",
       "education": [
         null
@@ -1384,7 +1384,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/595423/421852-595423-evseeva_l.jpg"
       },
-      "name": "\u0415\u0432\u0441\u0435\u0435\u0432\u0430 \u0410\u043d\u043d\u0430 \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u043d\u0430",
+      "name": "Евсеева Анна Леонидовна",
       "experience": "11",
       "education": [
         null
@@ -1400,10 +1400,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/108460/550702-108460-pestova_l.jpg"
       },
-      "name": "\u041f\u0435\u0441\u0442\u043e\u0432\u0430 \u0415\u043b\u0435\u043d\u0430 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u043d\u0430",
+      "name": "Пестова Елена Анатольевна",
       "experience": "12",
       "education": [
-        "2 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "2 категория"
       ],
       "specialty": [
         47
@@ -1415,7 +1415,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/704244/550753-704244-kovalev_l.jpg"
       },
-      "name": "\u041a\u043e\u0432\u0430\u043b\u0435\u0432 \u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447",
+      "name": "Ковалев Вячеслав Александрович",
       "experience": "8",
       "education": [
         null
@@ -1431,7 +1431,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/591815/540832-591815-zholobova_l.jpg"
       },
-      "name": "\u0416\u043e\u043b\u043e\u0431\u043e\u0432\u0430 \u041a\u0441\u0435\u043d\u0438\u044f \u042e\u0440\u044c\u0435\u0432\u043d\u0430",
+      "name": "Жолобова Ксения Юрьевна",
       "experience": "7",
       "education": [
         null
@@ -1446,7 +1446,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/704246/550757-704246-medvedeva_l.jpg"
       },
-      "name": "\u041c\u0435\u0434\u0432\u0435\u0434\u0435\u0432\u0430 \u0415\u043b\u0435\u043d\u0430 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u043d\u0430",
+      "name": "Медведева Елена Андреевна",
       "experience": "7",
       "education": [
         null
@@ -1461,7 +1461,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/739933/621381-739933-solongina_l.jpg"
       },
-      "name": "\u0421\u043e\u043b\u043e\u043d\u0433\u0438\u043d\u0430 \u0415\u0432\u0433\u0435\u043d\u0438\u044f \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u043d\u0430",
+      "name": "Солонгина Евгения Владимировна",
       "experience": "6",
       "education": [
         null
@@ -1476,7 +1476,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/598392/555474-598392-mineeva_l.jpg"
       },
-      "name": "\u041c\u0438\u043d\u0435\u0435\u0432\u0430 \u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f \u042d\u0434\u0443\u0430\u0440\u0434\u043e\u0432\u043d\u0430",
+      "name": "Минеева Анастасия Эдуардовна",
       "experience": "5",
       "education": [
         null
@@ -1491,7 +1491,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/723169/592953-723169-barsukovskaya_l.jpg"
       },
-      "name": "\u0411\u0430\u0440\u0441\u0443\u043a\u043e\u0432\u0441\u043a\u0430\u044f \u0415\u0432\u0433\u0435\u043d\u0438\u044f \u042e\u0440\u044c\u0435\u0432\u043d\u0430",
+      "name": "Барсуковская Евгения Юрьевна",
       "experience": "6",
       "education": [
         null
@@ -1507,7 +1507,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/298774/550700-298774-ogorodnikova_l.jpg"
       },
-      "name": "\u041e\u0433\u043e\u0440\u043e\u0434\u043d\u0438\u043a\u043e\u0432\u0430 \u041d\u0438\u043d\u0430 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u043d\u0430",
+      "name": "Огородникова Нина Николаевна",
       "experience": "8",
       "education": [
         null
@@ -1522,7 +1522,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/779252/886088-779252-volkov_l.jpg"
       },
-      "name": "\u0412\u043e\u043b\u043a\u043e\u0432 \u041a\u0438\u0440\u0438\u043b\u043b \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u0438\u0447",
+      "name": "Волков Кирилл Николаевич",
       "experience": "1",
       "education": [
         null
@@ -1537,7 +1537,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/215594/395425-215594-bufatin_l.jpg"
       },
-      "name": "\u0411\u0443\u0444\u0430\u0442\u0438\u043d \u0412\u0438\u043a\u0442\u043e\u0440 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447",
+      "name": "Буфатин Виктор Александрович",
       "experience": "26",
       "education": [
         null
@@ -1552,10 +1552,10 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/132203/119618-132203-hramcov_l.jpg"
       },
-      "name": "\u0425\u0440\u0430\u043c\u0446\u043e\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447",
+      "name": "Храмцов Владимир Евгеньевич",
       "experience": "22",
       "education": [
-        "\u0412\u044b\u0441\u0448\u0430\u044f \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f"
+        "Высшая категория"
       ],
       "specialty": [
         5
@@ -1567,7 +1567,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/static/img/Fdoctor.png"
       },
-      "name": "\u041a\u043e\u043d\u043e\u043d\u043e\u0432\u0430 \u0410\u043d\u043d\u0430 \u0411\u043e\u0440\u0438\u0441\u043e\u0432\u043d\u0430",
+      "name": "Кононова Анна Борисовна",
       "experience": "28",
       "education": [
         null
@@ -1582,7 +1582,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/300178/825612-300178-sharomov_l.jpg"
       },
-      "name": "\u0428\u0430\u0440\u043e\u043c\u043e\u0432 \u041c\u0438\u0445\u0430\u0438\u043b \u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+      "name": "Шаромов Михаил Дмитриевич",
       "experience": "38",
       "education": [
         null
@@ -1597,7 +1597,7 @@
       "photo": {
         "url": "https://prodoctorov.ru/media/photo/kirov/doctorimage/704248/550760-704248-shvin_l.jpg"
       },
-      "name": "\u0428\u0432\u0438\u043d \u0415\u043b\u0435\u043d\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u043d\u0430",
+      "name": "Швин Елена Александровна",
       "experience": "11",
       "education": [
         null
@@ -1611,259 +1611,259 @@
   "specs": [
     {
       "id": 0,
-      "name": "\u0410\u043a\u0443\u0448\u0435\u0440"
+      "name": "Акушер"
     },
     {
       "id": 1,
-      "name": "\u0410\u043b\u043b\u0435\u0440\u0433\u043e\u043b\u043e\u0433"
+      "name": "Аллерголог"
     },
     {
       "id": 2,
-      "name": "\u0410\u043d\u0434\u0440\u043e\u043b\u043e\u0433"
+      "name": "Андролог"
     },
     {
       "id": 3,
-      "name": "\u0410\u0440\u0438\u0442\u043c\u043e\u043b\u043e\u0433"
+      "name": "Аритмолог"
     },
     {
       "id": 4,
-      "name": "\u0412\u0440\u0430\u0447 \u041b\u0424\u041a"
+      "name": "Врач ЛФК"
     },
     {
       "id": 5,
-      "name": "\u0412\u0440\u0430\u0447 \u0423\u0417\u0418"
+      "name": "Врач УЗИ"
     },
     {
       "id": 6,
-      "name": "\u0412\u0440\u0430\u0447-\u043a\u043e\u0441\u043c\u0435\u0442\u043e\u043b\u043e\u0433"
+      "name": "Врач-косметолог"
     },
     {
       "id": 7,
-      "name": "\u0413\u0430\u0441\u0442\u0440\u043e\u044d\u043d\u0442\u0435\u0440\u043e\u043b\u043e\u0433"
+      "name": "Гастроэнтеролог"
     },
     {
       "id": 8,
-      "name": "\u0413\u0435\u043c\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Гематолог"
     },
     {
       "id": 9,
-      "name": "\u0413\u0438\u043d\u0435\u043a\u043e\u043b\u043e\u0433"
+      "name": "Гинеколог"
     },
     {
       "id": 10,
-      "name": "\u0413\u0438\u043d\u0435\u043a\u043e\u043b\u043e\u0433-\u044d\u043d\u0434\u043e\u043a\u0440\u0438\u043d\u043e\u043b\u043e\u0433"
+      "name": "Гинеколог-эндокринолог"
     },
     {
       "id": 11,
-      "name": "\u0413\u043e\u043c\u0435\u043e\u043f\u0430\u0442"
+      "name": "Гомеопат"
     },
     {
       "id": 12,
-      "name": "\u0414\u0435\u0440\u043c\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Дерматолог"
     },
     {
       "id": 13,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0430\u043b\u043b\u0435\u0440\u0433\u043e\u043b\u043e\u0433"
+      "name": "Детский аллерголог"
     },
     {
       "id": 14,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0433\u0430\u0441\u0442\u0440\u043e\u044d\u043d\u0442\u0435\u0440\u043e\u043b\u043e\u0433"
+      "name": "Детский гастроэнтеролог"
     },
     {
       "id": 15,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0433\u0435\u043c\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Детский гематолог"
     },
     {
       "id": 16,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0433\u0438\u043d\u0435\u043a\u043e\u043b\u043e\u0433"
+      "name": "Детский гинеколог"
     },
     {
       "id": 17,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u043a\u0430\u0440\u0434\u0438\u043e\u043b\u043e\u0433"
+      "name": "Детский кардиолог"
     },
     {
       "id": 18,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u043d\u0435\u0432\u0440\u043e\u043b\u043e\u0433"
+      "name": "Детский невролог"
     },
     {
       "id": 19,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u043e\u0440\u0442\u043e\u043f\u0435\u0434"
+      "name": "Детский ортопед"
     },
     {
       "id": 20,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u043f\u0441\u0438\u0445\u0438\u0430\u0442\u0440"
+      "name": "Детский психиатр"
     },
     {
       "id": 21,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0441\u0442\u043e\u043c\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Детский стоматолог"
     },
     {
       "id": 22,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0443\u0440\u043e\u043b\u043e\u0433"
+      "name": "Детский уролог"
     },
     {
       "id": 23,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0445\u0438\u0440\u0443\u0440\u0433"
+      "name": "Детский хирург"
     },
     {
       "id": 24,
-      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u044d\u043d\u0434\u043e\u043a\u0440\u0438\u043d\u043e\u043b\u043e\u0433"
+      "name": "Детский эндокринолог"
     },
     {
       "id": 25,
-      "name": "\u0414\u0438\u0435\u0442\u043e\u043b\u043e\u0433"
+      "name": "Диетолог"
     },
     {
       "id": 26,
-      "name": "\u0418\u043c\u043c\u0443\u043d\u043e\u043b\u043e\u0433"
+      "name": "Иммунолог"
     },
     {
       "id": 27,
-      "name": "\u041a\u0430\u0440\u0434\u0438\u043e\u043b\u043e\u0433"
+      "name": "Кардиолог"
     },
     {
       "id": 28,
-      "name": "\u041a\u0430\u0440\u0434\u0438\u043e\u0445\u0438\u0440\u0443\u0440\u0433"
+      "name": "Кардиохирург"
     },
     {
       "id": 29,
-      "name": "\u041b\u041e\u0420"
+      "name": "ЛОР"
     },
     {
       "id": 30,
-      "name": "\u041b\u0430\u0437\u0435\u0440\u043d\u044b\u0439 \u0445\u0438\u0440\u0443\u0440\u0433"
+      "name": "Лазерный хирург"
     },
     {
       "id": 31,
-      "name": "\u041c\u0430\u043c\u043c\u043e\u043b\u043e\u0433"
+      "name": "Маммолог"
     },
     {
       "id": 32,
-      "name": "\u041c\u0430\u043d\u0443\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u0440\u0430\u043f\u0435\u0432\u0442"
+      "name": "Мануальный терапевт"
     },
     {
       "id": 33,
-      "name": "\u041c\u0430\u0441\u0441\u0430\u0436\u0438\u0441\u0442"
+      "name": "Массажист"
     },
     {
       "id": 34,
-      "name": "\u041d\u0435\u0432\u0440\u043e\u043b\u043e\u0433"
+      "name": "Невролог"
     },
     {
       "id": 35,
-      "name": "\u041d\u0435\u0439\u0440\u043e\u043f\u0441\u0438\u0445\u043e\u043b\u043e\u0433"
+      "name": "Нейропсихолог"
     },
     {
       "id": 36,
-      "name": "\u041d\u0435\u043e\u043d\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Неонатолог"
     },
     {
       "id": 37,
-      "name": "\u041e\u043d\u043a\u043e\u043b\u043e\u0433"
+      "name": "Онколог"
     },
     {
       "id": 38,
-      "name": "\u041e\u043d\u043a\u043e\u043b\u043e\u0433-\u0443\u0440\u043e\u043b\u043e\u0433"
+      "name": "Онколог-уролог"
     },
     {
       "id": 39,
-      "name": "\u041e\u0440\u0442\u043e\u043f\u0435\u0434"
+      "name": "Ортопед"
     },
     {
       "id": 40,
-      "name": "\u041e\u0441\u0442\u0435\u043e\u043f\u0430\u0442"
+      "name": "Остеопат"
     },
     {
       "id": 41,
-      "name": "\u041e\u0444\u0442\u0430\u043b\u044c\u043c\u043e\u043b\u043e\u0433 (\u043e\u043a\u0443\u043b\u0438\u0441\u0442)"
+      "name": "Офтальмолог (окулист)"
     },
     {
       "id": 42,
-      "name": "\u041f\u0435\u0434\u0438\u0430\u0442\u0440"
+      "name": "Педиатр"
     },
     {
       "id": 43,
-      "name": "\u041f\u043e\u0434\u043e\u043b\u043e\u0433 (\u043f\u043e\u0434\u0438\u0430\u0442\u0440)"
+      "name": "Подолог (подиатр)"
     },
     {
       "id": 44,
-      "name": "\u041f\u0441\u0438\u0445\u043e\u043b\u043e\u0433"
+      "name": "Психолог"
     },
     {
       "id": 45,
-      "name": "\u041f\u0441\u0438\u0445\u043e\u0442\u0435\u0440\u0430\u043f\u0435\u0432\u0442"
+      "name": "Психотерапевт"
     },
     {
       "id": 46,
-      "name": "\u041f\u0443\u043b\u044c\u043c\u043e\u043d\u043e\u043b\u043e\u0433"
+      "name": "Пульмонолог"
     },
     {
       "id": 47,
-      "name": "\u0420\u0435\u0432\u043c\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Ревматолог"
     },
     {
       "id": 48,
-      "name": "\u0420\u0435\u0444\u043b\u0435\u043a\u0441\u043e\u0442\u0435\u0440\u0430\u043f\u0435\u0432\u0442"
+      "name": "Рефлексотерапевт"
     },
     {
       "id": 49,
-      "name": "\u0421\u043e\u043c\u043d\u043e\u043b\u043e\u0433"
+      "name": "Сомнолог"
     },
     {
       "id": 50,
-      "name": "\u0421\u043e\u0441\u0443\u0434\u0438\u0441\u0442\u044b\u0439 \u0445\u0438\u0440\u0443\u0440\u0433"
+      "name": "Сосудистый хирург"
     },
     {
       "id": 51,
-      "name": "\u0421\u0442\u043e\u043c\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Стоматолог"
     },
     {
       "id": 52,
-      "name": "\u0421\u0442\u043e\u043c\u0430\u0442\u043e\u043b\u043e\u0433-\u0433\u0438\u0433\u0438\u0435\u043d\u0438\u0441\u0442"
+      "name": "Стоматолог-гигиенист"
     },
     {
       "id": 53,
-      "name": "\u0421\u0442\u043e\u043c\u0430\u0442\u043e\u043b\u043e\u0433-\u043e\u0440\u0442\u043e\u043f\u0435\u0434"
+      "name": "Стоматолог-ортопед"
     },
     {
       "id": 54,
-      "name": "\u0422\u0435\u0440\u0430\u043f\u0435\u0432\u0442"
+      "name": "Терапевт"
     },
     {
       "id": 55,
-      "name": "\u0422\u0440\u0430\u0432\u043c\u0430\u0442\u043e\u043b\u043e\u0433"
+      "name": "Травматолог"
     },
     {
       "id": 56,
-      "name": "\u0422\u0440\u0438\u0445\u043e\u043b\u043e\u0433"
+      "name": "Трихолог"
     },
     {
       "id": 57,
-      "name": "\u0423\u0440\u043e\u043b\u043e\u0433"
+      "name": "Уролог"
     },
     {
       "id": 58,
-      "name": "\u0424\u043b\u0435\u0431\u043e\u043b\u043e\u0433"
+      "name": "Флеболог"
     },
     {
       "id": 59,
-      "name": "\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442"
+      "name": "Функциональный диагност"
     },
     {
       "id": 60,
-      "name": "\u0425\u0438\u0440\u0443\u0440\u0433"
+      "name": "Хирург"
     },
     {
       "id": 61,
-      "name": "\u042d\u043d\u0434\u043e\u043a\u0440\u0438\u043d\u043e\u043b\u043e\u0433"
+      "name": "Эндокринолог"
     },
     {
       "id": 62,
-      "name": "\u042d\u043d\u0434\u043e\u0441\u043a\u043e\u043f\u0438\u0441\u0442"
+      "name": "Эндоскопист"
     },
     {
       "id": 63,
-      "name": "\u042d\u043f\u0438\u043b\u0435\u043f\u0442\u043e\u043b\u043e\u0433"
+      "name": "Эпилептолог"
     }
   ],
   "timeslots": [
