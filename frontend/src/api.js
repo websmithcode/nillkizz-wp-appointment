@@ -1,10 +1,7 @@
-// class API {
-//   getDoctors() {
-//     return [];
-//   }
-// }
 import demoData from "@/demo_data.json";
 import { DateTime } from "luxon";
+const axios = require("axios").default;
+
 class DemoAPI {
   async getDoctorsAndSpecs() {
     const fetched_doctors = await this.getDoctors();
@@ -100,22 +97,22 @@ class DemoAPI {
   }
 }
 class API {
+  SITE_URL = "http://localhost:8080";
+  REST_URL = this.SITE_URL + "?rest_route=";
+  ROUTES = {
+    get_doctors: this.REST_URL + "/nillkizz-appointment/v1/get-doctors",
+  };
+
   async getDoctorsAndSpecs() {
     const fetched_doctors = await this.getDoctors();
-    console.log(fetched_doctors)
-    const fetched_specs = await this.getSpecialties();
     const fetched_timeslots = await this.getTimeslots();
 
     const mapTimeslots = new Map(
       fetched_timeslots.map((ts) => [parseInt(ts.doctor_id), ts])
     );
-    const mapSpecs = new Map(fetched_specs.map((s) => [s.id, s]));
-
-    const doctors = fetched_doctors.map((doctor) => {
-      doctor.id = parseInt(doctor.id);
+    const doctors = fetched_doctors.map((doctor, key) => {
+      doctor.id = key;
       const now = DateTime.now().startOf("day");
-
-      doctor.spec = doctor.specialty.map((specId) => mapSpecs.get(specId));
 
       let mapCalendar = new Map();
 
@@ -147,32 +144,39 @@ class API {
       return doctor;
     });
     const mapDoctors = new Map(doctors.map((doc) => [doc.id, doc]));
-    const specs = fetched_specs.filter((spec) =>
-      doctors.some((doc) => doc.specialty.includes(spec.id))
-    );
+    const specs = new Map();
+    doctors.forEach(doc => doc.specialty.forEach(spec => specs.set(spec.id, spec.val)));
+
     return { doctors, mapDoctors, specs };
   }
   async getConfig() {
-    return demoApi.getConfig()
+    return demoApi.getConfig();
   }
   async getDoctors() {
-    return new Promise((res) => {
-      setTimeout(() => {
-        return res();
-      }, 400);
-    }).then(() => {
-      return demoData.persons.slice(0, 70);
+    function formatTermsArray(terms) {
+      return terms.map((term) => ({
+        id: term.term_id,
+        val: term.name,
+      }));
+    }
+    const response = await axios.get(this.ROUTES.get_doctors);
+    const doctors = response.data.map((doc) => {
+      doc = { ...doc, ...doc.details };
+      delete doc.details;
+      doc.specialty = formatTermsArray(doc.specialty);
+      doc.education = formatTermsArray(doc.education);
+      return doc;
     });
+    return doctors;
   }
   async getSpecialties() {
-    return demoApi.getSpecialties()
+    return demoApi.getSpecialties();
   }
   async getTimeslots() {
-    return demoApi.getTimeslots()
+    return demoApi.getTimeslots();
   }
 }
-const demoApi = new DemoAPI()
+const demoApi = new DemoAPI();
 const api = new API();
-
 
 export default api;

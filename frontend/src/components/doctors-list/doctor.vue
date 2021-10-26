@@ -6,8 +6,8 @@
     h3.name {{ doctor.name }}
     hr.my-2
     .details
-      .speciality(v-if="spec") Специальность: {{ spec }}
-      .experience(v-if="doctor.experience") Стаж {{ doctor.experience }} Лет
+      .speciality(v-if="doctor.specialty") Специальность: {{ specialtyFormatted }}
+      .experience(v-if="doctor.experience") Стаж {{ experienceFormatted }}
       .education(v-if="education") Образование: {{ education }}
   .appointment
     calendar(:calendar="doctor.calendar", v-model="selectedSlot")
@@ -16,6 +16,8 @@
 <script>
 import { mapGetters } from "vuex";
 import calendar from "./calendar.vue";
+import { yearsToStr } from "@/inc/rusHelpers.js";
+
 export default {
   components: { calendar },
   props: {
@@ -33,14 +35,14 @@ export default {
   },
   computed: {
     ...mapGetters(["specs"]),
-    spec() {
-      if (this.doctor.spec)
-        return this.doctor.spec.map((spec) => spec.name).join(", ");
-      return "";
+    specialtyFormatted() {
+      return this.doctor.specialty.map((spec) => spec.val).join(", ");
     },
     education() {
-      if (this.doctor.education.length) return this.doctor.education.join(", ");
-      else return "";
+      return this.doctor.education.map((ed) => ed.val).join(", ");
+    },
+    experienceFormatted() {
+      return yearsToStr(this.doctor.experience);
     },
   },
   watch: {

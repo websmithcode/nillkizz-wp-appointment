@@ -1,11 +1,15 @@
 <template lang="pug">
 .doctors-filter
-  .search 
+  .search
     ui-input(v-model="search", :name="'Поиск: Врач, Специальность'")
-  .filters 
-    ui-select(v-model="spec", :name="'Специальность'")
+  .filters
+    ui-select(
+      v-model="spec",
+      :name="'Специальность'",
+      style="min-width: 150px"
+    )
       option(value="") ----
-      option(v-for="spec in specs", :key="spec.id", :value="spec.id") {{ spec.name }}
+      option(v-for="spec in specs", :key="spec[0]", :value="spec[0]") {{ spec[1] }}
     ui-select(v-model="exp", :name="'Стаж'")
       option(value="") Любой
       option(value="5") От 5 лет

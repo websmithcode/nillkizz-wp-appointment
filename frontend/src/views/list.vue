@@ -1,5 +1,6 @@
 <template lang="pug">
-.doctors-list
+.doctors-list 
+  teleport(to="#debug-area") {{ filters }}
   doctors-filter(v-model="filters")
   main
     .doctors(v-if="!!paginated.length")
@@ -55,8 +56,8 @@ export default {
           return doc.name.includes(key);
         });
         const bySpec = query.some((key) => {
-          return doc.spec.some((spec) =>
-            spec ? spec.name.includes(key) : false
+          return doc.specialty.some((spec) =>
+            spec ? spec.val.includes(key) : false
           );
         });
         return byName || bySpec;
@@ -70,13 +71,16 @@ export default {
 
         const spec = this.filters.spec;
         if (/^\d+$/.test(spec))
-          founded &&= doc.specialty.includes(parseInt(spec));
+          founded &&= doc.specialty
+            .map((spec) => spec.id)
+            .includes(parseInt(spec));
 
         const exp = this.filters.experience;
         if (/^\d+$/.test(exp)) founded &&= doc.experience > parseInt(exp);
 
         const gender = this.filters.gender;
-        if (["male", "female"].includes(gender)) founded &&= doc.gender == gender;
+        if (["male", "female"].includes(gender))
+          founded &&= doc.gender.value == gender;
         return founded;
       });
     },

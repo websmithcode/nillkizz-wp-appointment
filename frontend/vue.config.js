@@ -1,7 +1,7 @@
-const webpack = require('webpack');
+const webpack = require("webpack");
 module.exports = {
   css: {
-    extract: false
+    extract: false,
   },
   filenameHashing: false,
   configureWebpack: {
@@ -13,5 +13,4 @@ module.exports = {
   },
   runtimeCompiler: true,
   productionSourceMap: false,
-}
-
+};

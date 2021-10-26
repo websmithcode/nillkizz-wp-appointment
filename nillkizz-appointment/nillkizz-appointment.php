@@ -74,6 +74,18 @@ if (!class_exists('NillkizzAppointment')) {
         switch ($action) {
           default:
             $doctors = get_field('doctors', 'nillkizz-appointment-doctors');
+            function array_terms_id_to_obj($array)
+            {
+              return array_map(function ($term) {
+                return get_term($term);
+              }, $array);
+            }
+            $doctors = array_map(function ($doc) {
+
+              $doc['details']['specialty'] = array_terms_id_to_obj($doc['details']['specialty']);
+              $doc['details']['education'] = array_terms_id_to_obj($doc['details']['education']);
+              return $doc;
+            }, $doctors);
             $response = rest_ensure_response($doctors);
         }
         return $response;
