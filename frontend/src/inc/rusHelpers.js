@@ -2,15 +2,15 @@ export function yearsToStr(age) {
   let txt, count;
   count = age % 100;
   if (count >= 5 && count <= 20) {
-    txt = 'лет';
+    txt = "лет";
   } else {
     count = count % 10;
     if (count == 1) {
-      txt = 'год';
+      txt = "год";
     } else if (count >= 2 && count <= 4) {
-      txt = 'года';
+      txt = "года";
     } else {
-      txt = 'лет';
+      txt = "лет";
     }
   }
   return age + " " + txt;

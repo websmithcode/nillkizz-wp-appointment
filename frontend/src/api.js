@@ -145,7 +145,9 @@ class API {
     });
     const mapDoctors = new Map(doctors.map((doc) => [doc.id, doc]));
     const specs = new Map();
-    doctors.forEach(doc => doc.specialty.forEach(spec => specs.set(spec.id, spec.val)));
+    doctors.forEach((doc) =>
+      doc.specialty.forEach((spec) => specs.set(spec.id, spec.val))
+    );
 
     return { doctors, mapDoctors, specs };
   }
