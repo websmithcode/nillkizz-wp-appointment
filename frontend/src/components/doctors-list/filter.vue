@@ -1,24 +1,70 @@
 <template lang="pug">
 .doctors-filter
   .search
-    ui-input(v-model="search", :name="'Поиск: Врач, Специальность'")
-  .filters
-    ui-select(
-      v-model="spec",
-      :name="'Специальность'",
-      style="min-width: 150px"
+    q-input(
+      square,
+      outlined,
+      dense,
+      bg-color="white",
+      v-model="search",
+      label="Поиск: Врач, Специальность"
     )
-      option(value="") ----
-      option(v-for="spec in specs", :key="spec[0]", :value="spec[0]") {{ spec[1] }}
-    ui-select(v-model="exp", :name="'Стаж'")
-      option(value="") Любой
-      option(value="5") От 5 лет
-      option(value="15") От 15 лет
-      option(value="30") От 30 лет
-    ui-select(v-model="gender", :name="'Пол'")
-      option(value="") Любой
-      option(value="male") М
-      option(value="female") Ж
+      template(v-slot:append)
+        q-icon.cursor-pointer(
+          size="xs",
+          name="clear",
+          v-if="search !== ''",
+          @click.stop="gender = ''"
+        )
+  .filters
+    q-select(
+      square,
+      outlined,
+      dense,
+      v-model="spec",
+      :options="specOptions",
+      label="Специальность",
+      :style="{ minWidth: '170px' }"
+    )
+      template(v-slot:append)
+        q-icon.cursor-pointer(
+          size="xs",
+          name="clear",
+          v-if="spec !== null",
+          @click.stop="spec = null"
+        )
+    q-select(
+      square,
+      outlined,
+      dense,
+      v-model="exp",
+      :options="expOptions",
+      label="Стаж",
+      :style="{ minWidth: '140px' }"
+    )
+      template(v-slot:append)
+        q-icon.cursor-pointer(
+          size="xs",
+          name="clear",
+          v-if="exp !== null",
+          @click.stop="exp = null"
+        )
+    q-select(
+      square,
+      outlined,
+      dense,
+      v-model="gender",
+      :options="genderOptions",
+      label="Пол",
+      :style="{ minWidth: '100px' }"
+    )
+      template(v-slot:append)
+        q-icon.cursor-pointer(
+          size="xs",
+          name="clear",
+          v-if="gender !== null",
+          @click.stop="gender = null"
+        )
 </template>
 
 <script>
@@ -38,20 +84,35 @@ export default {
   data() {
     return {
       search: "",
-      spec: "",
-      exp: "",
-      gender: "",
+      spec: null,
+      exp: null,
+      gender: null,
+      expOptions: [
+        { label: "От 5 лет", value: "5" },
+        { label: "От 15 лет", value: "15" },
+        { label: "От 30 лет", value: "30" },
+      ],
+      genderOptions: [
+        { label: "М", value: "male" },
+        { label: "Ж", value: "female" },
+      ],
     };
   },
   computed: {
     ...mapGetters(["specs"]),
     filters() {
       return Object.assign(this.modelValue, {
-        spec: this.spec,
         search: this.search,
-        experience: this.exp,
-        gender: this.gender,
+        spec: this.spec?.value ?? "",
+        experience: this.exp?.value ?? "",
+        gender: this.gender?.value ?? "",
       });
+    },
+    specOptions() {
+      return Array.from(this.specs.entries()).map((spec) => ({
+        label: spec[1],
+        value: spec[0],
+      }));
     },
   },
   watch: {

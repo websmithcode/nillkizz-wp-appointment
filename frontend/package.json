@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.4",
+    "@quasar/extras": "^1.0.0",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "luxon": "^2.0.2",
+    "quasar": "^2.0.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
@@ -33,10 +35,11 @@
     "eslint-plugin-vue": "^7.0.0",
     "postcss": "^7",
     "prettier": "^2.2.1",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
+    "sass": "1.32.12",
+    "sass-loader": "^10.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue-cli-plugin-pug": "~2.0.0",
+    "vue-cli-plugin-quasar": "~4.0.3",
     "vue-cli-plugin-tailwind": "~2.0.6",
     "webpack-chain": "^6.5.1"
   }

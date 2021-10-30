@@ -62,7 +62,13 @@ export default {
         });
         return byName || bySpec;
       }
-      const searched = this.doctors.filter(search.bind(this));
+
+      let searched = this.doctors;
+
+      if (this.filters.search.length) {
+        searched = searched.filter(search.bind(this));
+      }
+
       return searched;
     },
     filteredDoctors() {

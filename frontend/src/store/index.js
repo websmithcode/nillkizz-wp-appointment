@@ -4,7 +4,7 @@ import api from "@/api";
 export default createStore({
   state: {
     loading: 0,
-    specs: {},
+    specs: new Map(),
     doctors: [],
     mapDoctors: new Map(),
   },

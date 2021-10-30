@@ -21,22 +21,48 @@ h1.title Запись на прием к врачу
           | {{ spec.name }}
     calendar(:calendar="doctor.calendar", v-model="selectedSlot")
   form.form
-    .fields
-      n-input(v-model="firstName", name="Имя")
-      n-input(v-model="lastName", name="Фамилия")
-      n-input(v-model="birthday", name="Дата рождения")
-      n-input(v-model="phoneNumber", name="Номер телефона")
+    .fields {{ firstName }}
+      q-input(
+        square,
+        outlined,
+        dense,
+        bg-color="white",
+        v-model="firstName",
+        label="Имя"
+      )
+      q-input(
+        square,
+        outlined,
+        dense,
+        bg-color="white",
+        v-model="lastName",
+        label="Фамилия"
+      )
+      q-input(
+        square,
+        outlined,
+        dense,
+        bg-color="white",
+        v-model="birthday",
+        label="Дата рождения"
+      )
+      q-input(
+        square,
+        outlined,
+        bg-color="white",
+        v-model="phoneNumber",
+        label="Номер телефона"
+      )
     button.submit {{ phoneIsConfirmed ? 'Записаться' : 'Проверить номер' }}
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import { nInput } from "@/components/ui";
 
 import calendar from "@/components/doctors-list/calendar.vue";
 
 export default {
-  components: { calendar, nInput },
+  components: { calendar },
 
   data() {
     return {
