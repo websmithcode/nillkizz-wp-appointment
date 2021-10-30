@@ -53,7 +53,7 @@ export default {
     };
   },
   mounted() {
-    if (this.doctor) this.specialty = this.doctor.spec[0].id;
+    if (this.doctor) this.specialty = this.doctor.specialty[0].id;
   },
   methods: {},
   computed: {
@@ -70,7 +70,7 @@ export default {
   },
   watch: {
     doctor(newVal) {
-      this.specialty = newVal?.spec[0].id;
+      this.specialty = newVal?.specialty[0].id;
     },
   },
 };
