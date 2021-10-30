@@ -33,4 +33,20 @@ if (function_exists('acf_add_options_page')) :
     'active' => true,
   ));
 
+  acf_add_options_page(array(
+    'page_title' => 'Настройки подтверждения номера телефона',
+    'menu_slug' => 'nillkizz-appointment-phone-confirmation',
+    'menu_title' => 'Номер телефона',
+    'capability' => 'edit_posts',
+    'position' => '',
+    'parent_slug' => 'nillkizz-appointment',
+    'icon_url' => 'dashicons-smartphone',
+    'redirect' => true,
+    'post_id' => 'nillkizz-appointment-phone-confirmation',
+    'autoload' => false,
+    'update_button' => 'Сохранить',
+    'updated_message' => 'Настройки сохранены',
+    'active' => true,
+  ));
+
 endif;

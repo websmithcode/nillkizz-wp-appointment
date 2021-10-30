@@ -61,35 +61,7 @@ if (!class_exists('NillkizzAppointment')) {
 
     function register_api()
     {
-      add_action('rest_api_init', function () {
-
-        register_rest_route('nillkizz-appointment/v1', '/get-doctors', array(
-          'methods'             => 'GET',            // метод запроса: GET, POST ...
-          'callback'            => 'json_api',  // функция обработки запроса. Должна вернуть ответ на запрос
-          // 'permission_callback' => 'function_name',  // функция проверки доступа к маршруту. Должна вернуть true/false
-        ));
-      });
-      function json_api($request)
-      {
-        switch ($action) {
-          default:
-            $doctors = get_field('doctors', 'nillkizz-appointment-doctors');
-            function array_terms_id_to_obj($array)
-            {
-              return array_map(function ($term) {
-                return get_term($term);
-              }, $array);
-            }
-            $doctors = array_map(function ($doc) {
-
-              $doc['details']['specialty'] = array_terms_id_to_obj($doc['details']['specialty']);
-              $doc['details']['education'] = array_terms_id_to_obj($doc['details']['education']);
-              return $doc;
-            }, $doctors);
-            $response = rest_ensure_response($doctors);
-        }
-        return $response;
-      }
+      include_once('includes/json_api.php');
     }
   }
 
