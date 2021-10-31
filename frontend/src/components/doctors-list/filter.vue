@@ -70,14 +70,7 @@
 <script>
 import { mapGetters } from "vuex";
 
-import uiSelect from "@/components/ui/select";
-import uiInput from "@/components/ui/input";
-
 export default {
-  components: {
-    uiSelect,
-    uiInput,
-  },
   props: {
     modelValue: Object,
   },
@@ -129,5 +122,5 @@ export default {
   .search
     @apply mb-2
   .filters
-    @apply flex gap-3
+    @apply flex gap-3 flex-wrap
 </style>

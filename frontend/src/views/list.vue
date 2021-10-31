@@ -4,8 +4,7 @@
   q-scroll-area.scroll-area(
     ref="scrollArea",
     :thumb-style="thumbStyle",
-    :bar-style="barStyle",
-    style="height: calc(100vh - 100px)"
+    :bar-style="barStyle"
   )
     .doctors(v-if="!!paginated.length")
       doctor(v-for="doc in filteredDoctors", :key="doc.id", :doctor="doc")
@@ -26,10 +25,9 @@ import { mapGetters } from "vuex";
 
 import doctorsFilter from "@/components/doctors-list/filter";
 import doctor from "@/components/doctors-list/doctor";
-import uiPagination from "@/components/ui/pagination";
 
 export default {
-  components: { doctorsFilter, doctor, uiPagination },
+  components: { doctorsFilter, doctor },
   data() {
     return {
       currentPage: 1,
@@ -116,8 +114,10 @@ export default {
 
 <style lang="sass">
 .doctors-list
+  @apply flex flex-col
   .scroll-area
     $shadow_size: 3px
+    height: 100%
     &::before
       content: ''
       box-shadow: 0 $shadow_size*2 $shadow_size (-$shadow_size) white inset

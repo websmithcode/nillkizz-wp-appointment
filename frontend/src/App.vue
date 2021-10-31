@@ -28,6 +28,8 @@ export default {
 html, body
   scroll-behavior: smooth
   @apply text-gray-800 h-full
+  #app, #app>.view-wrapper, #app>.view-wrapper>.doctors-list, #app>.view-wrapper>.doctors-list>.scroll-area
+    height: 100%
   .view-wrapper
     @apply opacity-0 pointer-events-none max-w-5xl m-auto
     &.loaded
