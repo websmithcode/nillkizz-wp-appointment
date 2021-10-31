@@ -1,9 +1,9 @@
 const webpack = require("webpack");
 module.exports = {
-  css: {
-    extract: false,
-  },
-
+  // css: {
+  //   extract: false,
+  // },
+  assetsDir: 'wp-content/plugins/nillkizz-appointment/public/app/',
   filenameHashing: false,
 
   configureWebpack: {

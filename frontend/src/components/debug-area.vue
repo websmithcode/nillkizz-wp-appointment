@@ -6,5 +6,5 @@
 
 <style lang="sass">
 #debug-area
-  @apply fixed left-3 bottom-5 text-white p-2 rounded-md flex flex-col gap-1 shadow-2xl bg-black bg-opacity-60
+  @apply fixed left-3 bottom-5 text-white p-2 rounded-md flex flex-col gap-1 bg-black bg-opacity-60
 </style>

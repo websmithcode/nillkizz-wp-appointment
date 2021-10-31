@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "./assets/tailwind.css";
-import "./assets/normalize.css";
+// import "./assets/normalize.css";
 import { Quasar } from "quasar";
 import quasarUserOptions from "./quasar-user-options";
 

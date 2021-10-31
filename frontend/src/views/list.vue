@@ -1,20 +1,24 @@
 <template lang="pug">
 .doctors-list 
-  teleport(to="#debug-area") {{ filters }}
   doctors-filter(v-model="filters")
-  main
-    .doctors(v-if="!!paginated.length")
-      doctor(v-for="doc in paginated", :key="doc.id", :doctor="doc")
-    .empty(v-else) Ничего не найдено
-  ui-pagination(
-    v-model:paginated="paginated",
-    :perPage="perPage",
-    :elems="filteredDoctors",
-    :startSize="2",
-    :endSize="2",
-    :middleSize="2",
-    @pageChanged="pageChanged = true"
+  q-scroll-area.scroll-area(
+    ref="scrollArea",
+    :thumb-style="thumbStyle",
+    :bar-style="barStyle",
+    style="height: calc(100vh - 100px)"
   )
+    .doctors(v-if="!!paginated.length")
+      doctor(v-for="doc in filteredDoctors", :key="doc.id", :doctor="doc")
+    .empty(v-else) Ничего не найдено
+    q-pagination(
+      v-if="maxPage > 1",
+      v-model="currentPage",
+      :max="maxPage",
+      :max-pages="6",
+      direction-links,
+      boundary-numbers,
+      unelevated
+    )
 </template>
 
 <script>
@@ -28,8 +32,7 @@ export default {
   components: { doctorsFilter, doctor, uiPagination },
   data() {
     return {
-      pageChanged: false,
-      paginated: [],
+      currentPage: 1,
       perPage: 3,
       filters: {
         search: "",
@@ -90,26 +93,49 @@ export default {
         return founded;
       });
     },
+    paginated() {
+      const pageIndex = this.currentPage - 1;
+      return this.filteredDoctors.slice(
+        pageIndex * this.perPage,
+        pageIndex + 1 * this.perPage
+      );
+    },
+    maxPage() {
+      return Math.ceil(this.filteredDoctors.length / this.perPage);
+    },
   },
   watch: {
     paginated() {
       this.$nextTick(() => {
-        if (this.pageChanged) {
-          this.$el.scrollIntoView();
-          this.pageChanged = false;
-        }
+        this.$refs.scrollArea.setScrollPosition("vertical", 0, 300);
       });
     },
   },
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .doctors-list
-  @apply mx-2
-  main
+  .scroll-area
+    $shadow_size: 3px
+    &::before
+      content: ''
+      box-shadow: 0 $shadow_size*2 $shadow_size (-$shadow_size) white inset
+      width: calc(100% - 10px)
+      @apply absolute top-0 h-5 z-50
+    &::after
+      content: ''
+      box-shadow: 0 (-$shadow_size*2) $shadow_size (-$shadow_size) white inset
+      width: calc(100% - 10px)
+      @apply absolute bottom-0 h-5 z-50
+    .q-scrollarea__content
+      @apply pb-7
     .doctors
-      @apply flex flex-col items-center gap-3 mb-4
+      @apply flex flex-col items-center gap-3 py-4
     .empty
       @apply text-2xl text-center pt-24
+    .q-pagination
+      @apply flex justify-center
+      .q-btn--rectangle
+        @apply rounded-none
 </style>

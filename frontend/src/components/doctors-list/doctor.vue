@@ -1,14 +1,15 @@
 <template lang="pug">
 .doctor
-  figure.photo-wrap
-    .photo(:style="{ backgroundImage: `url(${doctor.photo.url})` }") 
   .info
-    h3.name {{ doctor.name }}
-    hr.my-2
-    .details
-      .speciality(v-if="doctor.specialty") Специальность: {{ specialtyFormatted }}
-      .experience(v-if="doctor.experience") Стаж {{ experienceFormatted }}
-      .education(v-if="education") Образование: {{ education }}
+    figure.photo-wrap
+      .photo(:style="{ backgroundImage: `url(${doctor.photo.url})` }") 
+    .text
+      h3.name {{ doctor.name }}
+      hr.my-2
+      .details
+        .speciality(v-if="doctor.specialty") Специальность: {{ specialtyFormatted }}
+        .experience(v-if="doctor.experience") Стаж {{ experienceFormatted }}
+        .education(v-if="education") Образование: {{ education }}
   .appointment
     calendar(:calendar="doctor.calendar", v-model="selectedSlot")
 </template>
@@ -55,17 +56,19 @@ export default {
 
 <style lang="sass" scoped>
 .doctor
-  @apply flex flex-col items-center gap-1 max-w-md w-full
-  @apply lg:flex-row lg:max-w-full lg:gap-4
+  @apply flex flex-col justify-between items-center gap-4 md:max-w-xl w-full
+  @apply lg:flex-row lg:max-w-full
   @apply bg-gray-50 p-3 border border-gray-400
-  .photo-wrap
-    height: 150px
-    width: 150px
-    @apply p-1 border border-gray-200 rounded-full flex-shrink-0
-    .photo
-      @apply w-full h-full bg-center bg-cover rounded-full border border-gray-200
   .info
-    @apply flex flex-col w-full
-    .name
-      @apply text-2xl text-gray-500
+    @apply flex gap-4 flex-col items-center sm:items-start sm:flex-row
+    .photo-wrap
+      height: 150px
+      width: 150px
+      @apply p-1 border border-gray-200 rounded-full flex-shrink-0
+      .photo
+        @apply w-full h-full bg-center bg-cover rounded-full border border-gray-200
+    .text
+      @apply flex flex-col w-full
+      .name
+        @apply text-2xl text-gray-500
 </style>

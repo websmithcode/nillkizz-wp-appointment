@@ -28,13 +28,11 @@ export default {
 html, body
   scroll-behavior: smooth
   @apply text-gray-800 h-full
-
-  .view-wrapper.loaded
-    @apply opacity-100 duration-500 pointer-events-auto
   .view-wrapper
-    @apply opacity-0 pointer-events-none
+    @apply opacity-0 pointer-events-none max-w-5xl m-auto
+    &.loaded
+      @apply opacity-100 duration-500 pointer-events-auto
   [v-cloack]
-    max-height: 300px
     height: 300px
     @apply hidden
 </style>
