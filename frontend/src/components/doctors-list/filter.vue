@@ -5,66 +5,43 @@
       square,
       outlined,
       dense,
+      clearable,
+      debounce="500",
       bg-color="white",
       v-model="search",
       label="Поиск: Врач, Специальность"
     )
-      template(v-slot:append)
-        q-icon.cursor-pointer(
-          size="xs",
-          name="clear",
-          v-if="search !== ''",
-          @click.stop="gender = ''"
-        )
   .filters
     q-select(
       square,
       outlined,
       dense,
       v-model="spec",
+      clearable,
       :options="specOptions",
       label="Специальность",
       :style="{ minWidth: '170px' }"
     )
-      template(v-slot:append)
-        q-icon.cursor-pointer(
-          size="xs",
-          name="clear",
-          v-if="spec !== null",
-          @click.stop="spec = null"
-        )
     q-select(
       square,
       outlined,
       dense,
       v-model="exp",
+      clearable,
       :options="expOptions",
       label="Стаж",
-      :style="{ minWidth: '140px' }"
+      :style="{ minWidth: '145px' }"
     )
-      template(v-slot:append)
-        q-icon.cursor-pointer(
-          size="xs",
-          name="clear",
-          v-if="exp !== null",
-          @click.stop="exp = null"
-        )
     q-select(
       square,
       outlined,
       dense,
       v-model="gender",
+      clearable,
       :options="genderOptions",
       label="Пол",
       :style="{ minWidth: '100px' }"
     )
-      template(v-slot:append)
-        q-icon.cursor-pointer(
-          size="xs",
-          name="clear",
-          v-if="gender !== null",
-          @click.stop="gender = null"
-        )
 </template>
 
 <script>
@@ -76,7 +53,7 @@ export default {
   },
   data() {
     return {
-      search: "",
+      search: null,
       spec: null,
       exp: null,
       gender: null,
@@ -95,7 +72,7 @@ export default {
     ...mapGetters(["specs"]),
     filters() {
       return Object.assign(this.modelValue, {
-        search: this.search,
+        search: this.search != null ? this.search : "",
         spec: this.spec?.value ?? "",
         experience: this.exp?.value ?? "",
         gender: this.gender?.value ?? "",
