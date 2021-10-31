@@ -125,7 +125,7 @@ export default {
 
 <style scoped lang="sass">
 .doctors-filter
-  @apply mb-3
+  @apply mb-3 mx-1
   .search
     @apply mb-2
   .filters
