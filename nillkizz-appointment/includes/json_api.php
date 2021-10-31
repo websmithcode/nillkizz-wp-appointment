@@ -45,12 +45,12 @@ function phone_confirmation()
     'dstNumber' => 79005741200,
     $config['call_duration']
   ]);
-  $response['data']['time'] = time();
+  $response['time'] = time();
   $_SESSION['nillkizz_appointment_phone_confirmation'] =  $response['data'];
-  switch ($response['data']['status']) {
+  switch ($response['data']->status) {
     case 'success':
       return rest_ensure_response([
-        'status' => $response['data']['status'],
+        'status' => $response['data']->status,
         'code_validity_time' => $config['code_expire_time']
       ]);
     case 'error':
