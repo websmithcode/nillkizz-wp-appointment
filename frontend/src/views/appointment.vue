@@ -1,12 +1,15 @@
 <template lang="pug">
-h1.title Запись на прием к врачу
+header 
+  q-btn(color="primary", unelevated, @click="$router.go(-1)")
+    q-icon(name="arrow_back_ios_new", color="white")
+    q-tooltip(anchor="center right", self="center left") Назад
+  h1.title Запись на прием к врачу
 .container(v-if="doctor")
   .doctor 
     .info
       q-avatar(square, size="80px")
         img(:src="doctor.photo.sizes.thumbnail")
       .text 
-        span Вы записываетесь на прием к:
         .name {{ doctor.name }}
     .specialty
       .title.q-my-auto Специальность:
@@ -246,8 +249,12 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-h1.title
-  @apply text-2xl font-semibold mb-8 text-center
+header
+  @apply relative mb-8
+  .q-btn
+    @apply rounded-none absolute
+  h1.title
+    @apply text-2xl font-semibold text-center pt-2
 .container
   @apply border p-3 bg-gray-50 flex gap-5 mx-auto
   .doctor
@@ -255,7 +262,7 @@ h1.title
     .info
       @apply flex gap-4
       .text
-        @apply flex flex-col justify-around
+        @apply flex flex-col justify-center
         .name
           @apply text-2xl text-blue-500
     .specialty
