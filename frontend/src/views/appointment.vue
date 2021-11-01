@@ -136,7 +136,9 @@ export default {
       },
     };
   },
-  mounted() {},
+  mounted() {
+    if (this.doctor) this.inputs.specialty.value = this.doctor.specialty[0];
+  },
   methods: {
     phoneValidate(value) {
       return /^7 \(\d{3}\) \d{3} \d{2}-\d{2}$/.test(value);
