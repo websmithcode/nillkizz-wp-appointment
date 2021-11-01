@@ -4,12 +4,12 @@ add_action('rest_api_init', function () {
     'methods'  => 'GET',
     'callback' => 'get_doctors',
   ));
-  register_rest_route('nillkizz-appointment/v1', '/phone-confirmation', array(
-    'methods'  => 'GET',
-    'callback' => 'phone_confirmation',
+  register_rest_route('nillkizz-appointment/v1', '/request-call', array(
+    'methods'  => 'POST',
+    'callback' => 'request_call',
   ));
   register_rest_route('nillkizz-appointment/v1', '/check-phone-confirmation-code', array(
-    'methods'  => 'GET',
+    'methods'  => 'POST',
     'callback' => 'check_phone_confirmation_code',
   ));
 });
@@ -34,27 +34,35 @@ function get_doctors()
   return rest_ensure_response($doctors);
 }
 
-function phone_confirmation()
+function request_call()
 {
   include_once('NewTel.php');
-  session_start();
+  $data = json_decode(file_get_contents('php://input'), true);
   $config = get_field('config', 'nillkizz-appointment-phone-confirmation');
   $new_tel = new NewTel($config);
 
   $response = (array) $new_tel->make_request('call-password/start-password-call', [
-    'dstNumber' => 79005741200,
+    'dstNumber' => $data['phone'],
     $config['call_duration']
   ]);
-  $response['time'] = time();
-  $_SESSION['nillkizz_appointment_phone_confirmation'] =  $response['data'];
-  switch ($response['data']->status) {
+  switch ($response['data']->data->result) {
     case 'success':
+      global $wpdb;
+      $wpdb->insert(
+        $wpdb->prefix . 'nillkizz_appointment_codes',
+        [
+          'callId' => $response['data']->data->callDetails->callId,
+          'pin' => $response['data']->data->callDetails->pin,
+          'created' => (new DateTime())->format('Y-m-d H:i:s')
+        ]
+      );
       return rest_ensure_response([
         'status' => $response['data']->status,
-        'code_validity_time' => $config['code_expire_time']
+        'code_validity_time' => $config['code_expire_time'],
+        'callId' => $response['data']->data->callDetails->callId
       ]);
     case 'error':
-      return new WP_Error('400', 'Internal error', ['status' => 400, 'response' => $response]);
+      return new WP_Error('400', 'Bad request', ['status' => 400, 'response' => $response]);
     default:
       return new WP_Error('500', 'Internal error', ['status' => 500, 'response' => $response]);
   }
@@ -62,26 +70,27 @@ function phone_confirmation()
 
 function check_phone_confirmation_code()
 {
-  if (empty($_POST) | !isset($_POST['code'])) {
+  $data = json_decode(file_get_contents('php://input'), true);
+  if (empty($data) | !isset($data['code'])) {
     return new WP_Error('400', 'Bad request', ['status' => 400]);
   }
 
+  global $wpdb;
+  $call = $wpdb->get_row("SELECT callId, pin, created FROM " . $wpdb->prefix . "nillkizz_appointment_codes WHERE callId=" . $data['callId']);
   $config = get_field('config', 'nillkizz-appointment-phone-confirmation');
-  session_start();
-  $state = $_SESSION['nillkizz_appointment_phone_confirmation'];
-
-  if (!isset($state)) {
+  if (!isset($call)) {
     return new WP_Error('400', 'Code has not been generated', ['status' => 400]);
   }
 
-  $code = $_POST['code'];
-  $passed_time = time() - $state['time'];
+  $passed_time = time() - (new DateTime($call->created))->getTimestamp();
   $is_expired_code = $passed_time > $config['code_expire_time'];
   if ($is_expired_code) {
     return new WP_Error('400', 'Code is expired', ['status' => 400, 'passed_time' => $passed_time, 'expire_time' => $config['code_expire_time']]);
   }
 
-  $is_valid_code = $state['data']->callDetails->code === $code;
+  $received_code = $data['code'];
+  $valid_code = $call->pin;
+  $is_valid_code =  $valid_code === $received_code;
   if (!$is_valid_code) {
     return new WP_Error('400', 'Code is not valid', ['status' => 400]);
   }

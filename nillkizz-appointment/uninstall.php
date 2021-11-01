@@ -1,11 +1,7 @@
 <?php
 if (!defined('WP_UNINSTALL_PLUGIN')) {
-    die;
+  die;
 }
- 
-// $options = '';
-// delete_option($option_name);
 
-// drop a custom database table
-// global $wpdb;
-// $wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}mytable");
+global $wpdb;
+$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}nillkizz_appointment_codes");

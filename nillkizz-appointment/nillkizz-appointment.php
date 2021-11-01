@@ -6,9 +6,12 @@
  * Author URI:        https://t.me/alxndr_smith
  */
 
-
-define('PLUGIN_URL', plugin_dir_url(__FILE__));
-define('PLUGIN_DIR', plugin_dir_path(__FILE__));
+$currentDir = trailingslashit(dirname(__FILE__));
+define('NILLKIZZ_APPOINTMENT_DIR', $currentDir);
+define('NILLKIZZ_APPOINTMENT_VERSION', '1.0');
+$pluginName = plugin_basename(NILLKIZZ_APPOINTMENT_DIR);
+$pluginUrl = trailingslashit(WP_PLUGIN_URL . '/' . $pluginName);
+$assetsUrl = $pluginUrl . 'assets/';
 
 
 
@@ -25,14 +28,14 @@ if (!class_exists('NillkizzAppointment')) {
       $this->register_api();
       include_once('includes/shortcodes.php');
     }
-
     function init_acf()
     {
+      global $pluginUrl, $currentDir;
       // Define path and URL to the ACF plugin.
-      define('MY_ACF_EXT_PATH', PLUGIN_DIR . 'includes/acf-extended-pro/');
-      define('MY_ACF_EXT_URL', PLUGIN_URL . 'includes/acf-extended-pro/');
-      define('MY_ACF_PATH', PLUGIN_DIR . 'includes/acf-pro/');
-      define('MY_ACF_URL', PLUGIN_URL . 'includes/acf-pro/');
+      define('MY_ACF_EXT_PATH', $currentDir . 'includes/acf-extended-pro/');
+      define('MY_ACF_EXT_URL', $pluginUrl . 'includes/acf-extended-pro/');
+      define('MY_ACF_PATH', $currentDir . 'includes/acf-pro/');
+      define('MY_ACF_URL', $pluginUrl . 'includes/acf-pro/');
       // Include the ACF plugin.
       include_once(MY_ACF_PATH . 'acf.php');
       include_once(MY_ACF_EXT_PATH . 'acf-extended.php');
@@ -43,8 +46,8 @@ if (!class_exists('NillkizzAppointment')) {
       {
         return MY_ACF_URL;
       }
-      include_once(PLUGIN_DIR . 'init-data/acf/field-groups.php');
-      include_once(PLUGIN_DIR . 'init-data/acf/options-pages.php');
+      include_once($currentDir . 'init-data/acf/field-groups.php');
+      include_once($currentDir . 'init-data/acf/options-pages.php');
 
       add_filter('acf/settings/show_admin', array(&$this, 'my_acf_settings_show_admin'));
     }
@@ -56,15 +59,28 @@ if (!class_exists('NillkizzAppointment')) {
 
     function register_taxonomies()
     {
-      include_once(PLUGIN_DIR . 'init-data/taxonomies.php');
+      global $currentDir;
+      include_once($currentDir . 'init-data/taxonomies.php');
     }
 
     function register_api()
     {
       include_once('includes/json_api.php');
     }
+
+    static public function activate()
+    {
+      require_once('activate.php');
+    }
+
+    function uninstall()
+    {
+      global $wpdb;
+      $wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}nillkizz_appointment_codes");
+    }
   }
 
   global $nillkizz_appointment;
   $nillkizz_appointment = new NillkizzAppointment();
+  register_activation_hook(__FILE__, array($nillkizz_appointment, 'activate'));
 }

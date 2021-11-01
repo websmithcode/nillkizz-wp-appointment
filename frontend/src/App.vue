@@ -1,7 +1,13 @@
 <template lang="pug">
 .view-wrapper(v-cloak, :class="{ loaded: !IS_LOADING }")
-  router-view(v-model:doctorToAppointment="doctorToAppointment")
-debug-area
+  router-view(
+    v-model:doctorToAppointment="doctorToAppointment",
+    v-slot="{ Component }"
+  )
+    transition(name="fade")
+      component(:is="Component")
+  q-resize-observer(@resize="onResize")
+//- debug-area
 </template>
 
 <script>
@@ -19,17 +25,34 @@ export default {
       doctorToAppointment: undefined,
     };
   },
+  methods: {
+    onResize(size) {
+      this.$nextTick(() => {
+        parent.postMessage(
+          JSON.stringify({
+            action: "resize",
+            height: size.height,
+          }),
+          "*"
+        );
+      });
+    },
+  },
   computed: {
     ...mapGetters(["IS_LOADING"]),
   },
 };
 </script>
 <style lang="sass">
+.fade-enter-active, .fade-leave-active
+  transition: opacity 0.3s ease
+
+.fade-enter-from, .fade-leave-to
+  opacity: 0
+
 html, body
   scroll-behavior: smooth
-  @apply text-gray-800 h-full
-  #app, #app>.view-wrapper, #app>.view-wrapper>.doctors-list, #app>.view-wrapper>.doctors-list>.scroll-area
-    height: 100%
+  @apply text-gray-800
   .view-wrapper
     @apply opacity-0 pointer-events-none max-w-5xl m-auto
     &.loaded

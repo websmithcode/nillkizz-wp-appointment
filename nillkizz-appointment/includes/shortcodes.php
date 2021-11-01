@@ -1,7 +1,19 @@
 <?php
 add_shortcode('nillkizz-appointment', function () {
-  $plugin_url = PLUGIN_URL;
+  global $pluginUrl;
   return <<<HTML
-  <embed src="http://localhost:8082" style="width: 100%; height: calc(100vh - 100px)">
+  <script>
+    function resizeIframe(e) {
+      const data = JSON.parse(e.data);
+      console.log(data)
+      if (data.action == 'resize'){
+        const obj = document.getElementById('nillkizz-appointment-app');
+        obj.style.height = data.height + 'px';
+      }
+    }
+    window.addEventListener('message', resizeIframe);
+  </script>
+  <iframe id="nillkizz-appointment-app" src="{$pluginUrl}public/app/index.html" style="width: 100%" frameborder="0" scrolling="no" >
+
 HTML;
 });

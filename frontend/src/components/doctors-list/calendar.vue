@@ -51,7 +51,8 @@ export default {
   mounted() {
     if (!this.calendar.isActive) return;
     this.selectDay(
-      this.moelValue?.dayISO ?? this.days.filter((day) => !day.disabled)[0]?.ISO
+      this.modelValue?.dayISO ??
+        this.days.filter((day) => !day.disabled)[0]?.ISO
     );
     this.$nextTick(() => {
       const daysWrapper = this.$el.querySelector(".days .days-wrapper"),

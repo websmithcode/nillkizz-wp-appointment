@@ -101,6 +101,8 @@ class API {
   REST_URL = this.SITE_URL + "?rest_route=";
   ROUTES = {
     get_doctors: this.REST_URL + "/nillkizz-appointment/v1/get-doctors",
+    request_call: this.REST_URL + "/nillkizz-appointment/v1/request-call",
+    check_code: this.REST_URL + "/nillkizz-appointment/v1/check-phone-confirmation-code",
   };
 
   async getDoctorsAndSpecs() {
@@ -128,7 +130,6 @@ class API {
               day.dt = DateTime.fromISO(dayISO).setLocale("ru");
               day.ISO = dayISO;
               day.disabled = day.dt.ts < now || day.size < 1;
-              // day.disabled = day.size < 1;
               day.isToday = day.dt.ts == now.ts;
               return [dayISO, day];
             })
@@ -176,6 +177,12 @@ class API {
   }
   async getTimeslots() {
     return demoApi.getTimeslots();
+  }
+  async requestCall(phone) {
+    return await axios.post(this.ROUTES.request_call, { phone });
+  }
+  async checkCode(code, callId) {
+    return await axios.post(this.ROUTES.check_code, { code, callId });
   }
 }
 const demoApi = new DemoAPI();

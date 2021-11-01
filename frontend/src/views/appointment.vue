@@ -3,63 +3,99 @@ h1.title Запись на прием к врачу
 .container(v-if="doctor")
   .doctor 
     .info
-      .photo(:style="{ backgroundImage: `url(${doctor.photo.url})` }") 
+      q-avatar(square, size="80px")
+        img(:src="doctor.photo.sizes.thumbnail")
       .text 
         span Вы записываетесь на прием к:
         .name {{ doctor.name }}
     .specialty
-      .title Специальность
+      .title.q-my-auto Специальность:
       .choices
-        label(v-for="(spec, index) in doctor?.spec")
-          input(
-            v-model="specialty",
-            type="radio",
-            :value="spec.id",
-            name="specialty"
+        label(v-for="(spec, index) in doctor?.specialty")
+          q-radio(
+            v-model="inputs.specialty.value",
+            :val="spec",
+            :label="spec.val",
+            color="cyan"
           )
-          |
-          | {{ spec.name }}
     calendar(:calendar="doctor.calendar", v-model="selectedSlot")
-  form.form
-    .fields {{ firstName }}
+  q-form.form(@submit="onSubmit")
+    .inputs
       q-input(
+        ref="firstNameRef",
         square,
         outlined,
         dense,
         bg-color="white",
-        v-model="firstName",
+        v-model="inputs.firstName.value",
+        :rules="[(val) => !!val]",
         label="Имя"
       )
       q-input(
+        ref="lastNameRef",
         square,
         outlined,
         dense,
         bg-color="white",
-        v-model="lastName",
+        v-model="inputs.lastName.value",
+        :rules="[(val) => !!val]",
         label="Фамилия"
       )
       q-input(
+        ref="birthdayRef",
         square,
         outlined,
         dense,
         bg-color="white",
-        v-model="birthday",
-        label="Дата рождения"
+        mask="##.##.####",
+        fill-mask,
+        v-model="inputs.birthday.value",
+        :rules="[birthdayValidate || 'Не правильно введена дата']",
+        hint="Дата рождения дд.мм.гггг"
       )
       q-input(
+        ref="phoneNumberRef",
         square,
         outlined,
+        dense,
+        mask="7 (###) ### ##-##",
+        fill-mask,
+        :rules="[phoneValidate]",
         bg-color="white",
-        v-model="phoneNumber",
-        label="Номер телефона"
+        v-model="inputs.phoneNumber.value",
+        hint="Номер телефона",
+        :loading="inputs.phoneNumber.loading",
+        :error="inputs.phoneNumber.error",
+        :error-message="inputs.phoneNumber.errorMessage",
+        :disable="inputs.phoneNumber.disable"
       )
-    button.submit {{ phoneIsConfirmed ? 'Записаться' : 'Проверить номер' }}
+      q-slide-transition 
+        div(v-show="call.codeIsRequested")
+          q-input(
+            ref="codeRef",
+            square,
+            outlined,
+            dense,
+            :bg-color="inputs.code.bgColor",
+            v-model="inputs.code.value",
+            hint="Код подтверждения",
+            :loading="inputs.code.loading",
+            :error="inputs.code.error",
+            :error-message="inputs.code.errorMessage",
+            :disable="inputs.code.disable"
+          )
+            template(v-slot="after", v-if="call.lostTime > 0") 
+              .q-my-auto {{ codeLostText }}
+    button.submit {{ call.phoneIsConfirmed ? 'Записаться' : call.codeIsRequested ? 'Подтвердить номер' : 'Запросить код подтвержения' }}
+//- q-table.q-mt-md(:rows="tableRows", dense, separator="cell", hide-bottom)
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 
+import api from "@/api";
 import calendar from "@/components/doctors-list/calendar.vue";
+import { DateTime } from "luxon";
 
 export default {
   components: { calendar },
@@ -70,18 +106,107 @@ export default {
         dayISO: this.$route.params.dayISO,
         slotTime: this.$route.params.slotTime,
       },
-      specialty: "",
-      firstName: "",
-      lastName: "",
-      birthday: "",
-      phoneNumber: "",
-      phoneIsConfirmed: false,
+      call: {
+        id: null,
+        codeIsRequested: false,
+        phoneIsConfirmed: false,
+        lostTime: 0,
+        timerInterval: null,
+      },
+      inputs: {
+        specialty: { value: null },
+        firstName: { value: "" },
+        lastName: { value: "" },
+        birthday: { value: "" },
+        phoneNumber: {
+          value: "",
+          loading: false,
+          disable: false,
+          error: false,
+          errorMessage: "",
+        },
+        code: {
+          value: "",
+          loading: false,
+          disable: false,
+          error: false,
+          errorMessage: "",
+          bgColor: "white",
+        },
+      },
     };
   },
-  mounted() {
-    if (this.doctor) this.specialty = this.doctor.specialty[0].id;
+  mounted() {},
+  methods: {
+    phoneValidate(value) {
+      return /^7 \(\d{3}\) \d{3} \d{2}-\d{2}$/.test(value);
+    },
+    birthdayValidate(value) {
+      function getDateTime(strDate) {
+        return DateTime.fromFormat(strDate ?? "", "dd.MM.yyyy", {
+          locale: "ru",
+        });
+      }
+      return getDateTime(value).isValid;
+    },
+    onSubmit() {
+      if (!this.call.phoneIsConfirmed && !this.call.codeIsRequested) {
+        this.inputs.phoneNumber.loading = true;
+        this.inputs.phoneNumber.disable = true;
+        this.inputs.phoneNumber.error = false;
+        this.call.id = null;
+        api
+          .requestCall(this.computedValues.phoneNumber)
+          .then((res) => {
+            const data = res.data;
+            if (data.status == "success") {
+              this.$nextTick(() => (this.inputs.phoneNumber.loading = false));
+              this.call.codeIsRequested = true;
+              this.call.lostTime = data.code_validity_time;
+              this.call.id = data["callId"];
+
+              this.timerInterval = setInterval(() => {
+                this.call.lostTime--;
+                if (this.call.lostTime < 1) {
+                  clearInterval(this.timerInterval);
+                  this.call.codeIsRequested = false;
+                  this.call.lostTime = 0;
+                  this.inputs.phoneNumber.disable = false;
+                  this.inputs.code.error = false;
+                  this.inputs.code.value = "";
+                }
+              }, 1000);
+            }
+          })
+          .catch(() => {
+            this.inputs.phoneNumber.loading = false;
+            this.inputs.phoneNumber.disable = false;
+            this.inputs.phoneNumber.error = true;
+            this.inputs.phoneNumber.errorMessage =
+              "Проверьте правильность ввода";
+          });
+      } else if (!this.call.phoneIsConfirmed && this.call.codeIsRequested) {
+        this.inputs.code.loading = true;
+        this.inputs.code.disable = true;
+        api
+          .checkCode(this.inputs.code.value, this.call.id)
+          .then(() => {
+            this.$nextTick(() => {
+              this.inputs.code.loading = false;
+              this.inputs.code.bgColor = "green";
+              clearInterval(this.timerInterval);
+              this.call.lostTime = 0;
+            });
+          })
+          .catch(() => {
+            this.inputs.code.loading = false;
+            this.inputs.code.disable = false;
+            this.inputs.code.error = true;
+            this.inputs.code.errorMessage = "Проверьте правильность ввода";
+          });
+      }
+    },
   },
-  methods: {},
   computed: {
     ...mapGetters(["mapDoctors"]),
     doctor() {
@@ -89,14 +214,30 @@ export default {
       if (!this.mapDoctors.has(docId)) return;
       return this.mapDoctors.get(docId);
     },
-    formData() {
-      if (!this.phoneIsConfirmed) return;
-      return new FormData();
+    computedValues() {
+      return {
+        specialty: this.inputs.specialty.value?.val,
+        firstName: this.inputs.firstName.value,
+        lastName: this.inputs.lastName.value,
+        birthday: this.inputs.birthday.value,
+        phoneNumber: this.inputs.phoneNumber.value.replace(/\D+/g, ""),
+      };
+    },
+    codeLostText() {
+      const min = String(Math.floor(this.call.lostTime / 60)).padStart(2, 0);
+      const sec = String(this.call.lostTime % 60).padStart(2, 0);
+      return `${min}:${sec}`;
+    },
+    tableRows() {
+      return Object.entries(this.computedValues).map((v) => ({
+        key: v[0],
+        value: v[1],
+      }));
     },
   },
   watch: {
     doctor(newVal) {
-      this.specialty = newVal?.specialty[0].id;
+      this.inputs.specialty.value = newVal?.specialty[0];
     },
   },
 };
@@ -104,29 +245,30 @@ export default {
 
 <style lang="sass" scoped>
 h1.title
-  @apply text-2xl font-semibold mb-8
+  @apply text-2xl font-semibold mb-8 text-center
 .container
-  @apply border p-3 bg-gray-50 flex gap-5
+  @apply border p-3 bg-gray-50 flex gap-5 mx-auto
   .doctor
     @apply flex flex-col gap-8
     .info
       @apply flex gap-4
-      .photo
-        @apply w-16 h-16 bg-center bg-cover
       .text
         @apply flex flex-col justify-around
         .name
           @apply text-2xl text-blue-500
     .specialty
+      @apply flex flex-wrap
       .title
-        @apply mb-2
+        @apply mb-2 mr-4
       .choices
         @apply flex gap-3
 
   .form
-    @apply flex flex-col gap-3
-    .fields
-      @apply flex flex-wrap gap-3
+    @apply w-full flex flex-col justify-between
+    .inputs
+      @apply mb-2
+      .q-input
+        @apply mb-1
     .submit
       @apply bg-gray-500 text-white px-4 py-2
 </style>
