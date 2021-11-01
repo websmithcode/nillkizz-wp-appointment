@@ -6,8 +6,7 @@
         .days-wrapper
           .selector(:style="selectorStyle")
           .day(
-            :class="{ selected: selectedDayISO == day.ISO, today: day.isToday }",
-            :disabled="day.disabled",
+            :class="{ selected: selectedDayISO == day.ISO, today: day.isToday, 'cursor-not-allowed': day.disabled, 'text-gray-400': day.disabled }",
             @click="!day.disabled && selectDay(day.ISO)",
             v-for="day in days"
           )
@@ -121,8 +120,6 @@ export default {
             @apply text-center select-none cursor-pointer duration-500 z-10 py-1 relative
             &.selected
               @apply pointer-events-none
-            &[disabled='true']
-              @apply text-gray-400 cursor-not-allowed
             .content
               @apply hover:bg-white duration-500
             *
