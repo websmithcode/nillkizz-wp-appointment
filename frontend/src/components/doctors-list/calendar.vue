@@ -60,7 +60,7 @@ export default {
         selectedOffsetLeft =
           daysWrapper.querySelector(".days .selected").offsetLeft,
         daysWrapperWidth = daysWrapper.offsetWidth;
-      if (currentScroll + daysWrapperWidth < selectedOffsetLeft)
+      if (currentScroll + daysWrapperWidth - 1 < selectedOffsetLeft)
         this.scrollDays();
     });
   },
