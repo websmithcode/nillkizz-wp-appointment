@@ -4,7 +4,7 @@
     v-model:doctorToAppointment="doctorToAppointment",
     v-slot="{ Component }"
   )
-    transition(name="fade")
+    transition(name="fade", mode="out-in")
       component(:is="Component")
   q-resize-observer(@resize="onResize")
 //- debug-area
@@ -45,8 +45,7 @@ export default {
 </script>
 <style lang="sass">
 .fade-enter-active, .fade-leave-active
-  transition: opacity 0.3s ease
-
+  transition: opacity .3s ease
 .fade-enter-from, .fade-leave-to
   opacity: 0
 

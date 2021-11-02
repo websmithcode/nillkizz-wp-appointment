@@ -1,18 +1,19 @@
 <template lang="pug">
-.doctors-list 
-  doctors-filter(v-model="filters")
-  .doctors(v-if="!!paginated.length")
-    doctor(v-for="doc in filteredDoctors", :key="doc.id", :doctor="doc")
-  .empty(v-else) Ничего не найдено
-  q-pagination(
-    v-if="maxPage > 1",
-    v-model="currentPage",
-    :max="maxPage",
-    :max-pages="6",
-    direction-links,
-    boundary-numbers,
-    unelevated
-  )
+.view-body
+  .doctors-list 
+    doctors-filter(v-model="filters")
+    .doctors(v-if="!!paginated.length")
+      doctor(v-for="doc in filteredDoctors", :key="doc.id", :doctor="doc")
+    .empty(v-else) Ничего не найдено
+    q-pagination(
+      v-if="maxPage > 1",
+      v-model="currentPage",
+      :max="maxPage",
+      :max-pages="6",
+      direction-links,
+      boundary-numbers,
+      unelevated
+    )
 </template>
 
 <script>

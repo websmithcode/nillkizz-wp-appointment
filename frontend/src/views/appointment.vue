@@ -1,107 +1,108 @@
 <template lang="pug">
-header 
-  back-button
-  h1.title Запись на прием к врачу
-main(v-if="doctor")
-  .doctor 
-    .info
-      q-avatar(square, size="80px")
-        img(:src="doctor.photo.sizes.thumbnail")
-      .text 
-        .name {{ doctor.name }}
-    .specialty
-      .title.q-my-auto Специальность:
-      .choices
-        label(v-for="(spec, index) in doctor?.specialty")
-          q-radio(
-            v-model="inputs.specialty.value",
-            :val="spec",
-            :label="spec.val",
-            color="cyan"
-          )
-    calendar(:calendar="doctor.calendar", v-model="selectedSlot")
-  q-form.form(@submit="onSubmit")
-    .inputs
-      q-input(
-        ref="firstNameRef",
-        square,
-        outlined,
-        dense,
-        bg-color="white",
-        v-model="inputs.firstName.value",
-        :rules="[(val) => !!val]",
-        label="Имя"
-      )
-      q-input(
-        ref="lastNameRef",
-        square,
-        outlined,
-        dense,
-        bg-color="white",
-        v-model="inputs.lastName.value",
-        :rules="[(val) => !!val]",
-        label="Фамилия"
-      )
-      q-input(
-        ref="birthdayRef",
-        square,
-        outlined,
-        dense,
-        bg-color="white",
-        mask="##.##.####",
-        fill-mask,
-        v-model="inputs.birthday.value",
-        :rules="[birthdayValidate || 'Не правильно введена дата']",
-        hint="Дата рождения дд.мм.гггг"
-      )
-      q-input(
-        ref="phoneNumberRef",
-        square,
-        outlined,
-        dense,
-        mask="7 (###) ### ##-##",
-        fill-mask,
-        :rules="[phoneValidate]",
-        bg-color="white",
-        v-model="inputs.phoneNumber.value",
-        hint="Номер телефона",
-        :loading="inputs.phoneNumber.loading",
-        :error="inputs.phoneNumber.error",
-        :error-message="inputs.phoneNumber.errorMessage",
-        :disable="inputs.phoneNumber.disable"
-      )
-      q-slide-transition 
-        div(v-show="call.codeIsRequested")
-          q-input(
-            ref="codeRef",
-            square,
-            outlined,
-            dense,
-            :bg-color="inputs.code.bgColor",
-            v-model="inputs.code.value",
-            hint="Код подтверждения",
-            :loading="inputs.code.loading",
-            :error="inputs.code.error",
-            :error-message="inputs.code.errorMessage",
-            :disable="inputs.code.disable"
-          )
-            template(v-slot="after", v-if="call.lostTime > 0") 
-              .q-my-auto {{ codeLostText }}
-    q-btn.submit(
-      type="submit",
-      color="primary",
-      unelevated,
-      :label="call.phoneIsConfirmed ? 'Записаться' : call.codeIsRequested ? 'Подтвердить номер' : 'Запросить код подтвержения'"
-    ) 
-q-dialog.thanks-banner(
-  v-model="requestIsSent",
-  maximized,
-  transition-show="fade"
-)
-  q-card.text-center.flex.flex-col.justify-center.relative
+.view-body
+  header 
     back-button
-    .text-h5 Спасибо, ваша заявка принята.
-    .text-h6 В ближайшее время мы с вами свяжемся!
+    h1.title Запись на прием к врачу
+  main(v-if="doctor")
+    .doctor 
+      .info
+        q-avatar(square, size="80px")
+          img(:src="doctor.photo.sizes.thumbnail")
+        .text 
+          .name {{ doctor.name }}
+      .specialty
+        .title.q-my-auto Специальность:
+        .choices
+          label(v-for="(spec, index) in doctor?.specialty")
+            q-radio(
+              v-model="inputs.specialty.value",
+              :val="spec",
+              :label="spec.val",
+              color="cyan"
+            )
+      calendar(:calendar="doctor.calendar", v-model="selectedSlot")
+    q-form.form(@submit="onSubmit")
+      .inputs
+        q-input(
+          ref="firstNameRef",
+          square,
+          outlined,
+          dense,
+          bg-color="white",
+          v-model="inputs.firstName.value",
+          :rules="[(val) => !!val]",
+          label="Имя"
+        )
+        q-input(
+          ref="lastNameRef",
+          square,
+          outlined,
+          dense,
+          bg-color="white",
+          v-model="inputs.lastName.value",
+          :rules="[(val) => !!val]",
+          label="Фамилия"
+        )
+        q-input(
+          ref="birthdayRef",
+          square,
+          outlined,
+          dense,
+          bg-color="white",
+          mask="##.##.####",
+          fill-mask,
+          v-model="inputs.birthday.value",
+          :rules="[birthdayValidate || 'Не правильно введена дата']",
+          hint="Дата рождения дд.мм.гггг"
+        )
+        q-input(
+          ref="phoneNumberRef",
+          square,
+          outlined,
+          dense,
+          mask="7 (###) ### ##-##",
+          fill-mask,
+          :rules="[phoneValidate]",
+          bg-color="white",
+          v-model="inputs.phoneNumber.value",
+          hint="Номер телефона",
+          :loading="inputs.phoneNumber.loading",
+          :error="inputs.phoneNumber.error",
+          :error-message="inputs.phoneNumber.errorMessage",
+          :disable="inputs.phoneNumber.disable"
+        )
+        q-slide-transition 
+          div(v-show="call.codeIsRequested")
+            q-input(
+              ref="codeRef",
+              square,
+              outlined,
+              dense,
+              :bg-color="inputs.code.bgColor",
+              v-model="inputs.code.value",
+              hint="Код подтверждения",
+              :loading="inputs.code.loading",
+              :error="inputs.code.error",
+              :error-message="inputs.code.errorMessage",
+              :disable="inputs.code.disable"
+            )
+              template(v-slot="after", v-if="call.lostTime > 0") 
+                .q-my-auto {{ codeLostText }}
+      q-btn.submit(
+        type="submit",
+        color="primary",
+        unelevated,
+        :label="call.phoneIsConfirmed ? 'Записаться' : call.codeIsRequested ? 'Подтвердить номер' : 'Запросить код подтвержения'"
+      ) 
+  q-dialog.thanks-banner(
+    v-model="requestIsSent",
+    maximized,
+    transition-show="fade"
+  )
+    q-card.text-center.flex.flex-col.justify-center.relative
+      back-button
+      .text-h5 Спасибо, ваша заявка принята.
+      .text-h6 В ближайшее время мы с вами свяжемся!
 </template>
 
 <script>
