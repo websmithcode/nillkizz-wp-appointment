@@ -1,0 +1,6 @@
+tmp
+.env
+*.zip
+/wp-data/*.sql
+/nillkizz-appointment/public/app/
+
