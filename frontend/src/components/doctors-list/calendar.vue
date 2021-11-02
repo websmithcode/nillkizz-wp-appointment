@@ -13,10 +13,17 @@
             .content
               .dow {{ day.dt.toFormat('ccc').toUpperCase() }}
               .dom {{ day.dt.day }}
-
-      .control(@click="scrollDays") 
-        chevron-right-icon.icon(:class="{ back: daysIsScrolled }")
-    .slots(v-if="calendar.has(selectedDayISO)")
+      q-btn(
+        @click="scrollDays",
+        :class="{ rotated: daysIsScrolled }",
+        round,
+        unelevated,
+        color="primary",
+        icon="arrow_back_ios_new",
+        size="sm",
+        padding="sm"
+      ) 
+    .slots(v-if="calendar.has(selectedDayISO)", color="white")
       .slot(
         v-for="slot in slots.values()",
         :class="{ selected: slot.time == modelValue?.slotTime && selectedDayISO == modelValue?.dayISO }",
@@ -27,11 +34,9 @@
 </template>
 
 <script>
-import { ChevronRightIcon } from "@heroicons/vue/solid";
 import { DateTime } from "luxon";
 
 export default {
-  components: { ChevronRightIcon },
   props: {
     calendar: Map,
     modelValue: Object,
@@ -103,7 +108,7 @@ export default {
     $dayHeight: 60px
     .days
       margin-bottom: -1px
-      @apply flex sm:ml-3 justify-center
+      @apply flex sm:ml-3 justify-center items-center
       .days-container
         width: 315px
         height: $dayHeight
@@ -138,13 +143,9 @@ export default {
         @apply bg-gray-500 hover:bg-gray-600 text-white px-2 py-1 text-center cursor-pointer select-none ring-blue-500 ring-0 duration-200
         &.selected
           @apply ring-2
-  .control
-    width: 30px
-    @apply hidden
-    @apply sm:flex justify-center items-center select-none cursor-pointer mx-3
-    .icon
-      @apply w-8 text-white duration-300 transform p-1 bg-gray-400 rounded-full
-      &.back
+    .q-btn
+      @apply duration-200 transform
+      &.rotated
         @apply rotate-180
   .empty
     @apply text-center text-xl

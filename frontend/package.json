@@ -10,7 +10,6 @@
     "lintfix": "vue-cli-service lint --fix"
   },
   "dependencies": {
-    "@heroicons/vue": "^1.0.4",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",

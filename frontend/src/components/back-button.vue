@@ -1,6 +1,10 @@
 <template lang="pug">
-q-btn(color="primary", unelevated, @click="$router.go(-1)")
-  q-icon(name="arrow_back_ios_new", color="white")
+q-btn(
+  color="primary",
+  unelevated,
+  @click="$router.go(-1)",
+  icon="arrow_back_ios_new"
+)
   q-tooltip(anchor="center right", self="center left") Назад
 </template>
 <style lang="sass" scoped>
