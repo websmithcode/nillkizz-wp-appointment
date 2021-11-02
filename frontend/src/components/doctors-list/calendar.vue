@@ -149,7 +149,7 @@ export default {
       @apply border border-gray-400 p-3 bg-white
       @apply grid grid-cols-6 gap-2
       .slot
-        @apply select-none ring-blue-700 ring-transparent ring-opacity-50 ring-0 duration-200 rounded-none
+        @apply ring-blue-700 ring-transparent ring-opacity-50 ring-0 duration-200 rounded-none
         &.selected
           @apply ring-4
     .q-btn
