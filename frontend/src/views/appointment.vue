@@ -1,8 +1,6 @@
 <template lang="pug">
 header 
-  q-btn(color="primary", unelevated, @click="$router.go(-1)")
-    q-icon(name="arrow_back_ios_new", color="white")
-    q-tooltip(anchor="center right", self="center left") Назад
+  back-button
   h1.title Запись на прием к врачу
 .container(v-if="doctor")
   .doctor 
@@ -90,7 +88,15 @@ header
             template(v-slot="after", v-if="call.lostTime > 0") 
               .q-my-auto {{ codeLostText }}
     button.submit {{ call.phoneIsConfirmed ? 'Записаться' : call.codeIsRequested ? 'Подтвердить номер' : 'Запросить код подтвержения' }}
-//- q-table.q-mt-md(:rows="tableRows", dense, separator="cell", hide-bottom)
+q-dialog.thanks-banner(
+  v-model="requestIsSent",
+  maximized,
+  transition-show="fade"
+)
+  q-card.text-center.flex.flex-col.justify-center.relative
+    back-button
+    .text-h5 Спасибо, ваша заявка принята.
+    .text-h6 В ближайшее время мы с вами свяжемся!
 </template>
 
 <script>
@@ -98,13 +104,15 @@ import { mapGetters } from "vuex";
 
 import api from "@/api";
 import calendar from "@/components/doctors-list/calendar.vue";
+import backButton from "@/components/back-button.vue";
 import { DateTime } from "luxon";
 
 export default {
-  components: { calendar },
+  components: { calendar, backButton },
 
   data() {
     return {
+      requestIsSent: false,
       selectedSlot: {
         dayISO: this.$route.params.dayISO,
         slotTime: this.$route.params.slotTime,
@@ -199,6 +207,7 @@ export default {
             this.$nextTick(() => {
               this.inputs.code.loading = false;
               this.inputs.code.bgColor = "green";
+              this.requestIsSent = true;
               clearInterval(this.timerInterval);
               this.call.lostTime = 0;
             });
@@ -233,12 +242,6 @@ export default {
       const sec = String(this.call.lostTime % 60).padStart(2, 0);
       return `${min}:${sec}`;
     },
-    tableRows() {
-      return Object.entries(this.computedValues).map((v) => ({
-        key: v[0],
-        value: v[1],
-      }));
-    },
   },
   watch: {
     doctor(newVal) {
@@ -251,8 +254,6 @@ export default {
 <style lang="sass" scoped>
 header
   @apply relative mb-8
-  .q-btn
-    @apply rounded-none absolute
   h1.title
     @apply text-2xl font-semibold text-center pt-2
 .container
