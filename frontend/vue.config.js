@@ -1,22 +1,18 @@
-const webpack = require("webpack");
+const sourceMaps = true;
+
 module.exports = {
   css: {
-    sourceMap: true
+    sourceMap: sourceMaps
     //   extract: false,
   },
-  assetsDir: 'wp-content/plugins/nillkizz-appointment/public/app/',
-  filenameHashing: false,
 
-  configureWebpack: {
-    plugins: [
-      new webpack.optimize.LimitChunkCountPlugin({
-        maxChunks: 1,
-      }),
-    ],
-  },
+  outputDir: '../nillkizz-appointment/public/app',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/wp-content/plugins/nillkizz-appointment/public/app/'
+    : '/',
 
   runtimeCompiler: true,
-  productionSourceMap: false,
+  productionSourceMap: sourceMaps,
 
   pluginOptions: {
     quasar: {
