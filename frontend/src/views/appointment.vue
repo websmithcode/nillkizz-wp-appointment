@@ -87,7 +87,12 @@ main(v-if="doctor")
           )
             template(v-slot="after", v-if="call.lostTime > 0") 
               .q-my-auto {{ codeLostText }}
-    button.submit {{ call.phoneIsConfirmed ? 'Записаться' : call.codeIsRequested ? 'Подтвердить номер' : 'Запросить код подтвержения' }}
+    q-btn.submit(
+      type="submit",
+      color="primary",
+      unelevated,
+      :label="call.phoneIsConfirmed ? 'Записаться' : call.codeIsRequested ? 'Подтвердить номер' : 'Запросить код подтвержения'"
+    ) 
 q-dialog.thanks-banner(
   v-model="requestIsSent",
   maximized,
@@ -280,5 +285,5 @@ main
       .q-input
         @apply mb-1
     .submit
-      @apply bg-gray-500 text-white px-4 py-2
+      @apply rounded-none
 </style>

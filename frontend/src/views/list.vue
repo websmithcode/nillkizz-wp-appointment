@@ -109,6 +109,6 @@ export default {
     @apply text-2xl text-center pt-24
   .q-pagination
     @apply flex justify-center
-    .q-btn--rectangle
+    .q-btn
       @apply rounded-none
 </style>
