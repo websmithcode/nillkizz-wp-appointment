@@ -97,7 +97,8 @@ class DemoAPI {
   }
 }
 class API {
-  SITE_URL = "http://localhost:8080";
+  // SITE_URL = "http://localhost:8080";
+  SITE_URL = window.location.origin;
   REST_URL = this.SITE_URL + "?rest_route=";
   ROUTES = {
     get_doctors: this.REST_URL + "/nillkizz-appointment/v1/get-doctors",

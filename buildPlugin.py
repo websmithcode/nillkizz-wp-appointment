@@ -29,4 +29,4 @@ def make_archive():
 
 clear_plugin_app()
 copy_app_staticfiles_to_plugin()
-# make_archive()
+make_archive()
