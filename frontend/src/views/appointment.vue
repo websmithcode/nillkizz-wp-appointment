@@ -2,7 +2,7 @@
 header 
   back-button
   h1.title Запись на прием к врачу
-.container(v-if="doctor")
+main(v-if="doctor")
   .doctor 
     .info
       q-avatar(square, size="80px")
@@ -255,13 +255,13 @@ export default {
 header
   @apply relative mb-8
   h1.title
-    @apply text-2xl font-semibold text-center pt-2
-.container
-  @apply border p-3 bg-gray-50 flex gap-5 mx-auto
+    @apply text-2xl font-semibold text-center pt-12 sm:pt-2
+main
+  @apply border p-3 bg-gray-50 flex flex-col sm:flex-row items-center gap-5 mx-auto
   .doctor
     @apply flex flex-col gap-8
     .info
-      @apply flex gap-4
+      @apply flex flex-col sm:flex-row gap-4
       .text
         @apply flex flex-col justify-center
         .name
@@ -271,7 +271,7 @@ header
       .title
         @apply mb-2 mr-4
       .choices
-        @apply flex gap-3
+        @apply flex flex-wrap gap-3
 
   .form
     @apply w-full flex flex-col justify-between
