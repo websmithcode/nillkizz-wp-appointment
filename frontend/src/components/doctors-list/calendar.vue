@@ -24,11 +24,20 @@
         padding="sm"
       ) 
     .slots(v-if="calendar.has(selectedDayISO)", color="white")
-      .slot(
+      q-btn.slot(
         v-for="slot in slots.values()",
         :class="{ selected: slot.time == modelValue?.slotTime && selectedDayISO == modelValue?.dayISO }",
-        @click="selectSlot(slot)"
-      ) {{ slot.time }}
+        @click="selectSlot(slot)",
+        :label="slot.time",
+        color="primary",
+        unelevated,
+        padding="none"
+      )
+      //- .slot(
+      //-   v-for="slot in slots.values()",
+      //-   :class="{ selected: slot.time == modelValue?.slotTime && selectedDayISO == modelValue?.dayISO }",
+      //-   @click="selectSlot(slot)"
+      //- ) {{ slot.time }}
   .empty(v-else) 
     .content Записи нет
 </template>
@@ -138,11 +147,11 @@ export default {
               @apply absolute bottom-1 bg-blue-500 rounded-full
     .slots
       @apply border border-gray-400 p-3 bg-white
-      @apply grid grid-cols-5 gap-2
+      @apply grid grid-cols-6 gap-2
       .slot
-        @apply bg-gray-500 hover:bg-gray-600 text-white px-2 py-1 text-center cursor-pointer select-none ring-blue-500 ring-0 duration-200
+        @apply select-none ring-blue-700 ring-transparent ring-opacity-50 ring-0 duration-200
         &.selected
-          @apply ring-2
+          @apply ring-4
     .q-btn
       @apply duration-200 transform
       &.rotated
