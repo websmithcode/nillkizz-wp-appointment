@@ -7,9 +7,10 @@ module.exports = {
   },
 
   outputDir: '../nillkizz-appointment/public/app',
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/wp-content/plugins/nillkizz-appointment/public/app/'
-    : '/',
+  publicPath: '/wp-content/plugins/nillkizz-appointment/public/app/',
+  // publicPath: process.env.NODE_ENV === 'production'
+  //   ? '/wp-content/plugins/nillkizz-appointment/public/app/'
+  //   : '/',
 
   runtimeCompiler: true,
   productionSourceMap: sourceMaps,
