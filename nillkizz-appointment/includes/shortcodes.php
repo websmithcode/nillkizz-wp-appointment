@@ -13,6 +13,11 @@ add_shortcode('nillkizz-appointment', function () {
     }
     window.addEventListener('message', resizeIframe);
   </script>
+  <style>
+    #nillkizz-appointment-app{
+      background-color: white;
+    }
+  </style>
   <iframe id="nillkizz-appointment-app" src="{$pluginUrl}public/app/index.html" style="width: 100%" frameborder="0" scrolling="no" >
 
 HTML;

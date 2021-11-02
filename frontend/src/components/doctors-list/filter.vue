@@ -18,6 +18,7 @@
       dense,
       v-model="spec",
       clearable,
+      bg-color="white",
       :options="specOptions",
       label="Специальность",
       :style="{ minWidth: '170px' }"
@@ -28,6 +29,7 @@
       dense,
       v-model="exp",
       clearable,
+      bg-color="white",
       :options="expOptions",
       label="Стаж",
       :style="{ minWidth: '145px' }"
@@ -38,6 +40,7 @@
       dense,
       v-model="gender",
       clearable,
+      bg-color="white",
       :options="genderOptions",
       label="Пол",
       :style="{ minWidth: '100px' }"

@@ -113,7 +113,7 @@ export default {
           @apply flex mr-auto z-10 relative overflow-x-scroll overflow-y-hidden
           .selector
             width: $dayWidth
-            @apply border border-b-0 border-gray-400 bg-gray-50 absolute h-full z-0 duration-300
+            @apply border border-b-0 border-gray-400 bg-white absolute h-full z-0 duration-300
           .day
             min-width: $dayWidth
             height: $dayHeight
@@ -132,7 +132,7 @@ export default {
               left: calc(50% - 3px)
               @apply absolute bottom-1 bg-blue-500 rounded-full
     .slots
-      @apply border border-gray-400 p-3
+      @apply border border-gray-400 p-3 bg-white
       @apply grid grid-cols-5 gap-2
       .slot
         @apply bg-gray-500 hover:bg-gray-600 text-white px-2 py-1 text-center cursor-pointer select-none ring-blue-500 ring-0 duration-200
