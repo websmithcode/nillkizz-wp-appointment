@@ -103,7 +103,8 @@ class API {
   ROUTES = {
     get_doctors: this.REST_URL + "/nillkizz-appointment/v1/get-doctors",
     request_call: this.REST_URL + "/nillkizz-appointment/v1/request-call",
-    check_code: this.REST_URL + "/nillkizz-appointment/v1/check-phone-confirmation-code",
+    check_code:
+      this.REST_URL + "/nillkizz-appointment/v1/check-phone-confirmation-code",
   };
 
   async getDoctorsAndSpecs() {
