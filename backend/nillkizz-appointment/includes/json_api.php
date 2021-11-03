@@ -24,12 +24,22 @@ function get_doctors()
       return get_term($term);
     }, $array);
   }
-
-  $doctors = array_map(function ($doc) {
-    $doc['details']['specialty'] = array_terms_id_to_obj($doc['details']['specialty']);
-    $doc['details']['education'] = array_terms_id_to_obj($doc['details']['education']);
+  function map_doctors($doc)
+  {
+    $terms = ['specialty', 'education'];
+    foreach ($terms as $term) {
+      $term_ids = $doc['details'][$term];
+      $doc['details'][$term] = !empty($term_ids) ? array_terms_id_to_obj($term_ids) : [];
+    }
     return $doc;
-  }, $doctors);
+  }
+  function filter_doctors($doc)
+  {
+    return !$doc['hide'];
+  }
+
+  $doctors = array_map('map_doctors', $doctors);
+  $doctors = array_filter($doctors, 'filter_doctors');
 
   return rest_ensure_response($doctors);
 }

@@ -4,7 +4,7 @@
     doctors-filter(v-model="filters")
     .doctors(v-if="!!paginated.length")
       doctor(v-for="doc in filteredDoctors", :key="doc.id", :doctor="doc")
-    .empty(v-else) Ничего не найдено
+    .empty(v-else) Записи нет
     q-pagination(
       v-if="maxPage > 1",
       v-model="currentPage",

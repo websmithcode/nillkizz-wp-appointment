@@ -165,7 +165,7 @@ class API {
       }));
     }
     const response = await axios.get(this.ROUTES.get_doctors);
-    const doctors = response.data.map((doc) => {
+    const doctors = Object.values(response.data).map((doc) => {
       doc = { ...doc, ...doc.details };
       delete doc.details;
       doc.specialty = formatTermsArray(doc.specialty);
