@@ -29,9 +29,14 @@ export default {
   },
   methods: {
     goToAppointment(args) {
-      this.$router.push(
-        `/appointment/doctor_${this.doctor.id}/day_${args.dayISO}/slot_${args.slotTime}`
-      );
+      this.$router.push({
+        name: "appointment",
+        params: {
+          doctorId: this.doctor.id,
+          dayISO: args.dayISO,
+          slotTime: args.slotTime,
+        },
+      });
     },
   },
   computed: {
