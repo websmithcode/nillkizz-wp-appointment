@@ -11,6 +11,11 @@ const routes = [
     name: "appointment",
     component: () => import("@/views/appointment.vue"),
   },
+  {
+    path: "/appointment/doctor_:doctorId",
+    name: "appointment_root",
+    component: () => import("@/views/appointment.vue"),
+  },
 ];
 
 const router = createRouter({

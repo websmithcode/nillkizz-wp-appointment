@@ -2,7 +2,7 @@
 q-btn(
   color="primary",
   unelevated,
-  @click="$router.go(-1)",
+  @click="$router.back()",
   icon="arrow_back_ios_new"
 )
   q-tooltip(anchor="center right", self="center left") Назад

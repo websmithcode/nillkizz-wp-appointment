@@ -1,8 +1,8 @@
 <template lang="pug">
 .view-body
   header 
-    back-button
-    h1.title Запись на прием к врачу
+    back-button(v-if="showButtonBack")
+    h1.title Записаться
   main(v-if="doctor")
     .doctor 
       .info
@@ -13,14 +13,18 @@
       .specialty
         .title.q-my-auto Специальность:
         .choices
-          label(v-for="(spec, index) in doctor?.specialty")
+          label(v-for="(spec, index) in doctor.specialty")
             q-radio(
               v-model="inputs.specialty.value",
               :val="spec",
               :label="spec.val",
               color="cyan"
             )
-      calendar(:calendar="doctor.calendar", v-model="selectedSlot")
+      calendar(
+        v-if="selectedSlot.dayISO && selectedSlot.slotTime",
+        :calendar="doctor.calendar",
+        v-model="selectedSlot"
+      )
     q-form.form(@submit="onSubmit")
       .inputs
         q-input(
@@ -118,6 +122,7 @@ export default {
 
   data() {
     return {
+      showButtonBack: this.$route.params.dayISO && this.$route.params.slotTime,
       requestIsSent: false,
       selectedSlot: {
         dayISO: this.$route.params.dayISO,
@@ -252,6 +257,18 @@ export default {
   watch: {
     doctor(newVal) {
       this.inputs.specialty.value = newVal?.specialty[0];
+
+      const getDay = () => {
+        if (!this.selectedSlot.dayISO) {
+          const days = Array.from(newVal.calendar.values());
+          return days.filter((day) => !day.disabled)[0];
+        }
+        return newVal.calendar.get(this.selectedSlot.dayISO);
+      };
+
+      if (!this.selectedSlot.dayISO) this.selectedSlot.dayISO = getDay().ISO;
+      if (!this.selectedSlot.slotTime)
+        this.selectedSlot.slotTime = getDay().values().next().value.time;
     },
   },
 };

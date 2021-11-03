@@ -1,6 +1,10 @@
 <?php
-add_shortcode('nillkizz-appointment', function () {
+add_shortcode('nillkizz-appointment', function ($attrs) {
   global $pluginUrl;
+  $url = "{$pluginUrl}public/app/index.html";
+  if (isset($attrs['doctor'])) {
+    $url .= "#/appointment/doctor_{$attrs['doctor']}";
+  }
   return <<<HTML
   <script>
     function resizeIframe(e) {
@@ -18,7 +22,7 @@ add_shortcode('nillkizz-appointment', function () {
       background-color: white;
     }
   </style>
-  <iframe id="nillkizz-appointment-app" src="{$pluginUrl}public/app/index.html" style="width: 100%" frameborder="0" scrolling="no" >
+  <iframe id="nillkizz-appointment-app" src="{$url}" style="width: 100%" frameborder="0" scrolling="no" >
 
 HTML;
 });
