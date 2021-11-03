@@ -3,14 +3,17 @@ add_action('rest_api_init', function () {
   register_rest_route('nillkizz-appointment/v1', '/get-doctors', array(
     'methods'  => 'GET',
     'callback' => 'get_doctors',
+    'permission_callback' => '__return_true'
   ));
   register_rest_route('nillkizz-appointment/v1', '/request-call', array(
     'methods'  => 'POST',
     'callback' => 'request_call',
+    'permission_callback' => '__return_true'
   ));
   register_rest_route('nillkizz-appointment/v1', '/check-phone-confirmation-code', array(
     'methods'  => 'POST',
     'callback' => 'check_phone_confirmation_code',
+    'permission_callback' => '__return_true'
   ));
 });
 
