@@ -33,11 +33,6 @@
         unelevated,
         padding="none"
       )
-      //- .slot(
-      //-   v-for="slot in slots.values()",
-      //-   :class="{ selected: slot.time == modelValue?.slotTime && selectedDayISO == modelValue?.dayISO }",
-      //-   @click="selectSlot(slot)"
-      //- ) {{ slot.time }}
   .empty(v-else) 
     .content Записи нет
 </template>
@@ -52,9 +47,8 @@ export default {
   },
   emits: ["update:modelValue"],
   data() {
-    const now = DateTime.now().startOf("day");
     return {
-      now,
+      now: DateTime.now().startOf("day"),
       days: Array.from(this.calendar.values()),
       daysIsScrolled: false,
       selectorStyle: { display: "none" },
