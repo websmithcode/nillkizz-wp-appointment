@@ -56,14 +56,20 @@ export default {
 
 <style lang="sass" scoped>
 .doctor
-  @apply flex flex-col justify-between items-center gap-4 md:max-w-xl w-full
-  @apply lg:flex-row lg:max-w-full
+  @apply flex flex-col justify-between items-center gap-4 sm:max-w-xl w-full
+  @apply md:flex-row md:max-w-full
   @apply bg-gray-50 p-3 border
   .info
     @apply flex gap-4 flex-col items-center sm:items-start sm:flex-row
     .photo-wrap
       height: 150px
       width: 150px
+      @screen md
+        height: 100px
+        width: 100px
+      @screen lg
+        height: 150px
+        width: 150px
       @apply p-1 border border-gray-200 rounded-full flex-shrink-0
       .photo
         @apply w-full h-full bg-center bg-cover rounded-full border border-gray-200

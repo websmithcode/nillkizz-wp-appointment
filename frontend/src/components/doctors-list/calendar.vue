@@ -23,16 +23,34 @@
         size="sm",
         padding="sm"
       ) 
-    .slots(v-if="calendar.has(selectedDayISO)", color="white")
-      q-btn.slot(
-        v-for="slot in slots.values()",
-        :class="{ selected: slot.time == modelValue?.slotTime && selectedDayISO == modelValue?.dayISO }",
-        @click="selectSlot(slot)",
-        :label="slot.time",
-        color="primary",
-        unelevated,
-        padding="none"
-      )
+    .slots-wrapper(
+      v-if="slots",
+      :class="{ more: countSlots > 11, expanded: expanded }",
+      :style="{ height: expandedInitial ? '100%' : heightOfSlots + 'px' }"
+    )
+      .slots(v-if="calendar.has(selectedDayISO)", color="white")
+        q-resize-observer(
+          v-if="!expandedInitial",
+          @resize="(size) => (heightOfSlots = size.height)"
+        )
+        q-btn.slot(
+          v-for="slot in slots.values()",
+          :class="{ selected: slot.time == modelValue?.slotTime && selectedDayISO == modelValue?.dayISO }",
+          @click="selectSlot(slot)",
+          :label="slot.time",
+          color="primary",
+          unelevated,
+          padding="none"
+        )
+        q-btn.slot(
+          v-if="countSlots > 11 && !expanded",
+          @click="expanded = true",
+          color="primary",
+          unelevated,
+          padding="none",
+          icon="expand_more"
+        )
+          q-tooltip(:offset="[0, 3]") Показать больше
   .empty(v-else) 
     .content Записи нет
 </template>
@@ -44,10 +62,13 @@ export default {
   props: {
     calendar: Map,
     modelValue: Object,
+    expandedInitial: Boolean,
   },
   emits: ["update:modelValue"],
   data() {
     return {
+      heightOfSlots: "82",
+      expanded: this.expandedInitial,
       now: DateTime.now().startOf("day"),
       days: Array.from(this.calendar.values()),
       daysIsScrolled: false,
@@ -95,8 +116,16 @@ export default {
     },
   },
   computed: {
+    countSlots() {
+      return this.calendar.get(this.selectedDayISO)?.size;
+    },
     slots() {
-      return this.calendar.get(this.selectedDayISO);
+      const slots = this.calendar.get(this.selectedDayISO);
+      if (!slots) return null;
+      if (this.countSlots < 12 || this.expanded) return slots;
+      else {
+        return new Map(Array.from(slots.entries()).slice(0, 11));
+      }
     },
   },
 };
@@ -139,13 +168,15 @@ export default {
               width: $size
               left: calc(50% - 3px)
               @apply absolute bottom-1 bg-blue-500 rounded-full
-    .slots
-      @apply border border-gray-400 p-3 bg-white
-      @apply grid grid-cols-6 gap-2
-      .slot
-        @apply ring-blue-700 ring-transparent ring-opacity-50 ring-0 duration-200 rounded-none
-        &.selected
-          @apply ring-4
+    .slots-wrapper
+      transition: height .3s
+      @apply border border-gray-400 bg-white overflow-hidden
+      .slots
+        @apply grid grid-cols-6 gap-2 p-2
+        .slot
+          @apply ring-blue-700 ring-transparent ring-opacity-50 ring-0 duration-200 rounded-none
+          &.selected
+            @apply ring-4
     .q-btn
       @apply duration-200 transform
       &.rotated

@@ -23,7 +23,8 @@
       calendar(
         v-if="selectedSlot.dayISO && selectedSlot.slotTime",
         :calendar="doctor.calendar",
-        v-model="selectedSlot"
+        v-model="selectedSlot",
+        :expandedInitial="true"
       )
     q-form.form(@submit="onSubmit")
       .inputs
