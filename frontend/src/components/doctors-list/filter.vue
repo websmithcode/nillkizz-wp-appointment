@@ -21,7 +21,8 @@
       bg-color="white",
       :options="specOptions",
       label="Специальность",
-      :style="{ minWidth: '170px' }"
+      :style="{ minWidth: '170px' }",
+      behavior="menu"
     )
     q-select(
       square,
@@ -32,7 +33,8 @@
       bg-color="white",
       :options="genderOptions",
       label="Пол",
-      :style="{ minWidth: '100px' }"
+      :style="{ minWidth: '100px' }",
+      behavior="menu"
     )
 </template>
 

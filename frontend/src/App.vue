@@ -1,5 +1,6 @@
 <template lang="pug">
 q-spinner-grid.loader(v-if="IS_LOADING", color="primary", size="3em")
+q-resize-observer(@resize="onResize")
 .view-wrapper(v-cloak, :class="{ loaded: !IS_LOADING }")
   router-view(
     v-model:doctorToAppointment="doctorToAppointment",
@@ -7,7 +8,6 @@ q-spinner-grid.loader(v-if="IS_LOADING", color="primary", size="3em")
   )
     transition(name="fade", mode="out-in")
       component(:is="Component")
-  q-resize-observer(@resize="onResize")
 //- debug-area
 </template>
 
@@ -52,6 +52,7 @@ export default {
 
 html, body
   scroll-behavior: smooth
+  min-height: 300px
   @apply text-gray-800
   .loader
     @apply fixed inset-1/2
@@ -60,6 +61,6 @@ html, body
     &.loaded
       @apply opacity-100 duration-500 pointer-events-auto
   [v-cloack]
-    height: 300px
+    height: 100%
     @apply hidden
 </style>
