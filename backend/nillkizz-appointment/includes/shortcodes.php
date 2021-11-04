@@ -7,8 +7,18 @@ add_shortcode('nillkizz-appointment', function ($attrs) {
   }
   return <<<HTML
   <script>
+    function isJsonString(str) {
+      try {
+          JSON.parse(str);
+      } catch (e) {
+          return false;
+      }
+      return true;
+    }
     function resizeIframe(e) {
-      const data = JSON.parse(e.data);
+      if (!isJsonString(e.data)) return
+
+        const data = JSON.parse(e.data);
       if (data.action == 'resize'){
         const obj = document.getElementById('nillkizz-appointment-app');
         obj.style.height = data.height + 'px';
