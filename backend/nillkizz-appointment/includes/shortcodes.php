@@ -17,11 +17,14 @@ add_shortcode('nillkizz-appointment', function ($attrs) {
     }
     function resizeIframe(e) {
       if (!isJsonString(e.data)) return
-
-        const data = JSON.parse(e.data);
+      
+      const obj = document.getElementById('nillkizz-appointment-app');
+      const data = JSON.parse(e.data);
       if (data.action == 'resize'){
-        const obj = document.getElementById('nillkizz-appointment-app');
         obj.style.height = data.height + 'px';
+      }
+      else if (data.action == 'scrollToTop'){
+        window.scrollTo(0, obj.getBoundingClientRect().y + window.pageYOffset - 150)
       }
     }
     window.addEventListener('message', resizeIframe);
