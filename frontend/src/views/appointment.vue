@@ -75,7 +75,7 @@
           :error-message="inputs.phoneNumber.errorMessage",
           :disable="inputs.phoneNumber.disable"
         )
-        q-slide-transition 
+        q-slide-transition
           div(v-show="call.codeIsRequested")
             q-input(
               ref="codeRef",
@@ -84,7 +84,8 @@
               dense,
               :bg-color="inputs.code.bgColor",
               v-model="inputs.code.value",
-              hint="Код подтверждения",
+              label="Код подтверждения",
+              hint="Последние 4 цифры номера входящего звонка",
               :loading="inputs.code.loading",
               :error="inputs.code.error",
               :error-message="inputs.code.errorMessage",
@@ -299,7 +300,7 @@ main
   .form
     @apply w-full flex flex-col justify-between
     .inputs
-      @apply mb-2
+      @apply mb-4
       .q-input
         @apply mb-1
     .submit
