@@ -1,4 +1,5 @@
 <template lang="pug">
+q-spinner-grid.loader(v-if="IS_LOADING", color="primary", size="3em")
 .view-wrapper(v-cloak, :class="{ loaded: !IS_LOADING }")
   router-view(
     v-model:doctorToAppointment="doctorToAppointment",
@@ -52,6 +53,8 @@ export default {
 html, body
   scroll-behavior: smooth
   @apply text-gray-800
+  .loader
+    @apply fixed inset-1/2
   .view-wrapper
     @apply opacity-0 pointer-events-none max-w-5xl m-auto
     &.loaded
