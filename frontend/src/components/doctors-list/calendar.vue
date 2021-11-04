@@ -2,7 +2,7 @@
 .calendar 
   .active(v-if="calendar.isActive")
     .days
-      .days-container
+      .days-container.q-mr-sm
         .days-wrapper
           .selector(:style="selectorStyle")
           .day(
