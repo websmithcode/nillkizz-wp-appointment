@@ -31,7 +31,7 @@ add_shortcode('nillkizz-appointment', function ($attrs) {
       background-color: white;
     }
   </style>
-  <iframe id="nillkizz-appointment-app" src="{$url}" style="width: 100%" frameborder="0" scrolling="no" >
+  <iframe id="nillkizz-appointment-app" src="{$url}" style="width: 100%" frameborder="0" scrolling="no" ></iframe>
 
 HTML;
 });
