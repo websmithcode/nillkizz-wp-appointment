@@ -25,14 +25,14 @@
       ) 
     .slots-wrapper(
       v-if="slots",
-      :class="{ more: countSlots > 11, expanded: expanded }",
-      :style="{ height: expandedInitial ? '100%' : heightOfSlots + 'px' }"
+      :class="{ more: countSlots > 11, expanded: expanded }"
     )
+      //- :style="{ height: expandedInitial ? '100%' : heightOfSlots + 'px' }"
       .slots(v-if="calendar.has(selectedDayISO)", color="white")
-        q-resize-observer(
-          v-if="!expandedInitial",
-          @resize="(size) => (heightOfSlots = size.height)"
-        )
+        //- q-resize-observer(
+        //-   v-if="!expandedInitial",
+        //-   @resize="(size) => (heightOfSlots = size.height)"
+        //- )
         q-btn.slot(
           v-for="slot in slots.values()",
           :class="{ selected: slot.time == modelValue?.slotTime && selectedDayISO == modelValue?.dayISO }",
