@@ -9,7 +9,6 @@ add_shortcode('nillkizz-appointment', function ($attrs) {
   <script>
     function resizeIframe(e) {
       const data = JSON.parse(e.data);
-      console.log(data)
       if (data.action == 'resize'){
         const obj = document.getElementById('nillkizz-appointment-app');
         obj.style.height = data.height + 'px';
