@@ -31,7 +31,6 @@ export default {
       filters: {
         search: "",
         spec: "",
-        experience: "",
         gender: "",
       },
     };
@@ -77,9 +76,6 @@ export default {
           founded &&= doc.specialty
             .map((spec) => spec.id)
             .includes(parseInt(spec));
-
-        const exp = this.filters.experience;
-        if (/^\d+$/.test(exp)) founded &&= doc.experience > parseInt(exp);
 
         const gender = this.filters.gender;
         if (["male", "female"].includes(gender))

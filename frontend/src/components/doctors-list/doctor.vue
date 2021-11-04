@@ -4,11 +4,10 @@
     figure.photo-wrap
       .photo(:style="{ backgroundImage: `url(${doctor.photo.url})` }") 
     .text
-      h3.name {{ doctor.name }}
+      h2.text-secondary.text-h5 {{ doctor.name }}
       hr.my-2
       .details
-        .speciality(v-if="doctor.specialty") Специальность: {{ specialtyFormatted }}
-        .experience(v-if="doctor.experience") Стаж {{ experienceFormatted }}
+        .speciality(v-if="specialtyFormatted") Специальность: {{ specialtyFormatted }}
         .education(v-if="education") Образование: {{ education }}
   .appointment
     calendar(:calendar="doctor.calendar", v-model="selectedSlot")
@@ -17,7 +16,6 @@
 <script>
 import { mapGetters } from "vuex";
 import calendar from "./calendar.vue";
-import { yearsToStr } from "@/inc/rusHelpers.js";
 
 export default {
   components: { calendar },
@@ -47,9 +45,6 @@ export default {
     education() {
       return this.doctor.education.map((ed) => ed.val).join(", ");
     },
-    experienceFormatted() {
-      return yearsToStr(this.doctor.experience);
-    },
   },
   watch: {
     selectedSlot(newVal) {
@@ -63,7 +58,7 @@ export default {
 .doctor
   @apply flex flex-col justify-between items-center gap-4 md:max-w-xl w-full
   @apply lg:flex-row lg:max-w-full
-  @apply bg-gray-50 p-3 border border-gray-400
+  @apply bg-gray-50 p-3 border
   .info
     @apply flex gap-4 flex-col items-center sm:items-start sm:flex-row
     .photo-wrap

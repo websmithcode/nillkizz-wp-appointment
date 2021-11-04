@@ -27,17 +27,6 @@
       square,
       outlined,
       dense,
-      v-model="exp",
-      clearable,
-      bg-color="white",
-      :options="expOptions",
-      label="Стаж",
-      :style="{ minWidth: '145px' }"
-    )
-    q-select(
-      square,
-      outlined,
-      dense,
       v-model="gender",
       clearable,
       bg-color="white",
@@ -58,13 +47,7 @@ export default {
     return {
       search: null,
       spec: null,
-      exp: null,
       gender: null,
-      expOptions: [
-        { label: "От 5 лет", value: "5" },
-        { label: "От 15 лет", value: "15" },
-        { label: "От 30 лет", value: "30" },
-      ],
       genderOptions: [
         { label: "М", value: "male" },
         { label: "Ж", value: "female" },
@@ -77,7 +60,6 @@ export default {
       return Object.assign(this.modelValue, {
         search: this.search != null ? this.search : "",
         spec: this.spec?.value ?? "",
-        experience: this.exp?.value ?? "",
         gender: this.gender?.value ?? "",
       });
     },

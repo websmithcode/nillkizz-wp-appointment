@@ -2,16 +2,16 @@
 .view-body
   header 
     back-button(v-if="showButtonBack")
-    h1.title Записаться
+    h1.title.text-secondary Записаться
   main(v-if="doctor")
     .doctor 
       .info
         q-avatar(square, size="80px")
           img(:src="doctor.photo.sizes.thumbnail")
         .text 
-          .name {{ doctor.name }}
+          h2.text-secondary.text-h5 {{ doctor.name }}
       .specialty
-        .title.q-my-auto Специальность:
+        .title.q-my-auto(v-if="doctor.specialty.length") Специальность:
         .choices
           label(v-for="(spec, index) in doctor.specialty")
             q-radio(
